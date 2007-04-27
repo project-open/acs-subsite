@@ -21,10 +21,10 @@ if {[empty_string_p $root_id]} {
 # Check if the user has site-wide-admin privileges
 set site_wide_admin_p [acs_user::site_wide_admin_p]
 
+
 array set node [site_node::get -node_id $root_id]
 set parent_id $node(parent_id)
 set object_id $node(object_id)
-
 
 if {![empty_string_p $new_parent]} {
     set javascript "onLoad=\"javascript:document.new_parent.name.focus();document.new_parent.name.select()\""
@@ -80,8 +80,8 @@ template::list::create \
     -key node_id \
     -elements {
 	 name_instance {
-	     html "align left"
-	     display_template {
+            html "align left"
+	    display_template {
 		<a name="@nodes.node_id@">@nodes.tree_indent;noquote@</a>
 	        <if @nodes.instance@ eq "">
 		<a href=@nodes.instance_url@>@nodes.name;noquote@</a>

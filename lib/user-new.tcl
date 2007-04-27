@@ -37,6 +37,19 @@ if { $self_register_p } {
     ad_user_logout 
 }
 
+# Redirect to the registration assessment if there is one, if not, continue with the regular
+# registration form.
+
+set implName [parameter::get -parameter "RegistrationImplName" -package_id [subsite::main_site_id]]
+
+set callback_url [callback -catch -impl "$implName" user::registration]
+
+if { $callback_url ne "" } {
+    ad_returnredirect [export_vars -base $callback_url { return_url }]
+    ad_script_abort
+}
+
+
 # Pre-generate user_id for double-click protection
 set user_id [db_nextval acs_object_id_seq]
 
@@ -46,7 +59,7 @@ if { [exists_and_not_null rel_group_id] } {
     ad_form -extend -name register -form {
         {rel_group_id:integer(hidden),optional}
     }
-
+    
     if { [permission::permission_p -object_id $rel_group_id -privilege "admin"] } {
         ad_form -extend -name register -form {
             {rel_type:text(select)
@@ -65,9 +78,9 @@ if { [exists_and_not_null rel_group_id] } {
 
 ad_form -extend -name register -on_request {
     # Populate elements from local variables
-
+    
 } -on_submit {
-
+    
     db_transaction {
         array set creation_info [auth::create_user \
                                      -user_id $user_id \
@@ -82,7 +95,7 @@ ad_form -extend -name register -on_request {
                                      -url $url \
                                      -secret_question $secret_question \
                                      -secret_answer $secret_answer]
-     
+	
         if { [string equal $creation_info(creation_status) "ok"] && [exists_and_not_null rel_group_id] } {
             group::add_member \
                 -group_id $rel_group_id \
@@ -90,15 +103,7 @@ ad_form -extend -name register -on_request {
                 -rel_type $rel_type
         }
     }
-
-    # Fraber 051124: TSearch2: We need to update "persons" 
-    # in order to trigger the TSearch2  # triggers
-    db_dml update_persons "
-        update persons
-        set first_names = first_names
-        where person_id = :user_id
-    "
-
+    
     # Handle registration problems
     
     switch $creation_info(creation_status) {
@@ -112,7 +117,7 @@ ad_form -extend -name register -on_request {
                 set first_elm [lindex [concat $reg_elms(required) $reg_elms(optional)] 0]
                 form set_error register $first_elm $creation_info(creation_message)
             }
-                
+	    
             # Element messages
             foreach { elm_name elm_error } $creation_info(element_messages) {
                 form set_error register $elm_name $elm_error
@@ -120,7 +125,7 @@ ad_form -extend -name register -on_request {
             break
         }
     }
-
+    
     switch $creation_info(account_status) {
         ok {
             # Continue below
@@ -131,23 +136,23 @@ ad_form -extend -name register -on_request {
             ad_script_abort
         }
     }
-
+    
 } -after_submit {
-
+    
     if { ![empty_string_p $next_url] } {
         # Add user_id and account_message to the URL
         
         ad_returnredirect [export_vars -base $next_url {user_id password {account_message $creation_info(account_message)}}]
         ad_script_abort
     } 
-
-
+    
+    
     # User is registered and logged in
     if { ![exists_and_not_null return_url] } {
         # Redirect to subsite home page.
         set return_url [subsite::get_element -element url]
     }
-
+    
     # If the user is self registering, then try to set the preferred
     # locale (assuming the user has set it as a anonymous visitor
     # before registering).
@@ -161,7 +166,7 @@ ad_form -extend -name register -on_request {
 	    ad_set_cookie -replace t -max_age 0 "ad_locale" ""
 	}
     }
-
+    
     # Handle account_message
     if { ![empty_string_p $creation_info(account_message)] && $self_register_p } {
         # Only do this if user is self-registering

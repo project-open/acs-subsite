@@ -3,7 +3,7 @@
 <queryset>
    <rdbms><type>oracle</type><version>8.1.6</version></rdbms>
 
-<fullquery name="subsite::after_mount.add_constraint">      
+<fullquery name="subsite::default::create_app_group.add_constraint">      
       <querytext>
       
 		    BEGIN
@@ -71,5 +71,18 @@
 
         </querytext>
     </fullquery>
+ 
+    <partialquery name="subsite::get_url.orderby">
+        <querytext>
+        and rownum < 2
+        order by decode(host, :search_vhost, 1, 0) desc
+        </querytext>
+    </partialquery>
+ 
+    <partialquery name="subsite::get_url.simple_search">
+        <querytext>
+        and rownum < 2
+        </querytext>
+    </partialquery>
  
 </queryset>

@@ -13,17 +13,18 @@ ad_page_contract {
     {application_url ""}
 }
 
-set user_id [ad_maybe_redirect_for_registration]
+set user_id [auth::require_login]
 ad_require_permission $object_id admin
 
 # RBM: Check if this is the Main Site and prevent the user from being
 #      able to remove Read permission on "The Public" and locking
 #      him/herself out.
-#
-set extra_where_clause ""
 if { [string equal $object_id [subsite::main_site_id]] } {
-	set extra_where_clause "AND grantee_id <> -1"
+    set mainsite_p 1
+} else {
+    set mainsite_p 0
 }
+
 
 set name [db_string name {}]
 

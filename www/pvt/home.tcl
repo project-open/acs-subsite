@@ -14,10 +14,10 @@ ad_page_contract {
     portrait_state:onevalue
     portrait_publish_date:onevalue
     portrait_title:onevalue
+    portrait_description:onevalue
     export_user_id:onevalue
     ad_url:onevalue
     member_link:onevalue
-    subsite_url:onevalue
     pvt_home_url:onevalue
 }
 
@@ -27,21 +27,21 @@ acs_user::get -array user -include_bio -user_id $user_id
 
 set account_status [ad_conn account_status]
 set login_url [ad_get_login_url]
+set subsite_url [ad_conn vhost_subsite_url]
 
 set page_title [ad_pvt_home_name]
 
 set pvt_home_url [ad_pvt_home]
 
-set subsite_url [subsite::get_element -element url]
-
 set context [list $page_title]
+
+set fragments [callback -catch user::workspace -user_id $user_id]
 
 set ad_url [ad_url]
 
 set community_member_url [acs_community_member_url -user_id $user_id]
 
 set notifications_url [lindex [site_node::get_children -node_id [subsite::get_element -element node_id] -package_key "notifications"] 0]
-
 
 set system_name [ad_system_name]
 
@@ -56,7 +56,8 @@ if { [llength [lang::system::get_locales]] > 1 } {
 if [ad_parameter SolicitPortraitP "user-info" 0] {
     # we have portraits for some users 
     if ![db_0or1row get_portrait_info "
-    select cr.publish_date, nvl(cr.title,'your portrait') as portrait_title
+    select cr.publish_date, nvl(cr.title,'your portrait') as portrait_title,
+    nvl(cr.description,'no description') as portrait_description 
     from cr_revisions cr, cr_items ci, acs_rels a
     where cr.revision_id = ci.live_revision
     and  ci.item_id = a.object_id_two

@@ -4,7 +4,7 @@
 #  return_url:optional
 #  edit_p:optional
 #  message:optional
-#
+#  show_groups_p:optional
 
 auth::require_login -account_status closed
 
@@ -18,6 +18,9 @@ if { ![exists_and_not_null return_url] } {
     set return_url [ad_conn url]
 }
 
+if { ![exists_and_not_null show_groups_p] } {
+    set show_groups_p 0
+}
 
 set action_url "[subsite::get_element -element url]user/basic-info-update"
 
@@ -108,7 +111,6 @@ if { ![string equal [acs_user::ScreenName] "none"] } {
                  ]]
 }
 
-
 ad_form -extend -name user_info -form {
     {url:text,optional
         {label "[_ acs-subsite.Home_page]"}
@@ -126,6 +128,10 @@ ad_form -extend -name user_info -form {
         set $var $user($var)
     }
 } -on_submit {
+
+    # Makes the email an image or text according to the level of privacy
+    catch {email_image::edit_email_image -user_id $user_id -new_email $email} errmsg
+
     set user_info(authority_id) $user(authority_id)
     set user_info(username) $user(username)
     foreach elm $form_elms {
@@ -158,6 +164,7 @@ ad_form -extend -name user_info -form {
             break
         }
     }
+ 
 } -after_submit {
     if { [string equal [ad_conn account_status] "closed"] } {
         auth::verify_account_status
@@ -178,9 +185,3 @@ if { ![form is_valid user_info] } {
 		"<a href=\"[element get_value user_info url]\">[element get_value user_info url]</a>"
     }
 }
-
-db_multirow groups groups "
-  select distinct groups.group_id, lower(groups.group_name), groups.group_name
-     from groups, group_member_map gm
-     where groups.group_id = gm.group_id and gm.member_id=:user_id
-  order by lower(groups.group_name)"

@@ -12,6 +12,7 @@ ad_library {
 
 namespace eval subsite {
     namespace eval util {}
+    namespace eval default {}
 }
 
 ad_proc -public subsite::after_mount { 
@@ -21,70 +22,14 @@ ad_proc -public subsite::after_mount {
     This is the TCL proc that is called automatically by the APM
     whenever a new instance of the subsites application is mounted.
 
-    We do three things:
-
-    <ul>
-      <li> Create application group
-      <li> Create segment "Subsite Users"
-      <li> Create relational constraint to make subsite registration 
-           require supersite registration.
-    </ul>
-
     @author Don Baccus (dhogaza@pacifier.com)
     @creation-date 2003-03-05
 
 } {
-
-    if { [empty_string_p [application_group::group_id_from_package_id -no_complain -package_id $package_id]] } {
-
-        set subsite_name [db_string subsite_name_query {}]
-
-        set truncated_subsite_name [string range $subsite_name 0 89]
-
-        db_transaction {
-
-            # Create subsite application group
-            set group_name "$truncated_subsite_name Parties"
-            set subsite_group_id [application_group::new \
-                                      -package_id $package_id \
-                                      -group_name $group_name]
-
-            # Create segment of registered users
-            set segment_name "$truncated_subsite_name Members"
-            set segment_id [rel_segments_new $subsite_group_id membership_rel $segment_name]
-
-            # Create a constraint that says "to be a member of this
-            # subsite you must be a member of the parent subsite".
-	    set subsite_id [site_node_closest_ancestor_package acs-subsite]
-
-            db_1row parent_subsite_query {}
-
-            set constraint_name "Members of [string range $subsite_name 0 30] must be members of [string range $supersite_name 0 30]"
-            set user_id [ad_conn user_id]
-            set creation_ip [ad_conn peeraddr]
-            db_exec_plsql add_constraint {}
-
-            # Create segment of registered users for administrators
-            set segment_name "$truncated_subsite_name Administrators"
-            set admin_segment_id [rel_segments_new $subsite_group_id admin_rel $segment_name]
-
-            # Grant admin privileges to the admin segment
-            permission::grant \
-                -party_id $admin_segment_id \
-                -object_id $package_id \
-                -privilege admin
-
-            # Grant read/write/create privileges to the member segment
-            foreach privilege { read create write } {
-                permission::grant \
-                    -party_id $segment_id \
-                    -object_id $package_id \
-                    -privilege $privilege
-            }
-            
-        }
-    }
+    subsite::default::create_app_group -package_id $package_id
 }
+
+
 
 ad_proc -public subsite::before_uninstantiate { 
     {-package_id:required}
@@ -93,7 +38,7 @@ ad_proc -public subsite::before_uninstantiate {
     Delete the application group associated with this subsite.
 
 } {
-    application_group::delete -group_id [application_group::group_id_from_package_id -package_id $package_id]
+    subsite::default::delete_app_group -package_id $package_id
 }
 
 ad_proc -public subsite::before_upgrade { 
@@ -142,7 +87,113 @@ ad_proc -public subsite::before_upgrade {
         }
 }
 
+ad_proc -public subsite::pivot_root {
+    -node_id
+} {
 
+    Pivot the package associated with node_id onto the root.  Mounting
+    the current root package under node_id.
+
+} {
+    array set node [site_node::get -node_id $node_id]
+    array set root [site_node::get -url "/"]
+
+    db_transaction {
+        site_node::unmount -node_id $node(node_id)
+        site_node::unmount -node_id $root(node_id)
+
+        site_node::mount -node_id $root(node_id) -object_id $node(package_id)
+        site_node::mount -node_id $node(node_id) -object_id $root(package_id)
+
+        #TODO: swap the application groups for the subsites so that
+        #TODO: registered users is always the application group of the root
+        #TODO: subsite.
+    }
+}
+
+ad_proc -public subsite::default::create_app_group {
+    -package_id
+    {-name {}}
+} {
+
+    Create the default application group for a subsite.
+
+    <ul>
+      <li> Create application group
+      <li> Create segment "Subsite Users"
+      <li> Create relational constraint to make subsite registration 
+           require supersite registration.
+    </ul>
+
+} {
+    if { [empty_string_p [application_group::group_id_from_package_id -no_complain -package_id $package_id]] } {
+        array set node [site_node::get_from_object_id -object_id $package_id]
+        set node_id $node(node_id)
+
+        if { [empty_string_p $name] } {
+            set subsite_name [db_string subsite_name_query {}]
+        } else {
+            set subsite_name $name
+        }
+
+        set truncated_subsite_name [string range $subsite_name 0 89]
+
+        db_transaction {
+
+            # Create subsite application group
+            set group_name "$truncated_subsite_name"
+            set subsite_group_id [application_group::new \
+                                      -package_id $package_id \
+                                      -group_name $group_name]
+
+            # Create segment of registered users
+            set segment_name "$truncated_subsite_name Members"
+            set segment_id [rel_segments_new $subsite_group_id membership_rel $segment_name]
+
+            # Create a constraint that says "to be a member of this subsite you must be a member
+            # of the parent subsite.
+	    set subsite_id [site_node::closest_ancestor_package \
+                                -node_id $node_id \
+                                -package_key [subsite::package_keys]]
+
+            db_1row parent_subsite_query {}
+            set constraint_name "Members of [string range $subsite_name 0 30] must be members of [string range $supersite_name 0 30]"
+            set user_id [ad_conn user_id]
+            set creation_ip [ad_conn peeraddr]
+            db_exec_plsql add_constraint {}
+
+            # Create segment of registered users for administrators
+            set segment_name "$truncated_subsite_name Administrators"
+            set admin_segment_id [rel_segments_new $subsite_group_id admin_rel $segment_name]
+
+            # Grant admin privileges to the admin segment
+            permission::grant \
+                -party_id $admin_segment_id \
+                -object_id $package_id \
+                -privilege admin
+
+            # Grant read/write/create privileges to the member segment
+            foreach privilege { read create write } {
+                permission::grant \
+                    -party_id $segment_id \
+                    -object_id $package_id \
+                    -privilege $privilege
+            }
+            
+        }
+    }
+
+}
+
+ad_proc -public subsite::default::delete_app_group {
+    -package_id
+} {
+
+    Delete the default application group for a subsite.
+
+} {
+    application_group::delete -group_id [application_group::group_id_from_package_id -package_id $package_id]
+}
 
 ad_proc -private subsite::instance_name_exists_p {
     node_id
@@ -231,6 +282,26 @@ ad_proc -public subsite::auto_mount_application {
 }
 
 
+ad_proc -public subsite::package_keys {
+    {-no_cache:boolean}
+} {
+    Get the list of packages which can be subsites.
+
+    We return acs-subsite, and catch the query since when upgrading an existing 
+    site we still need to know acs-subsite is a subsite.
+
+    @return the packages keys of all installed packages acting as subsites.
+} {
+    if {$no_cache_p} {
+        #if {[catch {set keys [db_list get_keys {}]} errMsg] || [empty_string_p $keys]} {
+        return {acs-subsite}
+        # }
+        return $keys
+    } else {
+        return [util_memoize "subsite::package_keys -no_cache"]
+    }
+}
+
 ad_proc -public subsite::get {
     {-subsite_id {}}
     {-array:required}
@@ -249,6 +320,12 @@ ad_proc -public subsite::get {
 
     if { [empty_string_p $subsite_id] } {
 	set subsite_id [ad_conn subsite_id]
+    }
+
+    if { ![ad_conn isconnected] } {
+        set package_id ""
+    } else {
+        set package_id [ad_conn package_id]
     }
 
     array unset subsite_info
@@ -296,8 +373,10 @@ ad_proc -public subsite::upload_allowed {} {
     @author Hector Amado (hr_amado@galileo.edu)
     @creation-date 2004-06-16
 } {
+   
+    set package_id [ad_conn subsite_id]
 
-    if { ![parameter::get_from_package_key -package_key acs-subsite -parameter SolicitPortraitP]  } {
+    if { ![parameter::get -package_id $package_id -parameter SolicitPortraitP -default 1]  } {
         if { ![acs_user::site_wide_admin_p] } {
              ns_log notice "user is tried to see user/portrait/upload  without permission"
         ad_return_forbidden \
@@ -309,16 +388,15 @@ ad_proc -public subsite::upload_allowed {} {
     }
 }
 
-ad_proc subsite::util::sub_type_exists_p {
+ad_proc -public subsite::util::sub_type_exists_p {
     object_type
 } {
-    returns 1 if object_type has sub types, or 0 otherwise
+    @param object_type
+
+    @return 1 if object_type has sub types, or 0 otherwise
 
     @author Oumi Mehrotra (oumi@arsdigita.com)
     @creation-date 2000-02-07
-
-    @param object_type
-
 } {
 
     return [db_string sub_type_exists_p {
@@ -334,11 +412,11 @@ ad_proc subsite::util::sub_type_exists_p {
 }
 
 
-ad_proc subsite::util::object_type_path_list {
+ad_proc -public subsite::util::object_type_path_list {
     object_type
     {ancestor_type acs_object}
 } {
-
+    @return the object type heirarchy for the given object type from ancestor_type to object_type
 } {
     set path_list [list]
 
@@ -360,7 +438,7 @@ ad_proc subsite::util::object_type_path_list {
 
 }
 
-ad_proc subsite::util::object_type_pretty_name {
+ad_proc -public subsite::util::object_type_pretty_name {
     object_type
 } {
     returns pretty name of object.  We need this so often that I thought
@@ -377,7 +455,7 @@ ad_proc subsite::util::object_type_pretty_name {
     }]
 }
 
-ad_proc subsite::util::return_url_stack {
+ad_proc -public subsite::util::return_url_stack {
     return_url_list
 } {
     Given a list of return_urls, we recursively encode them into one
@@ -408,17 +486,17 @@ ad_proc subsite::util::return_url_stack {
 }
 
 
-ad_proc subsite::define_pageflow {
+ad_proc -public subsite::define_pageflow {
     {-sections_multirow "sections"}
     {-subsections_multirow "subsections"}
     {-section ""}
 } {
     Defines the page flow of the subsite
+
+    TODO: add an image
+    TODO: add link_p/selected_p for subsections
 } {
     set pageflow [get_pageflow_struct]
-    
-    # TODO: add an image
-    # TODO: add link_p/selected_p for subsections
 
     set base_url [subsite::get_element -element url]
 
@@ -467,11 +545,15 @@ ad_proc subsite::define_pageflow {
 }
 
 
-ad_proc subsite::add_section_row {
+ad_proc -public subsite::add_section_row {
     {-array:required}
     {-base_url:required}
     {-multirow:required}
     {-section {}}
+} {
+    Helper proc for adding rows of sections to the page flow of the subsite.
+
+    @see subsite::define_pageflow
 } {
     upvar $array info
 
@@ -481,7 +563,10 @@ ad_proc subsite::add_section_row {
         set info(url) "[string range $info(url) 0 [string last / $info(url)]]."
     }
     
-    if { [ad_conn node_id] == [site_node_closest_ancestor_package "acs-subsite"] } {
+    if { [ad_conn node_id] == 
+         [site_node::closest_ancestor_package -include_self \
+            -package_key [subsite::package_keys] \
+            -url [ad_conn url]] } {
         set current_url [ad_conn extra_url]
     } else {
         # Need to prepend the path from the subsite to this package
@@ -493,6 +578,7 @@ ad_proc subsite::add_section_row {
     }
     
     set info(url) [file join $info(folder) $info(url)]
+    regsub {/\.$} $info(url) / info(url)
 
     # Default to not selected
     set selected_p 0
@@ -526,6 +612,9 @@ ad_proc -public subsite::get_section_info {
     {-array "section_info"}
     {-sections_multirow "sections"}
 } {
+    Takes the sections_multirow and sets the passed array name
+    with the elements label and url of the selected section.
+} {
     upvar $array row
     # Find the label of the selected section
 
@@ -543,7 +632,9 @@ ad_proc -public subsite::get_section_info {
     }
 }
 
-ad_proc subsite::get_pageflow_struct {} {
+ad_proc -public subsite::get_pageflow_struct {} {
+    Defines the page flow structure.
+} {
     # This is where the page flow structure is defined
     set subsections [list]
     lappend subsections home {
@@ -577,7 +668,8 @@ ad_proc subsite::get_pageflow_struct {} {
         # See if the redirect-url to a package inside this subsite
         for { set i 0 } { $i < [llength $child_urls] } { incr i } {
             array set child_node [site_node::get_from_url -exact -url [lindex $child_urls $i]]
-            if { [string equal $index_redirect_url "$child_node(name)/"] } {
+            if { [string equal $index_redirect_url $child_node(url)] ||
+                 [string equal ${index_redirect_url}/ $child_node(url)]} {
                 lappend pageflow $child_node(name) [list \
                                                         label "Home" \
                                                         folder $child_node(name) \
@@ -591,8 +683,12 @@ ad_proc subsite::get_pageflow_struct {} {
 
 
     set user_id [ad_conn user_id]
-    set admin_p [permission::permission_p -object_id \
-                     [site_node_closest_ancestor_package "acs-subsite"] -privilege admin -party_id [ad_conn untrusted_user_id]]
+    set admin_p [permission::permission_p \
+                     -object_id [site_node::closest_ancestor_package -include_self \
+                                     -package_key [subsite::package_keys] \
+                                     -url [ad_conn url]] \
+                     -privilege admin \
+                     -party_id [ad_conn untrusted_user_id]]
     set show_member_list_to [parameter::get -parameter "ShowMembersListTo" -package_id $subsite_id -default 2]
 
     if { $admin_p || ($user_id != 0 && $show_member_list_to == 1) || \
@@ -732,3 +828,198 @@ ad_proc -private subsite::assert_user_may_add_member {} {
         }
     }
 }
+
+ad_proc -public subsite::get_url {
+    {-node_id ""}
+    {-absolute_p 0}
+    {-force_host ""}
+    {-strict_p 0}
+    {-protocol ""}
+    {-port ""}
+} {
+    Returns the url stub for the specified subsite.
+
+    If -absolute is supplied then this function will generate absolute urls.  
+
+    If the site is currently being accessed via a host node mapping or 
+    -force_host_node_map is also supplied then URLs will ommit the 
+    corresponding subsite url stub.  The host name will be used
+    for any appropriate subsite when absolute urls are generated.  
+
+    @param node_id the subsite's node_id (defaults to nearest subsite node).
+    @param absolute_p whether to include the host in the returned url.
+    @param force_host_node_map_p whether to produce host node mapped urls 
+        regardless of the current connection state
+} {
+    if {[ad_conn isconnected]} {
+        if {[string equal $node_id ""]} {
+            set node_id [ad_conn subsite_node_id]
+        }
+
+        array set subsite_node [site_node::get -node_id $node_id]
+
+        set main_host [ns_config \
+            "ns/server/[ns_info server]/module/nssock" \
+            Hostname]
+
+        util_driver_info -array request
+
+        set headers [ns_conn headers]
+        set host_addr [split [ns_set iget $headers host] :]
+        set request(vhost) [lindex $host_addr 0]
+
+        if {![string equal [lindex $host_addr 1] ""]} {
+            set request(port) [lindex $host_addr 1]
+        }
+
+        set request_vhost_p [expr {![string equal $main_host $request(vhost)]}]
+    } else {
+        if {[string equal $node_id ""]} {
+            error "You must supply node_id when not connected."
+        } else {
+            array set subsite_node [site_node::get -node_id $node_id]
+        }
+
+        set request_vhost_p 0
+    }
+
+    set default_port(http) 80
+    set default_port(https) 443
+
+    set force_host_p [expr {![string equal $force_host ""]}]
+
+    set force_protocol_p [expr {![string equal $protocol ""]}]
+    if {!$force_protocol_p} {
+        set protocol http
+    } 
+
+    set force_port_p [expr {![string equal $port ""]}]
+    if {!$force_port_p} {
+        set port 80
+    }
+
+    set result ""
+
+    if {$request_vhost_p || 
+        $force_host_p} {
+        set root_p [string equal $subsite_node(parent_id) ""]
+        set search_vhost $force_host
+        set mapped_vhost ""
+
+        set where_clause [db_map strict_search]
+
+        # Figure out which hostname to use
+        if {!$force_host_p} {
+            set search_vhost $request(vhost)
+        } elseif {[string equal $force_host "any"]} {
+            if {$request_vhost_p} {
+                set search_vhost $request(vhost)
+                set where_clause [db_map orderby]
+            } else {
+                set where_clause [db_map simple_search]
+            }
+        } 
+
+        # TODO: This should be cached
+        set site_node $subsite_node(node_id)
+        set mapped_vhost [db_string get_vhost {} -default ""]
+
+        if {$root_p && [string equal $mapped_vhost ""]} {
+            if {$strict_p} {
+                error "$search_vhost is not mapped to this subsite or any of its parents."
+            }
+
+            if {[string equal $search_vhost "any"]} {
+                set mapped_vhost $main_host
+            } else {
+                set mapped_vhost $search_vhost
+            }
+        }
+
+        if {[string equal $mapped_vhost ""]} {
+            set result "[subsite::get_url \
+                -node_id $subsite_node(parent_id) \
+                -absolute_p $absolute_p \
+                -strict_p $strict_p \
+                -force_host $force_host]$subsite_node(name)/"
+        } else {
+            if {[ad_conn isconnected] &&
+                [string equal $mapped_vhost $request(vhost)]} {
+                if {!$force_protocol_p} {
+                    set protocol $request(proto)
+                }
+
+                if {!$force_port_p} {
+                    set port $request(port)
+                }
+            }
+
+            if {$absolute_p} {
+                set result "${protocol}://${mapped_vhost}"
+
+                if {![string equal $port $default_port($protocol)]} {
+                    append result ":$port"
+                }
+
+                append result "/"
+            } else {
+                set result "/"
+            }
+        }
+    } else {
+        if {$absolute_p} {
+            set result "${protocol}://${main_host}"
+
+            if {![string equal $port $default_port($protocol)]} {
+                append result ":$port"
+            }
+
+            append result "/"
+        }
+
+        append result "$subsite_node(url)"
+    }
+
+    return $result
+}
+
+ad_proc -private subsite::util::packages_no_mem {
+    -node_id
+} {
+    return a list of package_id's for children of the passed node_id
+
+    @author Jeff Davis davis@xarg.net
+    @creation-date 2004-05-07
+    @see subsite::util::packages
+} {
+    # need to strip nodes which have no mounted package...
+    set packages [list]
+    foreach package [site_node::get_children -all -node_id $node_id -element package_id] {
+        if {![empty_string_p $package]} {
+            lappend packages $package
+        }
+    }
+
+    return $packages
+}
+
+ad_proc -public subsite::util::packages {
+    -node_id
+} {
+    Return a list of package_id's for the subsite containing node_id
+
+    This is a memoized function which caches for 20 minutes.
+
+    @author Jeff Davis davis@xarg.net
+    @creation-date 2004-05-07
+    @see subsite::util::packages_no_mem
+} {
+    set subsite_node_id [site_node::closest_ancestor_package \
+                             -package_key [subsite::package_keys] \
+                             -node_id $node_id \
+                             -include_self \
+                             -element node_id]
+
+    return [util_memoize [list subsite::util::packages_no_mem -node_id $subsite_node_id] 1200]
+}
+

@@ -7,7 +7,6 @@ ad_library {
     @author oumi@arsdigita.com
     @creation-date 2001-02-01
     @cvs-id $Id$
-
 }
 
 namespace eval subsite {

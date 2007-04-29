@@ -7,7 +7,6 @@ ad_library {
     @author mbryzek@arsdigita.com
     @creation-date Tue Nov  7 22:52:39 2000
     @cvs-id $Id$
-
 }
 
 namespace eval group_type {

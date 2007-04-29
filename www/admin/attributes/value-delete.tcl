@@ -7,7 +7,6 @@ ad_page_contract {
     @author mbryzek@arsdigita.com
     @creation-date Sun Dec 10 14:45:29 2000
     @cvs-id $Id$
-
 } {
     attribute_id:naturalnum,notnull
     enum_value:trim,notnull

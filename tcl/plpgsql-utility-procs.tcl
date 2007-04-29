@@ -5,7 +5,6 @@ ad_library {
     @author swoodcock@scholastic.co.uk
     @creation-date Sun Jul 22 13:51:26 BST 2001
     @cvs-id $Id$
-    
 }
 
 namespace eval plpgsql_utility {

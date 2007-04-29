@@ -7,7 +7,6 @@ ad_page_contract {
     @author mbryzek@arsdigita.com
     @creation-date Thu Dec  7 18:09:49 2000
     @cvs-id $Id$
-
 } {
     {view_by "group_type"}
 } -validate {

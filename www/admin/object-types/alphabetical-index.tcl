@@ -5,7 +5,6 @@ ad_page_contract {
     @author Yonatan Feldman (yon@arsdigita.com)
     @creation-date August 15, 2000
     @cvs-id $Id$
-
 } {}
 
 set page_title "Object Type Alphabetical Index"

@@ -7,7 +7,6 @@ ad_page_contract {
     @author oumi@arsdigita.com
     @creation-date 2000-02-07
     @cvs-id $Id$
-
 } {
     { user_type:notnull "user" }
     { user_type_exact_p t }

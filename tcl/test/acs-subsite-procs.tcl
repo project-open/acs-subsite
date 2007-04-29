@@ -27,7 +27,6 @@ aa_register_case acs_subsite_expose_bug_775 {
             aa_true "Delete of group \"group_775\" succeeded." 1
         }
     }
-
 }
 
 aa_register_case acs_subsite_expose_bug_1144 {

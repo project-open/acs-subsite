@@ -7,7 +7,6 @@ ad_library {
     @author mbryzek@arsdigita.com
     @creation-date Wed Dec 27 16:02:44 2000
     @cvs-id $Id$
-
 }
 
 ad_proc -public package_type_dynamic_p {

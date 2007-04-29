@@ -4,7 +4,6 @@ ad_page_contract {
     @author bquinn@arsidigta.com
     @creation-date 2000-09-09
     @cvs-id $Id$
-    
 } {
     {expand:integer,multiple ""}
     {new_parent:integer ""}

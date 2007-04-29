@@ -8,7 +8,6 @@ ad_page_contract {
     @author mbryzek@arsdigita.com
     @creation-date Tue Jan  2 12:10:17 2001
     @cvs-id $Id$
-
 } {
     group_id:integer,notnull
     rel_type:notnull

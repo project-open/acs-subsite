@@ -9,7 +9,6 @@ ad_library {
     @author mbryzek@arsdigita.com
     @creation-date Wed Feb 21 17:10:24 2001
     @cvs-id $Id$
-
 }
 
 ad_proc -public subsite_callback {

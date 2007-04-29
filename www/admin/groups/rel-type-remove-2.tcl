@@ -7,7 +7,6 @@ ad_page_contract {
     @author mbryzek@arsdigita.com
     @creation-date Tue Jan  2 12:28:33 2001
     @cvs-id $Id$
-
 } {
     group_rel_id:naturalnum,notnull
     { return_url "" }

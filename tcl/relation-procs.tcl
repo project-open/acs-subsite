@@ -7,7 +7,6 @@ ad_library {
     @author mbryzek@arsdigita.com
     @creation-date Sun Dec 10 16:46:11 2000
     @cvs-id $Id$
-
 }
 
 namespace eval relation {}

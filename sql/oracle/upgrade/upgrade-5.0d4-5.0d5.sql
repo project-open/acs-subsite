@@ -224,7 +224,11 @@ show errors;
 --
 -- @author oumi@arsdigita.com
 -- @creation-date 2000-02-02
+<<<<<<< upgrade-5.0d4-5.0d5.sql
 -- @cvs-id $Id$
+=======
+-- @cvs-id $Id$
+>>>>>>> 1.1.1.1.8.1
 --
 
 create or replace package user_profile

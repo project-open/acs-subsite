@@ -1,6 +1,5 @@
 ad_page_contract {
     @cvs-id $Id$
-
 } {
     token:notnull,trim
     user_id:integer

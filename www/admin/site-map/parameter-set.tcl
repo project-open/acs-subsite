@@ -5,7 +5,6 @@ ad_page_contract {
     @author Bryan Quinn (bquinn@arsdigita.com)
     @creation-date 12 September 2000
     @cvs-id $Id$
-
 } {
     package_id:naturalnum,notnull
     {orderby ""}

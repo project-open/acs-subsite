@@ -205,7 +205,11 @@ where g.group_id = s.group_id;
 --
 -- @author oumi@arsdigita.com
 -- @creation-date 2000-02-02
+<<<<<<< upgrade-4.1.1-4.2.sql
 -- @cvs-id $Id$
+=======
+-- @cvs-id $Id$
+>>>>>>> 1.1.1.1.8.1
 --
 
 ---------------------------
@@ -353,7 +357,11 @@ where p.party_id = groups.group_id(+)
 -- @author Michael Bryzek (mbryzek@arsdigita.com)
 -- @creation-date 2001-02-20
 
+<<<<<<< upgrade-4.1.1-4.2.sql
 -- $Id$
+=======
+-- $Id$
+>>>>>>> 1.1.1.1.8.1
 
 -- This is free software distributed under the terms of the GNU Public
 -- License.  Full text of the license is available from the GNU Project:

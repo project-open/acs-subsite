@@ -7,7 +7,6 @@ ad_page_contract {
     @author mbryzek@arsdigita.com
     @creation-date Mon Dec 11 10:52:35 2000
     @cvs-id $Id$
-
 } {
     { role:trim "" }
     { pretty_name "" }

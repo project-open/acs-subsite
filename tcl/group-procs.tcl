@@ -7,7 +7,6 @@ ad_library {
     @author mbryzek@arsdigita.com
     @creation-date Thu Dec  7 18:13:56 2000
     @cvs-id $Id$
-
 }
 
 

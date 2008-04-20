@@ -21,6 +21,7 @@ if {![exists_and_not_null otp_enabled_p]} { set otp_enabled_p ""}
 if {![exists_and_not_null time]} { set time ""}
 if {![info exists username]} { set username "" }
 if {![info exists email]} { set email "" }
+if {![info exists show_footer]} { set show_footer 1 }
 
 set no_otp_message [lang::message::lookup "" intranet-otp.No_OTP_defined_yet "
 You need a One Time Password (OTP) for login from your current location.<br>

@@ -34,19 +34,21 @@
   <msg key="at">unter</msg>
   <msg key="Auth_internal_error">Interner Fehler bei Authentifizierung</msg>
   <msg key="Authority">Authentifizierungsstelle</msg>
-  <msg key="Bad_Password">Falsches Passwort</msg>
+  <msg key="Bad_Password">Falsches Password</msg>
   <msg key="Ban">Deaktivieren</msg>
   <msg key="Basic_Information">Allgemeine Informationen:</msg>
   <msg key="Biographies">Biographien</msg>
   <msg key="Biography">Lebenslauf</msg>
   <msg key="Biography_Mime_Type">Mime Typ für die Biographie</msg>
   <msg key="Biography_Mime_Types">Mime Typ für die Biographie</msg>
-  <msg key="cannot_retrieve_password">Passwort zurücksetzen durch lokale Authentifizierungsstelle nicht unterstützt</msg>
+  <msg key="cannot_retrieve_password">Password zurücksetzen durch lokale Authentifizierungsstelle nicht unterstützt</msg>
   <msg key="Cannot_see_memb_list">Liste der Teilnehmer verborgen</msg>
   <msg key="Change_locale_label">Sprache einstellen</msg>
   <msg key="Change_my_email_P">Änderung meines e-Mail Privacy Levels</msg>
-  <msg key="Change_my_Password">Passwort ändern</msg>
-  <msg key="Change_pass_email_por">Passwort, E-Mail-Adresse oder Bild ändern</msg>
+  <msg key="Change_my_Password">Password ändern</msg>
+  <msg key="Change_pass_email_por">Password, E-Mail Adresse oder Bild ändern</msg>
+  <msg key="change_password_email_body_0">Sie haben angefordert (oder jemand fordert Sie auf) Ihr ]project-open[ Password zu ändern. Bitte klicken Sie auf den folgenden Link, um die Änderung abzuschliessen:</msg>
+  <msg key="change_password_email_body_1">Im Zweifelsfall führen Sie bitte keine Aktion aus und wenden Sie sich bitte an den ]project-open[ System Administrator.</msg>
   <msg key="Check_Your_Inbox">Überpüfen Sie Ihr Postfach</msg>
   <msg key="Children">Untergeordnete Objekte</msg>
   <msg key="choose_assessment">Wählen Sie einen der Registrationsfragebögen:</msg>
@@ -59,8 +61,8 @@
   <msg key="Communities">Communities</msg>
   <msg key="communities">Communities</msg>
   <msg key="community">Community</msg>
-  <msg key="Confirm">Bestätigen:</msg>
-  <msg key="confirmation_password_changed">Die Änderung Ihres Passworts war erfolgreich.</msg>
+  <msg key="Confirm">Password bestätigen</msg>
+  <msg key="confirmation_password_changed">Die Änderung Ihres Password war erfolgreich.</msg>
   <msg key="Continue">Fortsetzen</msg>
   <msg key="Continue_to_your_account">Weiter nach %pvt_home_name%</msg>
   <msg key="Country_Name">Land</msg>
@@ -68,7 +70,7 @@
   <msg key="create_asm">Erstellen Sie einen neuen Registrationsfragebogen</msg>
   <msg key="Create_new_community">Neue %pretty_name% erstellen</msg>
   <msg key="Create_new_subsite">Neue Subsite erstellen</msg>
-  <msg key="Current_Password">Aktuelles Passwort:</msg>
+  <msg key="Current_Password">Aktuelles Password:</msg>
   <msg key="Currently_invisible_msg">&lt;p&gt; Ihr Onlinestatus ist für andere Benutzer verborgen. &lt;/p&gt;</msg>
   <msg key="Currently_visible_msg">&lt;p&gt; Ihr Onlinestatus ist für andere Benutzer sichtbar. &lt;/p&gt; </msg>
   <msg key="Customize_Question">Frage ändern</msg>
@@ -88,44 +90,45 @@
   <msg key="edit_comment">Kommentar bearbeiten</msg>
   <msg key="Edit_Options">Optionen editieren</msg>
   <msg key="Elements_not_editable">Einige Elemente können nicht bearbeitet werden, da sie von %authority_name% verwaltet werden.</msg>
-  <msg key="Email">E-Mail-Adresse</msg>
+  <msg key="Email">E-Mail Adresse</msg>
   <msg key="email_as_a_form">Zulassen, mich über ein Formular anzusprechen</msg>
   <msg key="email_as_a_form_admin">Den Kontakt mittels eines Formulars erlauben</msg>
   <msg key="email_as_image">Meine e-Mail als Bild anzeigen</msg>
   <msg key="email_as_image_admin">e-Mail als Bild anzeigen</msg>
   <msg key="email_as_text">Meine e-Mail als Text anzeigen</msg>
   <msg key="email_as_text_admin">e-Mail als Text anzeigen</msg>
-  <msg key="email_body_Forgotten_password">Hier sind Ihre neuen Anmeldedaten: %account_id_label%: %account_id% %password_label%: %password%. Bitte ändern Sie Ihr Passwort unter folgendem Link: %reset_password_url%</msg>
-  <msg key="email_body_Registration_password">Vielen Dank für Ihre Registrierung bei %system_name%. Mit folgenden Daten können Sie sich bei %system_url% anmelden: %account_id_label%: %account_id% %password_label%: %password% Bitte ändern Sie Ihr Passwort unter folgendem Link: %reset_password_url%</msg>
-  <msg key="Email_Confirmation">E-Mail-Adresse bestätigen:</msg>
+  <msg key="email_body_Forgotten_password">Hier sind Ihre neuen Anmeldedaten: %account_id_label%: %account_id% %password_label%: %password%. Bitte ändern Sie Ihr Password unter folgendem Link: %reset_password_url%</msg>
+  <msg key="email_body_Registration_password">Vielen Dank für Ihre Registrierung bei %system_name%. Mit folgenden Daten können Sie sich bei %system_url% anmelden: %account_id_label%: %account_id% %password_label%: %password% Bitte ändern Sie Ihr Password unter folgendem Link: %reset_password_url%</msg>
+  <msg key="Email_Confirmation">E-Mail Adresse bestätigen:</msg>
   <msg key="email_dont_show">Meine e-Mail nicht anzeigen</msg>
   <msg key="email_dont_show_admin">e-Mail nicht anzeigen</msg>
   <msg key="email_not_available">Nicht verfügbar</msg>
   <msg key="Email_not_Requested">E-Mail nicht angefordert</msg>
-  <msg key="Email_required">Email-Adresse muss angegeben werden</msg>
-  <msg key="email_subject_Forgotten_password">Ihr vergessenes Passwort für %system_name%</msg>
+  <msg key="Email_required">E-Mail Adresse muss angegeben werden</msg>
+  <msg key="email_subject_Forgotten_password">Ihr vergessenes Password für %system_name%</msg>
   <msg key="email_subject_Registration_password">Willkommen bei %system_name%.</msg>
   <msg key="Enabled">Aktiviert</msg>
-  <msg key="Enter_your_username_to">Um Ihr Passwort zurücksetzen zu lassen, geben Sie bitte zunächst Ihre Benutzeridentifikation ein. </msg>
+  <msg key="Enter_your_username_to">Um Ihr Password zurücksetzen, geben Sie bitte zunächst Ihre E-Mail Adresse ein. </msg>
   <msg key="Erase_Portrait">Bild löschen</msg>
   <msg key="erase_portrait">Bild löschen</msg>
   <msg key="Error">Fehler</msg>
   <msg key="Error_sending_mail">Fehler beim Senden der E-Mail</msg>
-  <msg key="Error_sending_verification_mail">Die Email-Nachricht zur Überprüfung der Adresse konte nicht gesendet werden</msg>
+  <msg key="Error_sending_verification_mail">Die E-Mail Nachricht zur Überprüfung der Adresse konte nicht gesendet werden</msg>
   <msg key="Error_trying_to_register">Es trat ein Fehler auf während wir versucht haben, einen Account für Sie anzulegen.</msg>
   <msg key="Error_update_account_info">Während des Updates des Accounts trat ein Fehler auf</msg>
   <msg key="Expires">Ablaufdatum</msg>
   <msg key="Filename">Dateiname</msg>
   <msg key="First_names">Vorname(n)</msg>
-  <msg key="Forgot_your_password">Passwort vergessen?</msg>
+  <msg key="Forgot_your_password">Password zurücksetzen</msg>
   <msg key="Frequency">Häufigkeit</msg>
   <msg key="Go_back">Zurück</msg>
   <msg key="go_upload_the_users_por">Bild des Benutzers hochladen</msg>
   <msg key="go_upload_your_portrait">ein Bild hochladen.</msg>
   <msg key="Grant">Erteilen</msg>
   <msg key="Grant_Permission">Berechtigungen erteilen</msg>
-  <msg key="Have_group_mail">Eine Gruppe mit dieser Email-Adresse existiert bereits.</msg>
-  <msg key="Have_user_mail">Ein Benutzer mit dieser Email-Adresse existiert bereits.</msg>
+  <msg key="Groups">Gruppen</msg>
+  <msg key="Have_group_mail">Eine Gruppe mit dieser E-Mail Adresse existiert bereits.</msg>
+  <msg key="Have_user_mail">Ein Benutzer mit dieser E-Mail Adresse existiert bereits.</msg>
   <msg key="Have_user_name">Eine Gruppe mit diesem Benutzernamen existiert bereits.</msg>
   <msg key="Help_information">&lt;p&gt;&lt;h3&gt;Hilfe Info&lt;/h3&gt;</msg>
   <msg key="Hide">Verbergen</msg>
@@ -168,12 +171,12 @@
   <msg key="lt_deleteaifif_nodespara">lösche&lt;/a&gt;  &lt;/if&gt;  &lt;if @nodes.parameters_url@ ne &quot;&quot;&gt;  &lt;a href=&quot;@nodes.parameters_url@&quot;&gt;&lt;#_ parameters</msg>
   <msg key="lt_Do_not_inherit_from_p">Nicht vererben von %parent_object_name%</msg>
   <msg key="lt_Edit_comment_for_the_">Kommentar zum Bild von %first_names% %last_name% bearbeiten</msg>
-  <msg key="lt_first_names_last_name">%first_names% %last_name% (%email%) ist als Benutzer von %system_url% registriert. 
+  <msg key="lt_first_names_last_name">%first_names% %last_name% (%email%) ist als Benutzer von %system_url% registriert. 
       </msg>
   <msg key="lt_For_Site-Wide_Adminis">Für Systemadministratoren</msg>
   <msg key="lt_Grant_Permission_on_n">Berechtigungen erteilen für %name%</msg>
   <msg key="lt_Heres_what_the_databa">Folgende Daten wurden in der Datenbank gefunden:</msg>
-  <msg key="lt_How_would_you_like_the">Hier können Sie ein Bild von sich hochladen, das für andere Benutzer von dotLRN sichtbar ist.</msg>
+  <msg key="lt_How_would_you_like_the">Hier können Sie ein Bild von sich hochladen, das für andere Benutzer sichtbar ist.</msg>
   <msg key="lt_If_you_dont_think_the">Wenn die Person noch kein Benutzerkonto hat:</msg>
   <msg key="lt_If_you_happen_to_know">Wenn die Person, die Sie einladen wollen, bereits ein Benutzerkonto auf diesem System hat:</msg>
   <msg key="lt_If_you_need_this_func">Wenn Sie diese Funktionalität nutzen wollen, laden Sie bitte acs-reference und ref-countries.</msg>
@@ -183,11 +186,11 @@
   <msg key="lt_It_would_be_a_very_ba">Diese Option sollte nicht gewählt werden, wenn der Computer von mehreren Personen genutzt wird, etwa in einer Bibliothek oder einem universitären Rechenzentrum. Nachfolgende Benutzer können sonst unter Ihrer Identität auf den Dienst zugreifen.</msg>
   <msg key="lt_New_registration_at_s">Neue Registrierung bei %system_url%</msg>
   <msg key="lt_Note_text_in_red_below">Note text in red below the parameter entry fields indicates the value of this parameter is being overridden by an entry in the OpenACS parameter file. The use of the parameter file is discouraged but some sites need it to provide instance-specific values for parameters independent of the apm_parameter tables. </msg>
-  <msg key="lt_Note_that_you_can_era">Hinweis: Sie können Ihre Benutzeridentifikation und Ihr Passwort aus dem Browser löschen, indem Sie auf der dotLRN-Startseite die Option 'Abmelden' wählen. </msg>
+  <msg key="lt_Note_that_you_can_era">Hinweis: Sie können Ihre E-Mail Adresse und Ihr Password aus dem Browser löschen, indem Sie auf der dotLRN-Startseite die Option 'Abmelden' wählen. </msg>
   <msg key="lt_num_children_Children">%num_children% untergeordnete Objekte ausgeblendet</msg>
   <msg key="lt_On_portrait_publish_d">Am %portrait_publish_date% haben Sie &lt;a href=&quot;%subsite_url%user/portrait/&quot;&gt;%portrait_title%&lt;/a&gt; hochgeladen</msg>
-  <msg key="lt_Our_server_can_tell_y">Bestimmte Daten wie Benutzeridentifikation oder Passwort können vom Browser gespeichert werden. Dadurch brauchen diese Daten bei Computern, die von nur einer Person genutzt werden, nicht bei jeder Sitzung neu eingegeben zu werden.</msg>
-  <msg key="lt_Password_Confirmation">Passwort bestätigen</msg>
+  <msg key="lt_Our_server_can_tell_y">Bestimmte Daten wie Benutzeridentifikation oder Password können vom Browser gespeichert werden. Dadurch brauchen diese Daten bei Computern, die von nur einer Person genutzt werden, nicht bei jeder Sitzung neu eingegeben zu werden.</msg>
+  <msg key="lt_Password_Confirmation">Password bestätigen</msg>
   <msg key="lt_Personal_Home_Page_UR">Adresse der persönlichen Homepage:</msg>
   <msg key="lt_Please_locate_your_co">Bitte wählen Sie aus der folgenden Liste Ihren Ländercode aus. Gehen Sie dann mit Hilfe Ihres Browsers zum  Formular zurück.</msg>
   <msg key="lt_Please_read_and_follo">Bitte führen Sie die in der E-Mail genannten Schritte aus.</msg>
@@ -199,7 +202,7 @@
   <msg key="lt_Registration_informat_1">Die Registrierungsinformationen für diesen Dienst wurden an %email% gesendet.
 </msg>
   <msg key="lt_registration_request_submitted">Ihr Registrierungsantrag wurde an den Administrator von %system_name% übermittelt. Sie wurden noch nicht freigeschaltet.</msg>
-  <msg key="lt_Saving_email_address_">E-Mail-Adresse und Passwort werden gespeichert.</msg>
+  <msg key="lt_Saving_email_address_">E-Mail-Adresse und Password werden gespeichert.</msg>
   <msg key="lt_Show_everyone_else_at">Zeigen Sie, wer Sie sind bei %system_name%</msg>
   <msg key="lt_Sorry_but_it_seems_th">Sie haben keinen Zugang zu %system_name%. Wahrscheinlich wurde Ihr Benutzerkonto deaktiviert.</msg>
   <msg key="lt_Stop_inheriting_permi">Aufhören, die Berechtigungen von %parent_object_name% zu vererben</msg>
@@ -229,7 +232,7 @@
   <msg key="lt_Your_email_has_been_c">Ihre E-Mail-Adresse wurde bestätigt. Sie können sich nun bei %system_name% anmelden.</msg>
   <msg key="lt_Your_email_has_been_c_1">Ihre E-Mail-Adresse wurde bestätigt. Sie warten nun auf Freischaltung durch den Administrator von %system_name%.</msg>
   <msg key="lt_Your_email_is_confirm">Ihre E-Mail-Adresse wurde bestätigt.</msg>
-  <msg key="lt_Your_login_has_expire">Ihre Anmeldung ist abgelaufen. Bitte geben Sie erneut Ihr Passwort ein.</msg>
+  <msg key="lt_Your_login_has_expire">Ihre Anmeldung ist abgelaufen. Bitte geben Sie erneut Ihr Password ein.</msg>
   <msg key="lt_Your_URL_doesnt_have_">Die von Ihnen eingegebene URL hat nicht die richtige Form. Eine gültige URL könnte etwa lauten: &quot;%valid_url_example%&quot;</msg>
   <msg key="mail_a_message_to">Eine Nachricht senden an:</msg>
   <msg key="Make_administrator">Administrationsrechte erteilen</msg>
@@ -244,10 +247,10 @@
   <msg key="Members">Teilnehmer</msg>
   <msg key="Missing_argument">Fehlendes Argument</msg>
   <msg key="mount">mount</msg>
-  <msg key="My_Account">Mein Account</msg>
+  <msg key="My_Account">Mein Konto</msg>
   <msg key="Name">Name:</msg>
   <msg key="new_application">neue Applikation</msg>
-  <msg key="New_Password">Neues Passwort:</msg>
+  <msg key="New_Password">Neues Password</msg>
   <msg key="No_applications">Keine Anwendungen vorhanden</msg>
   <msg key="no_assessment">Kein Assessment verfügbar</msg>
   <msg key="No_ISO_Codes">Keine ISO-Codes geladen</msg>
@@ -258,7 +261,7 @@
   <msg key="No_user_with_this_username">Benutzername konnte nicht gefunden werden</msg>
   <msg key="none">Keine</msg>
   <msg key="Not_logged_in">Nicht angemeldet</msg>
-  <msg key="Not_valid_email_addr">Keine gültige Email-Adresse</msg>
+  <msg key="Not_valid_email_addr">Keine gültige E-Mail Adresse</msg>
   <msg key="Notes">Hinweise:</msg>
   <msg key="Notice">Hinweis:</msg>
   <msg key="on_name_to">für %name% an:</msg>
@@ -269,10 +272,17 @@
   <msg key="or_the">oder das</msg>
   <msg key="Parameters">Parameter</msg>
   <msg key="parameters">parameter</msg>
-  <msg key="Password">Passwort</msg>
-  <msg key="Password_changed_body">Das Passwort Ihres Benutzerkontos (%account_id_label%: %account_id%) bei %system_name% wurde kürzlich geändert. Es sind keine weiteren Schritte nötig, diese Mitteilung dient lediglich Ihrer Sicherheit. --------------- Sie können Ihr Passwort jederzeit mit folgenden Schritten ändern: 1. Melden Sie sich bei %system_name% an. 2. Klicken Sie auf den Link '%pvt_home_name%'. 3. Wählen Sie die Option '%password_update_link_text%'.</msg>
-  <msg key="Password_changed_subject">Passwort geändert</msg>
-  <msg key="Password_regular_change_now">Ihr Passwort muss rgelmässig geändert werden.  Bitte Ändern Sie jetzt ihr Passwort.</msg>
+  <msg key="Password">Password</msg>
+  <msg key="Password_changed_body">Das Password Ihres Benutzerkontos (%account_id_label%: %account_id%) bei %system_name% wurde kürzlich geändert.
+
+Es sind keine weiteren Schritte nötig, diese Mitteilung dient lediglich Ihrer Sicherheit. 
+
+Sie können Ihr Password jederzeit mit folgenden Schritten ändern:
+1. Melden Sie sich bei %system_name% an.
+2. Klicken Sie auf den Link '%pvt_home_name%'.
+3. Wählen Sie die Option '%password_update_link_text%'.</msg>
+  <msg key="Password_changed_subject">Password geändert</msg>
+  <msg key="Password_regular_change_now">Ihr Password muss rgelmässig geändert werden.  Bitte Ändern Sie jetzt ihr Password.</msg>
   <msg key="Passwords_dont_match">Passwörter stimmen nicht Überein</msg>
   <msg key="perm_cannot_be_removed">Die Erlabnis kann nicht wieder zurückgenommen werden.</msg>
   <msg key="Permissions">Berechtigungen</msg>
@@ -286,7 +296,7 @@
   <msg key="Question">Frage:</msg>
   <msg key="Re_enable">Aktivieren</msg>
   <msg key="read">Lesen</msg>
-  <msg key="Recover_Password">Passwort zurücksetzen</msg>
+  <msg key="Recover_Password">Password zurücksetzen</msg>
   <msg key="Refresh_login">Anmeldung aktualisieren</msg>
   <msg key="reg_asm_link">Angepasster Fragebogen für die Benutzerregistrierung</msg>
   <msg key="Register">Registrieren</msg>
@@ -298,7 +308,9 @@
   <msg key="rename">Umbenennen</msg>
   <msg key="Req_membership_comm">Zugang zu dieser Gruppe beantragen</msg>
   <msg key="Req_membership_subs">Mitgliedschaft für diese Subsite beantragen</msg>
+  <msg key="Request_Change_Password_token_email">Es wurde Ihnen eine E-Mail mit weiteren Anweisungen gesendet. Bitte klicken Sie auf dem Link in der E-Mail für die Eingabe eines neuen Password</msg>
   <msg key="Request_membership">Zugang beantragen</msg>
+  <msg key="Reset_Password">Password zurücksetzen</msg>
   <msg key="return_to_application">Zurück zur Anwendung</msg>
   <msg key="Revoke_Checked">Ausgewählte Berechtigungen aufheben</msg>
   <msg key="Role">Rolle</msg>
@@ -314,7 +326,7 @@
   <msg key="Show">Anzeigen</msg>
   <msg key="Site_Wide_Admin">System Administration</msg>
   <msg key="Site_wide_administration">Systemadministration</msg>
-  <msg key="sorry_forgotten_pwd">Das Passwort kann nicht zurückgesetzt werden.</msg>
+  <msg key="sorry_forgotten_pwd">Das Password kann nicht zurückgesetzt werden.</msg>
   <msg key="Status">Status</msg>
   <msg key="Story_Behind_Photo">Kommentar zum Bild</msg>
   <msg key="Story_behind_photo">Kommentar zum Bild</msg>
@@ -330,15 +342,15 @@
   <msg key="This_group_is_closed">Dies ist eine geschlossene Gruppe. Neue Teilnehmer können nur durch Einladung Zugang erhalten.</msg>
   <msg key="this_subsite">diese Subsite</msg>
   <msg key="This_user_has_left_the">Dieser Benutzer ist nicht mehr bei dotLRN registriert.</msg>
-  <msg key="To_log_in_visit_the">Um sich anzumelden, gehen Sie auf die</msg>
+  <msg key="To_log_in_visit_the">Um sich anschliessend anzumelden, gehen Sie auf die</msg>
   <msg key="Topic">Thema</msg>
   <msg key="type_specific_info">Typspezifische Informationen:</msg>
-  <msg key="Unknown_email">Email-Adresse unbekannt</msg>
+  <msg key="Unknown_email">E-Mail Adresse unbekannt</msg>
   <msg key="unmount">abhängen</msg>
   <msg key="UP">Eine Ebene nach oben</msg>
   <msg key="up_to_context_name">Eine Ebene höher zu &quot;%context_name%&quot;</msg>
   <msg key="Update">Aktualisieren</msg>
-  <msg key="Update_Password">Passwort aktualisieren</msg>
+  <msg key="Update_Password">Password aktualisieren</msg>
   <msg key="upload">Hochladen</msg>
   <msg key="upload_a_portrait">Ein Bild hochladen</msg>
   <msg key="upload_a_replacement_por">Ein anderes Bild hochladen</msg>

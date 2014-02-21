@@ -1274,7 +1274,8 @@ Calendar.prototype.showAt = function (x, y) {
 Calendar.prototype.showAtElement = function (el, opts) {
 	var p = Calendar.getAbsolutePos(el);
 	if (!opts || typeof opts != "string") {
-		this.showAt(p.x, p.y + el.offsetHeight);
+	    // fraber 140221: Calendar now appears towards the top right of the field
+	    this.showAt(p.x + 90, p.y + el.offsetHeight - 165);
 		return true;
 	}
 	this.show();
@@ -1743,7 +1744,7 @@ function showCalendarWithDateWidget(id,fmt) {
   calendar.selM = idM;            // inform it about the input field in use
   calendar.selD = idD;            // inform it about the input field in use
   calendar.selY = idY;            // inform it about the input field in use
-  calendar.showAtElement(idM);   // show the calendar next to the input field
+  calendar.showAtElement(idY);   // show the calendar next to the input field
   // catch mousedown on the document
   Calendar.addEvent(document, "mousedown", checkCalendar);
   return false;

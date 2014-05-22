@@ -146,7 +146,7 @@ ad_proc -private package_create_attribute_list {
     }
     
     if { $supertype ne "" && $object_name ne "" } {
-	foreach row [util_memoize "package_table_columns_for_type \"$supertype\""] {
+	foreach row [util_memoize [list package_table_columns_for_type $supertype]] {
 	    set table_name [lindex $row 0]
 	    set column_name [lindex $row 1]
 

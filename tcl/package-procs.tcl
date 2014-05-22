@@ -478,7 +478,7 @@ ad_proc -public package_object_view {
     if {$refresh_p eq "t"} {
 	package_object_view_reset $object_type
     }
-    return [util_memoize "package_object_view_helper -start_with $start_with $object_type"]
+    return [util_memoize [list package_object_view_helper -start_with $start_with $object_type]
 }
 
 
@@ -826,7 +826,7 @@ ad_proc -public package_instantiate_object {
     # This will prevent us from passing in any parameters that are
     # not defined
 
-    foreach arg [util_memoize "package_plsql_args \"$package_name\""] {
+    foreach arg [util_memoize [list package_plsql_args $package_name]] {
 	set real_params([string toupper $arg]) 1
     }
     

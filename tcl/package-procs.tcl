@@ -478,7 +478,7 @@ ad_proc -public package_object_view {
     if {$refresh_p eq "t"} {
 	package_object_view_reset $object_type
     }
-    return [util_memoize [list package_object_view_helper -start_with $start_with $object_type]
+    return [util_memoize [list package_object_view_helper -start_with $start_with $object_type]]
 }
 
 

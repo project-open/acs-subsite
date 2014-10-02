@@ -116,7 +116,7 @@ template::form create add_group
 
 attribute::add_form_elements -form_id add_group -variable_prefix group -start_with group -object_type $group_type
 
-attribute::add_form_elements -form_id add_group -variable_prefix rel -start_with relationship -object_type $add_with_rel_type
+# attribute::add_form_elements -form_id add_group -variable_prefix rel -start_with relationship -object_type $add_with_rel_type
 
 if { [template::form is_request add_group] } {
     

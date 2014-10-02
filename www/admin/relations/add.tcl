@@ -46,6 +46,7 @@ set context [list "Add relation"]
 
 set export_var_list [list group_id rel_type exact_p return_url allow_out_of_scope_p]
 
+
 if {$party_id ne ""} {
     lappend export_var_list party_id
 }
@@ -147,7 +148,7 @@ set add_in_scope_url "[ad_conn url]?[ad_export_vars -exclude allow_out_of_scope_
 set user_id [ad_conn user_id]
 set package_id [ad_conn package_id]
 
-attribute::add_form_elements -form_id add_relation -start_with relationship -object_type $rel_type
+# attribute::add_form_elements -form_id add_relation -start_with relationship -object_type $rel_type
 element::create add_relation rel_id -widget hidden -value [db_nextval "acs_object_id_seq"]
 
 if { [template::form is_valid add_relation] } {

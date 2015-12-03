@@ -4,7 +4,7 @@ ad_page_contract {
     @cvs-id $Id$
 } {
     {return_url "" }
-    {user_id ""}
+    {user_id:naturalnum ""}
 } -properties {
     context:onevalue
     export_vars:onevalue
@@ -20,13 +20,13 @@ if {$user_id eq "" || $user_id eq $current_user_id} {
     set admin_p 1
 }
 
-ad_require_permission $user_id "write"
+permission::require_permission -object_id $user_id -privilege "write"
 
 set doc(title) [_ acs-subsite.Erase]
 if {$admin_p} {
     set context [list \
                      [list [ad_pvt_home] [ad_pvt_home_name]] \
-                     [list "./?[export_vars user_id]" [_ acs-subsite.User_Portrait]] \
+                     [list [export_vars -base ./ user_id] [_ acs-subsite.User_Portrait]] \
                      $doc(title)]
 } else {
     set context [list \

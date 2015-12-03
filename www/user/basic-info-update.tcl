@@ -7,8 +7,8 @@ ad_page_contract {
     @cvs-id $Id$
 } {
     {return_url ""}
-    {user_id ""}
-    {edit_p 0}
+    {user_id:naturalnum ""}
+    {edit_p:boolean 0}
     {message ""}
 }
 

@@ -1,13 +1,5 @@
-/* Emulate getElementById on document.all only browsers. Requires
-   that IDs are unique to the page and do not coincide with NAME
-   attributes on other elements:-
-   Source: http://www.litotes.demon.co.uk/js_info/faq_notes/alt_dynwrite.html#getEl
-*/
-if((!document.getElementById) && document.all){
-    document.getElementById = function(id){return document.all[id];};
-}
 
-
+/* The function acs_Focus is included in blank-master.tcl
 function acs_Focus(form_name, element_name) {
     if (document.forms == null) return;
     if (document.forms[form_name] == null) return;
@@ -15,8 +7,7 @@ function acs_Focus(form_name, element_name) {
     if (document.forms[form_name].elements[element_name].type == 'hidden') return;
 
     document.forms[form_name].elements[element_name].focus();
-}
-
+} */
 
 function acs_FormRefresh(form_name) {
     if (document.forms == null) return;
@@ -765,18 +756,12 @@ Calendar.cellClick = function(el) {
 			newdate = true;
 		}
 	}
-
 	if (newdate) {
 		cal.callHandler();
 	}
-
-        // fraber 2012-02-07: Now closing the calendar after clicking into a date
-        if (typeof el.navtype == "undefined") {
-            Calendar.removeClass(el, "hilite");
-            cal.callCloseHandler();
-        }
-
 	if (closing) {
+		Calendar.removeClass(el, "hilite");
+		cal.callCloseHandler();
 	}
 };
 
@@ -1125,6 +1110,7 @@ Calendar.prototype._init = function (mondayFirst, date) {
 	}
 	this.ar_days = ar_days;
 	this.title.firstChild.data = Calendar._MN[month] + ", " + year;
+        this._hideCombos();
 	// PROFILE
 	// this.tooltips.firstChild.data = "Generated in " + ((new Date()) - today) + " ms";
 };
@@ -1274,8 +1260,7 @@ Calendar.prototype.showAt = function (x, y) {
 Calendar.prototype.showAtElement = function (el, opts) {
 	var p = Calendar.getAbsolutePos(el);
 	if (!opts || typeof opts != "string") {
-	    // fraber 140221: Calendar now appears towards the top right of the field
-	    this.showAt(p.x + 90, p.y + el.offsetHeight - 165);
+		this.showAt(p.x, p.y + el.offsetHeight);
 		return true;
 	}
 	this.show();
@@ -1737,14 +1722,14 @@ function showCalendarWithDateWidget(id,fmt) {
     // first-time call, create the calendar
     var cal = new Calendar(true, null, selectwidget, closeHandler);
     calendar = cal;             // remember the calendar in the global
-    cal.setRange(2000, 2070);   // min/max year allowed
+    cal.setRange(1900, 2050);   // min/max year allowed
     calendar.create();          // create a popup calendar
     calendar.parseDate(calval,fmt); // set it to a new date
   }
   calendar.selM = idM;            // inform it about the input field in use
   calendar.selD = idD;            // inform it about the input field in use
   calendar.selY = idY;            // inform it about the input field in use
-  calendar.showAtElement(idY);   // show the calendar next to the input field
+  calendar.showAtElement(idM);   // show the calendar next to the input field
   // catch mousedown on the document
   Calendar.addEvent(document, "mousedown", checkCalendar);
   return false;

@@ -24,8 +24,8 @@
 # @cvs-id $Id$
 
 set user_id [ad_conn user_id]
-set admin_p [ad_permission_p $group_id "admin"]
-set create_p [ad_permission_p $group_id "create"]
+set admin_p [permission::permission_p -object_id $group_id -privilege "admin"]
+set create_p [permission::permission_p -object_id $group_id -privilege "create"]
 
 set return_url "[ad_conn url]?[ad_conn query]"
 set return_url_enc [ad_urlencode $return_url]
@@ -67,7 +67,7 @@ db_multirow -extend {elements_display_url relations_add_url} rels relations_quer
     set role_pretty_name [lang::util::localize $role_pretty_name]
     set role_pretty_plural [lang::util::localize $role_pretty_plural]    
 
-    set elements_display_url [export_vars -url -base "elements-display" {group_id rel_type}]
-    set relations_add_url [export_vars -url -base "../relations/add" {group_id rel_type return_url}]
+    set elements_display_url [export_vars -base "elements-display" {group_id rel_type}]
+    set relations_add_url [export_vars -base "../relations/add" {group_id rel_type {return_url $return_url}}]
 
 }

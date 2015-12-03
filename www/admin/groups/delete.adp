@@ -1,6 +1,6 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="title">Delete @group_name;noquote@</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">Delete @group_name;noquote@</property>
 
 Are you sure you want to permanently, and irreversibly, remove this
 group? Removing this group will:
@@ -20,6 +20,6 @@ group? Removing this group will:
 
 <p>
 
-<center>
-<include src="../confirm-delete-form" action="delete-2" export_vars="@export_form_vars;noquote@" no_button="No, I want to cancel my request" yes_button="Yes, I really want to delete this group">
-</center>
+<div>
+<include src="../confirm-delete-form" action="delete-2" export_vars="@export_form_vars;literal@" no_button="No, I want to cancel my request" yes_button="Yes, I really want to delete this group">
+</div>

@@ -10,10 +10,10 @@ ad_page_contract {
 
 } {
     { user_type:notnull "user" }
-    { user_type_exact_p t }
+    { user_type_exact_p:boolean t }
     { user_id:naturalnum "" }
     { return_url "" }
-    {add_to_group_id ""}
+    {add_to_group_id:naturalnum ""}
     {add_with_rel_type "user_profile"}
     {group_rel_type_list ""}
 } -properties {
@@ -86,12 +86,12 @@ db_1row select_type_info {
 ## constraint violations in the database because the constraints are enforced
 ## by triggers in the DB.
 
-if { $user_type_exact_p eq "f" && \
-	[subsite::util::sub_type_exists_p $user_type] } {
+if { $user_type_exact_p == "f" 
+     && [subsite::util::sub_type_exists_p $user_type] } {
 
     # Sub user-types exist... select one
     set user_type_exact_p "t"
-    set export_url_vars [ad_export_vars -exclude user_type $export_var_list ]
+    set export_url_vars [export_vars -exclude user_type $export_var_list ]
 
     party::types_valid_for_rel_type_multirow -datasource_name object_types -start_with $user_type -rel_type $add_with_rel_type
 
@@ -201,10 +201,9 @@ if { [template::form is_valid add_user] } {
     # there may be more segments to put this new party in before the
     # user's original request is complete.   So build a return_url stack
     foreach group_rel_type $group_rel_type_list {
-	set next_group_id [lindex $group_rel_type 0]
-	set next_rel_type [lindex $group_rel_type 1]
+	lassign $group_rel_type next_group_id next_rel_type
 	lappend return_url_list \
-		"../relations/add?group_id=$next_group_id&rel_type=[ad_urlencode $next_rel_type]&party_id=$user_id&allow_out_of_scope_p=t"
+	    [export_vars -base "../relations/add" {{group_id $next_group_id} {rel_type $next_rel_type} {party_id $user_id} {allow_out_of_scope_p t}}]
     }
 
     # Add the original return_url as the last one in the list
@@ -213,7 +212,7 @@ if { [template::form is_valid add_user] } {
     set return_url_stacked [subsite::util::return_url_stack $return_url_list]
 
     if {$return_url_stacked eq ""} {
-	set return_url_stacked "../parties/one?party_id=$user_id"
+	set return_url_stacked [export_vars -base ../parties/one {{party_id $user_id}}]
     }
     ad_returnredirect $return_url_stacked
 
@@ -232,40 +231,46 @@ if { [template::form is_valid add_user] } {
 	    }]
 
 	    # we're supposed to notify the administrator when someone new registers
-	    acs_mail_lite::send -send_immediately \
-            -to_addr $notification_address \
-		    -from_addr [template::element::get_value add_user email] \
-            -subject "New registration at [ad_url]" \
-            -body "[template::element::get_value add_user first_names] [template::element::get_value add_user last_name] ([template::element::get_value add_user email]) was added as a registered as a user of 
+	    acs_mail_lite::send \
+		-send_immediately \
+		-to_addr $notification_address \
+		-from_addr [template::element::get_value add_user email] \
+		-subject "New registration at [ad_url]" \
+		-body "[template::element::get_value add_user first_names] [template::element::get_value add_user last_name] ([template::element::get_value add_user email]) was added as a registered as a user of 
 [ad_url]
 
 The user was added by $creation_name from [ad_conn url]."
 
     }
 
-	if { $email_verified_p eq "f" } {
+	if { $email_verified_p == "f" } {
 	
 	    set row_id [db_string user_new_2_rowid_for_email "select rowid from users where user_id = :user_id"]
 	    # the user has to come back and activate their account
 
-	    ns_sendmail [template::element::get_value add_user email] \
-		    $notification_address \
-		    "Welcome to [ad_system_name]" \
-		    "To confirm your registration, please go to [parameter::get -package_id [ad_acs_kernel_id] -parameter SystemURL]/register/email-confirm?[export_url_vars row_id]
+            set href [export_vars \
+                -base [parameter::get -package_id [ad_acs_kernel_id] -parameter SystemURL]/register/email-confirm {row_id}]
+	    acs_mail_lite::send \
+		-to_addr [template::element::get_value add_user email] \
+		-from_addr $notification_address \
+		-subject "Welcome to [ad_system_name]" \
+		-body "To confirm your registration, please go to $href
 
 After confirming your email, here's how you can log in at [ad_url]:
 
 Username:  [template::element::get_value add_user email]
 Password:  $password
 "
+
 	
 	} else {
 	    with_catch errmsg {
 #		ns_log Notice "sending mail from $notification_address to [template::element::get_value add_user email]"
-		ns_sendmail [template::element::get_value add_user email] \
-			$notification_address \
-			"Thank you for visiting [ad_system_name]" \
-			"Here's how you can log in at [ad_url]:
+		acs_mail_lite::send \
+			-to_addr [template::element::get_value add_user email] \
+			-from_addr $notification_address \
+			-subject "Thank you for visiting [ad_system_name]" \
+			-body "Here's how you can log in at [ad_url]:
 	    
 Username:  [template::element::get_value add_user email]
 Password:  $password

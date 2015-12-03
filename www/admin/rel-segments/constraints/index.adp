@@ -1,6 +1,6 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="title">Relational Constraint Administration</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">Relational Constraint Administration</property>
 
 Currently, the system is able to handle the following relational constraints:
 
@@ -17,4 +17,4 @@ Currently, the system is able to handle the following relational constraints:
 
 </ul>
 
-Note: Relational constraints are created from the <a href=../>relational segment administration pages</a>
+Note: Relational constraints are created from the <a href="../">relational segment administration pages</a>

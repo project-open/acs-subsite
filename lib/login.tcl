@@ -19,7 +19,7 @@ set self_registration [parameter::get_from_package_key \
 			          -parameter AllowSelfRegister \
 			          -default 1]   
 
-if { ![exists_and_not_null package_id] } {
+if { ![info exists subsite_id] || $subsite_id eq "" } {
     set subsite_id [subsite::get_element -element object_id]
 }
 
@@ -68,7 +68,7 @@ if { $allow_persistent_login_p } {
 set subsite_url [subsite::get_element -element url]
 set system_name [ad_system_name]
 
-if { [exists_and_not_null return_url] } {
+if { [info exists return_url] && $return_url ne "" } {
     if { [util::external_url_p $return_url] } {
       ad_returnredirect -message "only urls without a host name are permitted" "."
       ad_script_abort
@@ -79,8 +79,8 @@ if { [exists_and_not_null return_url] } {
 
 set authority_options [auth::authority::get_authority_options]
 
-if { ![exists_and_not_null authority_id] } {
-    set authority_id [lindex [lindex $authority_options 0] 1]
+if { ![info exists authority_id] || $authority_id eq "" } {
+    set authority_id [lindex $authority_options 0 1]
 }
 
 set forgotten_pwd_url [auth::password::get_forgotten_url -authority_id $authority_id -username $username -email $email]
@@ -91,12 +91,17 @@ if { $authority_id eq [auth::get_register_authority] || [auth::UseEmailForLoginP
 }
 
 set login_button [list [list [_ acs-subsite.Log_In] ok]]
-ad_form -name login -html { style "margin: 0px;" } -show_required_p 0 -edit_buttons $login_button -action "[subsite::get_url]register/" -form {
-    {return_url:text(hidden)}
-    {time:text(hidden)}
-    {token_id:text(hidden)}
-    {hash:text(hidden)}
-} 
+ad_form \
+    -name login \
+    -html { style "margin: 0px;" } \
+    -show_required_p 0 \
+    -edit_buttons $login_button \
+    -action "[subsite::get_url]register/" -form {
+	{return_url:text(hidden)}
+	{time:text(hidden)}
+	{token_id:integer(hidden)}
+	{hash:text(hidden)}
+    }
 
 set username_widget text
 if { [parameter::get -parameter UsePasswordWidgetForUsername -package_id [ad_acs_kernel_id]] } {
@@ -177,18 +182,18 @@ ad_form -extend -name login -on_request {
         set expiration_time 30
     }
 
-    if { $hash ne $computed_hash  || \
+    if { $hash ne $computed_hash  || 
              $time < [ns_time] - $expiration_time } {
         ad_returnredirect -message [_ acs-subsite.Login_has_expired] -- [export_vars -base [ad_conn url] { return_url }]
         ad_script_abort
     }
 
-    if { ![exists_and_not_null authority_id] } {
+    if { ![info exists authority_id] || $authority_id eq "" } {
         # Will be defaulted to local authority
         set authority_id {}
     }
 
-    if { ![exists_and_not_null persistent_p] } {
+    if { ![info exists persistent_p] || $persistent_p eq "" } {
         set persistent_p "f"
     }
     if {![element exists login email]} {
@@ -222,7 +227,7 @@ ad_form -extend -name login -on_request {
         }
     }
 
-    if { [exists_and_not_null auth_info(account_url)] } {
+    if { [info exists auth_info(account_url)] && $auth_info(account_url) ne "" } {
         ad_returnredirect $auth_info(account_url)
         ad_script_abort
     }
@@ -283,7 +288,7 @@ ad_form -extend -name login -on_request {
     # We're logged in
 
     # Handle account_message
-    if { [exists_and_not_null auth_info(account_message)] } {
+    if { [info exists auth_info(account_message)] && $auth_info(account_message) ne "" } {
         ad_returnredirect [export_vars -base "[subsite::get_element -element url]register/account-message" { { message $auth_info(account_message) } return_url }]
         ad_script_abort
     } else {

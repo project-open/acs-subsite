@@ -9,7 +9,7 @@
 
     <li><strong>@rels.role_pretty_plural@ (@rels.rel_type_pretty_name@)</strong>
 
-      <group column=rel_type>
+      <group column="rel_type">
         <if @rels.num_rels@ nil>
           <ul>
             <li> There are currently no @rels.role_pretty_plural@ </li>
@@ -23,7 +23,7 @@
           </if>
           <else>
             <br>
-	        <include src="elements-display-list" group_id="@group_id;noquote@" rel_type="@rels.rel_type;noquote@" return_url_enc="@return_url_enc;noquote@" member_state="approved">
+	        <include src="elements-display-list" group_id="@group_id;literal@" rel_type="@rels.rel_type;literal@" return_url_enc="@return_url_enc;literal@" member_state="approved">
           </else>
         </else>
       </group>
@@ -36,7 +36,7 @@
             </if>
             <li>Relational segment: 
               <if @rels.segment_id@ nil>
-                <em>#acs-subsite.none#</em> (<a href="../rel-segments/new?group_id=@group_id@&rel_type=@rels.rel_type@&return_url=@return_url_enc@">create segment</a>)
+                <em>#acs-subsite.none#</em> (<a href="../rel-segments/new?group_id=@group_id@&amp;rel_type=@rels.rel_type@&amp;return_url=@return_url_enc@">create segment</a>)
               </if>
               <else>
                 <a href="../rel-segments/one?segment_id=@rels.segment_id@">@rels.segment_name@</a>

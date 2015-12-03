@@ -61,7 +61,6 @@ cross join (select element_id from application_group_element_map
             where 
               m.element_id is null
               and p.party_id = pirs.party_id $scope_clause
-            order by party_name
     
       </querytext>
 </fullquery>

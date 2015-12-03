@@ -1,6 +1,6 @@
   <master>
-    <property name="title">#acs-subsite.Permissions#</property>
-    <property name="context">@context;noquote@</property>
+    <property name="doc(title)">#acs-subsite.Permissions#</property>
+    <property name="context">@context;literal@</property>
 
     <if @objects:rowcount@ gt 0> 
       #acs-subsite.You_have_admin_rights_on#
@@ -16,12 +16,12 @@
     <else>
       <em>#acs-subsite.You_do_not_have_admin_on#<em>
     </else>
-
     <form method="get" action="one">
+      <div>
       #acs-subsite.Select_an_Object_by_Id#
       <input name="object_id" type="text"> <input value="Continue" type="submit">
+      </div>
     </form>
-
 <if @admin_p@><p>
 #acs-subsite.You_can_also_browse_from# <a href="./?root=@default_context@">#acs-subsite.default_context#</a>
 #acs-subsite.or_the# <a href="./?root=@security_context_root@">#acs-subsite.Security_context_root#</a>#acs-subsite._or# <a href="./?root=@subsite@">#acs-subsite.this_subsite#</a>.

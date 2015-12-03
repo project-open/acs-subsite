@@ -14,7 +14,7 @@ ad_page_contract {
     pretty_plural:notnull,trim
     default_value:trim
     datatype:notnull,trim
-    required_p:notnull
+    required_p:boolean,notnull
     { return_url "" }
 } -properties {
     context:onevalue
@@ -39,7 +39,7 @@ if { [attribute::exists_p $object_type $pretty_name] } {
 
 # Right now, we do not support multiple values for attributes
 set max_n_values 1
-if {$required_p eq "t"} {
+if {$required_p == "t"} {
     set min_n_values 1
 } else {
     set min_n_values 0
@@ -57,9 +57,9 @@ db_transaction {
 
 # If we're an enumeration, redirect to start adding possible values.
 if {$datatype eq "enumeration"} {
-    ad_returnredirect enum-add?[ad_export_vars {attribute_id return_url}]
+    ad_returnredirect [export_vars -base enum-add {attribute_id return_url}]
 } elseif { $return_url eq "" } {
-    ad_returnredirect add?[ad_export_vars {object_type}]
+    ad_returnredirect [export_vars -base add {object_type}]
 } else {
     ad_returnredirect $return_url
 }

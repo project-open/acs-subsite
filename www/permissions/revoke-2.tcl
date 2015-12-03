@@ -6,7 +6,7 @@ ad_page_contract {
   @creation-date 2000-08-20
   @cvs-id $Id$
 } {
-  object_id:integer,notnull
+  object_id:naturalnum,notnull
   revoke_list:multiple
   { operation "" }
   {application_url ""}
@@ -24,4 +24,4 @@ if {$operation eq "Yes"} {
     }
 }
 
-ad_returnredirect "one?[export_vars {object_id application_url}]"
+ad_returnredirect [export_vars -base one {object_id application_url}]

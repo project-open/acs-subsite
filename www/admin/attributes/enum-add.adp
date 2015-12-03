@@ -1,6 +1,6 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="title">Specify values for @attribute_pretty_name;noquote@</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">Specify values for @attribute_pretty_name;noquote@</property>
 
 Note: Every value must have a unique name. Duplicate names will be ignored.
 
@@ -27,16 +27,16 @@ Note: Every value must have a unique name. Duplicate names will be ignored.
 <multiple name="value_form">
  <tr>
   <td>Value @value_form.sort_order@:</td>
-  <td><input type="text" name="@value_form.field_name@" maxlength=100></td>
+  <td><input type="text" name="@value_form.field_name@" maxlength="100"></td>
  </tr>
 </multiple>
 
 </table>
 
 <center>
-<input type=submit name="operation" value=" Add more values ">
+<input type="submit" name="operation" value=" Add more values ">
 <br>
-<input type=submit name="operation" value=" Finish adding values ">
+<input type="submit" name="operation" value=" Finish adding values ">
 </center>
 
 </form>

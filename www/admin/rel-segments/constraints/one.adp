@@ -1,11 +1,11 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="title">@props.constraint_name;noquote@</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">@props.constraint_name;literal@</property>
 
 All elements in side @props.rel_side@ of the segment 
-  <a href=../one?segment_id=@props.segment_id@>@props.segment_name@</a> 
+  <a href="../one?segment_id=@props.segment_id@">@props.segment_name@</a> 
 must be in the segment 
-  <a href=../one?segment_id=@props.req_segment_id@>@props.req_segment_name@</a>
+  <a href="../one?segment_id=@props.req_segment_id@">@props.req_segment_name@</a>
 
 <p>
 

@@ -1,5 +1,5 @@
 <master>
-<property name="title">#acs-subsite.lt_Complete_List_of_ISO_#</property>
+<property name="doc(title)">#acs-subsite.lt_Complete_List_of_ISO_#</property>
 <property name="context">#acs-subsite.ISO_Code_List#</property>
  
 <h2>#acs-subsite.lt_Complete_List_of_ISO_#</h2>
@@ -8,11 +8,11 @@
 
 <hr>
 <table>
-<tr><th align=left>#acs-subsite.Country_Name#<th>#acs-subsite.ISO_Code#</tr>
+<tr><th align="left">#acs-subsite.Country_Name#<th>#acs-subsite.ISO_Code#</tr>
 
 <multiple name="ccodes">
 
-  <tr><td>@ccodes.country_name@<td align=center>@ccodes.iso@</tr>
+  <tr><td>@ccodes.country_name@<td align="center">@ccodes.iso@</tr>
 
 </multiple>
 

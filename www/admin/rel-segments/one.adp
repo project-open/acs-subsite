@@ -1,6 +1,6 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="title">Segment "@props.segment_name;noquote@"</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">Segment "@props.segment_name;noquote@"</property>
 				   
 <h4>Properties of this segment</h4>
 
@@ -22,14 +22,14 @@
     </li>
    </multiple>
   </else>
-  <p><li> <a href="constraints/new?rel_segment=@segment_id@">Add a constraint</a> </li>
+  <li> <a href="constraints/new?rel_segment=@segment_id@">Add a constraint</a> </li>
 </ul>
 
 
 <if @admin_p@ eq "1">
   <h4>Administration</h4>
   <ul>
-    <li> <a href=delete?segment_id=@props.segment_id@>Delete this segment</a> </li>
+    <li> <a href="delete?segment_id=@props.segment_id@">Delete this segment</a> </li>
   </ul>
 </if>
 

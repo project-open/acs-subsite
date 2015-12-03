@@ -13,8 +13,8 @@ ad_proc -public email_image::update_private_p {
     -level:required
 } {
     Changes the priv_email field from the users table
-    @user_id 
-    @level   Change to this level
+    @param user_id 
+    @param level   Change to this level
 } {
     db_transaction {
         db_dml update_users {  }
@@ -25,7 +25,6 @@ ad_proc -public email_image::get_priv_email {
     -user_id:required
 } {
     Returns the priv_email field of the user from the users table.
-    @user_id
 } {
     set priv_level [db_string get_private_email {  }]
     if {$priv_level eq "5"} {
@@ -47,10 +46,9 @@ ad_proc -public email_image::get_user_email {
     you can choose the background color (In this format \#xxxxxx). Also you can make the background color transparent 
     (1 or 0).
     
-    @user_id
-    @return_url   The url to return when the email is shown as a link
-    @bgcolor      The Background color of the image. Default to \#ffffff
-    @transparent  If the bgcolor is transparent. Default to 1
+    @param return_url   The url to return when the email is shown as a link
+    @param bgcolor      The Background color of the image. Default to \#ffffff
+    @param transparent  If the bgcolor is transparent. Default to 1
 } {
     set email [email_image::get_email -user_id $user_id]
     set user_level [email_image::get_priv_email -user_id $user_id]
@@ -62,18 +60,18 @@ ad_proc -public email_image::get_user_email {
         # We use the privacy level that the user select
         set priv_level $user_level
     }
-    set send_email_url [ad_quotehtml "/shared/send-email?sendto=$user_id&return_url=$return_url"]
+    set send_email_url [ns_quotehtml "/shared/send-email?sendto=$user_id&return_url=$return_url"]
     switch $priv_level {
         "4" {
-            return "<a href=\"mailto:$email\" title=\"#acs-subsite.Send_email_to_this_user#\">$email</a>"
+            return [subst {<a href="mailto:$email" title="#acs-subsite.Send_email_to_this_user#">$email</a>}]
         }
         "3" {
             set email_image_id [email_image::get_related_item_id -user_id $user_id]
             if { $email_image_id != "-1" } {
                 # The user has an email image stored in the content repository
                 set revision_id [content::item::get_latest_revision -item_id $email_image_id]
-                set img_src [ad_quotehtml "/shared/email-image-bits.tcl?user_id=$user_id&revision_id=$revision_id"]
-                set email_image "<a href=\"$send_email_url\"><img style=\"border:0\" src=\"$img_src\" alt=\"#acs-subsite.Email#\"></a>"
+                set img_src [ns_quotehtml "/shared/email-image-bits.tcl?user_id=$user_id&revision_id=$revision_id"]
+		return [subst {<a href="$send_email_url"><img style="border:0" src="$img_src" alt="#acs-subsite.Email#"></a>}]
             } else {
                 # Create a new email_image
                 if { [catch { set email_image [email_image::new_item -user_id $user_id -return_url $return_url -bgcolor $bgcolor -transparent $transparent] } errmsg ] } {
@@ -82,13 +80,13 @@ ad_proc -public email_image::get_user_email {
                     # an image replacing the "@" symbol
                     set email_user [lindex [split $email '@'] 0]
                     set email_domain [lindex [split $email '@'] 1]
-                    set email_image "<a href=\"$send_email_url\">${email_user}<img style=\"border:0\" src=\"/shared/images/at.gif\" alt=\"@\">${email_domain}</a>"
+                    set email_image [subst {<a href="$send_email_url">$email_user<img style="border:0" src="/shared/images/at.gif" alt="@">$email_domain</a>}]
                 }
             }
             return $email_image
         }
         "2" {
-            return "<a href=\"$send_email_url\">\#acs-subsite.Send_email_to_this_user\#</a>"
+            return [subst {<a href="$send_email_url">#acs-subsite.Send_email_to_this_user#</a>}]
         }
         "1" { 
             #Do not show e-mail
@@ -103,7 +101,6 @@ ad_proc -public email_image::get_email {
 } {
     Returns the email of the user
 
-    @user_id
 } {
     return [db_string get_email {  }]
 }
@@ -119,9 +116,8 @@ ad_proc -public email_image::new_item {
     Creates the email_image of the user with his/her email on it and store it
     in the content repository under the Email_Images folder.
 
-    @user_id       
-    @bgcolor       The background color of the image in the format \#xxxxxx, default to \#ffffff
-    @transparent   If you want the background color transparent set it to 1. Default to 1
+    @param bgcolor       The background color of the image in the format \#xxxxxx, default to \#ffffff
+    @param transparent   If you want the background color transparent set it to 1. Default to 1
 } {
     
     # First we create a type and a folder in the content repository 
@@ -187,7 +183,7 @@ ad_proc -public email_image::new_item {
     
     set img_src [ad_quotehtml "/shared/email-image-bits.tcl?user_id=$user_id&revision_id=$revision_id"]
     set send_email_url [ad_quotehtml "/shared/send-email?sendto=$user_id&return_url=$return_url"]
-    set email_image "<a href=\"$send_email_url\"><img style=\"border:0\" src=\"$img_src\" alt=\"#acs-subsite.Email#\"></a>"
+    set email_image [subst {<a href="$send_email_url"><img style="border:0" src="$img_src" alt="#acs-subsite.Email#"></a>}
 
     return "$email_image"
 }
@@ -205,9 +201,8 @@ ad_proc -public email_image::edit_email_image {
     stored it makes a new revision of the image, if not, it creates a new item with the new
     image.
 
-    @user_id       
-    @bgcolor       The background color of the image in the format \#xxxxxx, default to \#ffffff
-    @transparent   If you want the background color transparent set it to 1. Default to 1
+    @param bgcolor       The background color of the image in the format \#xxxxxx, default to \#ffffff
+    @param transparent   If you want the background color transparent set it to 1. Default to 1
 } {
     if { $new_email == [email_image::get_email -user_id $user_id] } {
         # Email didn't change
@@ -292,8 +287,8 @@ ad_proc -public email_image::add_relation {
     -item_id:required
 } {
     Add a new relation between user_id and item_id
-    @user_id
-    @item_id the item_id of the image in the content repository
+
+    @param item_id the item_id of the image in the content repository
 } {
     db_exec_plsql add_relation {  }
 }
@@ -303,7 +298,6 @@ ad_proc -public email_image::get_related_item_id {
 } {
     Returns the item_id of the email_image stored in the content repository for
     user_id.
-    @user_id
 } {
     return [db_string get_rel_item {  } -default -1 ]
 }

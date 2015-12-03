@@ -1,5 +1,5 @@
 <master>
-  <property name="title">#acs-subsite.manage_users_email#</property>
-  <property name="context">@context;noquote@</property>
+  <property name="doc(title)">#acs-subsite.manage_users_email#</property>
+  <property name="context">@context;literal@</property>
 
-<formtemplate id=private-email></formtemplate>
+<formtemplate id="private-email"></formtemplate>

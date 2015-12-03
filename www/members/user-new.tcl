@@ -11,6 +11,7 @@ ad_page_contract {
 subsite::assert_user_may_add_member
 
 set group_id [application_group::group_id_from_package_id]
+
 set mainsite_group_id [application_group::group_id_from_package_id \
                            -no_complain \
                            -package_id [subsite::main_site_id]]

@@ -10,10 +10,10 @@ ad_page_contract {
 
 } {
     group_type:notnull
-    { group_type_exact_p t }
+    { group_type_exact_p:boolean t }
     { group_name "" }
     { group_id:naturalnum "" }
-    {add_to_group_id ""}
+    {add_to_group_id:integer ""}
     {add_with_rel_type "composition_rel"}
     { return_url "" }
     {group_rel_type_list ""}
@@ -95,12 +95,12 @@ set export_var_list [list group_id group_type \
 ## constraint violations in the database because the constraints are enforced
 ## by triggers in the DB.
 
-if { $group_type_exact_p eq "f" && \
-	[subsite::util::sub_type_exists_p $group_type] } {
+if { $group_type_exact_p == "f" 
+     && [subsite::util::sub_type_exists_p $group_type] } {
 
     # Sub rel-types exist... select one
     set group_type_exact_p "t"
-    set export_url_vars [ad_export_vars -exclude group_type $export_var_list ]
+    set export_url_vars [export_vars -exclude group_type $export_var_list ]
 
     party::types_valid_for_rel_type_multirow -datasource_name object_types -start_with $group_type -rel_type $add_with_rel_type
 
@@ -115,8 +115,7 @@ if { $group_type_exact_p eq "f" && \
 template::form create add_group
 
 attribute::add_form_elements -form_id add_group -variable_prefix group -start_with group -object_type $group_type
-
-# attribute::add_form_elements -form_id add_group -variable_prefix rel -start_with relationship -object_type $add_with_rel_type
+attribute::add_form_elements -form_id add_group -variable_prefix rel -start_with relationship -object_type $add_with_rel_type
 
 if { [template::form is_request add_group] } {
     
@@ -135,11 +134,8 @@ if { [template::form is_request add_group] } {
 
 if { [template::form is_valid add_group] } {
     db_transaction {
-
-	group::new -form_id add_group -variable_prefix group -group_id $group_id -context_id [ad_conn package_id]  $group_type 
-
+	group::new -form_id add_group -variable_prefix group -group_id $group_id -context_id [ad_conn package_id] $group_type 
 	relation_add -member_state $member_state $add_with_rel_type $add_to_group_id $group_id
-
     }
 
     # there may be more segments to put this new group in before the
@@ -147,10 +143,14 @@ if { [template::form is_valid add_group] } {
     set package_url [ad_conn package_url]
 
     foreach group_rel_type $group_rel_type_list {
-	set next_group_id [lindex $group_rel_type 0]
-	set next_rel_type [lindex $group_rel_type 1]
+	lassign $group_rel_type next_group_id next_rel_type
 	lappend return_url_list \
-		"${package_url}admin/relations/add?group_id=$next_group_id&rel_type=[ad_urlencode $next_rel_type]&party_id=$group_id&allow_out_of_scope_p=t"
+	    [export_vars -base "${package_url}admin/relations/add" {
+		{group_id $next_group_id}
+		{rel_type [ad_urlencode $next_rel_type]}
+		{party_id $group_id}
+		{allow_out_of_scope_p t}
+	    }]
     }
 
     # Add the original return_url as the last one in the list

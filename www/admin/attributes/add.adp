@@ -1,6 +1,6 @@
 <master>
-<property name="context">@context;noquote@</property>
-<property name="title">Add attribute to @object_pretty_name;noquote@</property>
+<property name="context">@context;literal@</property>
+<property name="doc(title)">Add attribute to @object_pretty_name;noquote@</property>
 <property name="focus">main_form.pretty_name</property>
 
 <form method="post" name="main_form" action="add-2">
@@ -10,17 +10,17 @@
 
  <tr>
   <td>Attribute pretty name:</td>
-  <td><input type="text" name="pretty_name" maxlength=100></td>
+  <td><input type="text" name="pretty_name" maxlength="100"></td>
  </tr>
 
  <tr>
   <td>Attribute pretty plural:</td>
-  <td><input type="text" name="pretty_plural" maxlength=100></td>
+  <td><input type="text" name="pretty_plural" maxlength="100"></td>
  </tr>
 
  <tr>
   <td>Default value:</td>
-  <td><input type="text" name="default_value" maxlength=100></td>
+  <td><input type="text" name="default_value" maxlength="100"></td>
  </tr>
 
  <tr>
@@ -46,7 +46,7 @@
 <p>
 
 <center>
-<input type=submit>
+<input type="submit">
 </center>
 
 </form>

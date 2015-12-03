@@ -8,7 +8,6 @@ ad_page_contract {
 
 } {}
 
-set page_title "Object Type Hierarchical Index"
 set doc(title) "Object Type Hierarchical Index"
 set context [list "Object Type Hierarchical Index"]
 

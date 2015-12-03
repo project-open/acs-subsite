@@ -3,7 +3,7 @@ ad_page_contract {
 
     @cvs-id $Id$
 } {
-    {user_id ""}
+    {user_id:naturalnum ""}
     {return_url ""}
 } -properties {
     first_names:onevalue
@@ -34,7 +34,7 @@ if {$user_id eq ""} {
     set admin_p 1
 }
 
-ad_require_permission $user_id "write"
+permission::require_permission -object_id $user_id -privilege "write"
 
 if {![db_0or1row get_name {}]} {
     ad_return_error "Account Unavailable" "We can't find you (user #$user_id) in the users table.  Probably your account was deleted for some reason."
@@ -47,12 +47,12 @@ if { $return_url eq "" } {
 
 if {$admin_p} {
     set context [list \
-                     [list "./?[export_vars user_id]" [_ acs-subsite.User_Portrait]] \
+                     [list [export_vars -base ./ user_id] [_ acs-subsite.User_Portrait]] \
                      $doc(title)]
 } else {
     set context [list \
                      [list [ad_pvt_home] [ad_pvt_home_name]] \
-                     [list "./?[export_vars return_url]" [_ acs-subsite.Your_Portrait]] \
+                     [list [export_vars -base ./ return_url] [_ acs-subsite.Your_Portrait]] \
                      $doc(title)]
 }
 

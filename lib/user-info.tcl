@@ -68,8 +68,10 @@ if { [llength [auth::authority::get_authority_options]] > 1 } {
     lappend read_only_elements authority_id
 }
 
-if { $user(authority_id) != [auth::authority::local] || ![auth::UseEmailForLoginP] || \
-         ([acs_user::site_wide_admin_p] && [llength [auth::authority::get_authority_options]] > 1) } {
+if { $user(authority_id) != [auth::authority::local]
+     || ![auth::UseEmailForLoginP]
+     || ([acs_user::site_wide_admin_p] && [llength [auth::authority::get_authority_options]] > 1)
+ } {
     lappend elms_list {
         username:text(text)
         {label "[_ acs-subsite.Username]"}
@@ -225,3 +227,9 @@ if { ![form is_valid user_info] } {
 		"<a href=\"[element get_value user_info url]\">[element get_value user_info url]</a>"
     }
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

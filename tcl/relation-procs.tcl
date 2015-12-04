@@ -113,9 +113,7 @@ ad_proc -public relation_add {
 	# JCD: this is enforced by trigger so no longer check explicitly
 	# see membership_rels_in_tr
 	# 
-	# set violated_err_msg [db_string select_rel_violation {
-	#    select rel_constraint.violation(:rel_id) from dual
-	# } -default ""]
+	# set violated_err_msg [db_string select_rel_violation {} -default ""]
 	#
 	# if { $violated_err_msg ne "" } {
 	#     error $violated_err_msg
@@ -143,7 +141,7 @@ ad_proc -public relation_remove {
 } {
     # Pull out the segment_id and the party_id (object_id_two) from
     # acs_rels. Note the outer joins since the segment may not exist.
-    if { ![db_0or1row select_rel_info {}] } {
+    if { ![db_0or1row select_rel_info_rm {}] } {
         # Relation doesn't exist
 	return 0
     }
@@ -368,3 +366,9 @@ ad_proc -public relation::get_objects {
 	return [relation::get_object_two -object_id_one $object_id_one -rel_type $rel_type -multiple]
     }
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

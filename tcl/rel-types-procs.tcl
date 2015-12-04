@@ -17,12 +17,13 @@ ad_page_contract_filter rel_type_dynamic_p {name value} {
     @creation-date 12/30/2000
 } {
     if {[db_string rel_type_dynamic_p {
-	select case when exists (select 1
-				 from acs_object_types t
-				 where t.dynamic_p = 't'
-				 and t.object_type = :value)
-	then 1 else 0 end
-	from dual}]} {
+        	select case when exists (select 1 
+                                   from acs_object_types t
+                                  where t.dynamic_p = 't'
+                                    and t.object_type = :value)
+	            then 1 else 0 end
+	  from dual
+    }]} {
 	return 1
     }
     ad_complain "Specific rel type either does not exist or is not dynamic and thus cannot be modified"
@@ -151,12 +152,12 @@ namespace eval rel_types {
 
 	# Create the actual acs object type
 
-	lappend plsql_drop [list db_exec_plsql drop_type {FOO}]
-	lappend plsql [list db_exec_plsql create_type {FOO}]
+	lappend plsql_drop [list db_exec_plsql drop_type {}]
+	lappend plsql [list db_exec_plsql create_type {}]
 
 	# Mark the type as dynamic
 
-	lappend plsql [list db_dml update_type {FOO}]
+	lappend plsql [list db_dml update_type FOO]
 	
 	# Force internationalisation of Roles
 	
@@ -322,3 +323,9 @@ namespace eval rel_types {
 	return $return_code
     }
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

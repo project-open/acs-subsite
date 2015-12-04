@@ -19,9 +19,13 @@ create table subsite_themes (
                   constraint subsite_themes_template_nn
                   not null,
     css           varchar(2000),
+    js            varchar(2000),
     form_template varchar(200),
     list_template varchar(200),
-    list_filter_template varchar(200)
+    list_filter_template varchar(200),
+    dimensional_template varchar(200),
+    resource_dir   varchar(200),
+    streaming_head varchar(200)
 );
 
 -- Insert the old themes that were hard-wired into earlier versions of acs-subsite.

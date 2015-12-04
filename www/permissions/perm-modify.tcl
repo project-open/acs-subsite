@@ -72,10 +72,15 @@ db_transaction {
         }
     }
 } on_error {
-    global errorInfo
-    ad_return_complaint 1 "Ooops, looks like we screwed up. Sorry. $errmsg<p> $errorInfo"
+    ad_return_complaint 1 "Ooops, looks like we screwed up. Sorry. $errmsg<p> $::errorInfo"
 }
 
 append page "</ul>"
 
 ad_returnredirect $return_url
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

@@ -20,9 +20,15 @@ if {(![info exists root] || $root eq "")} {
     set root [ad_conn package_id]
 }
 
-db_multirow objects adminable_objects { *SQL* }
+db_multirow objects adminable_objects {}
 
 set security_context_root [acs_magic_object security_context_root]
 set default_context [acs_magic_object default_context]
 set admin_p [permission::permission_p -object_id $security_context_root -party_id $user_id -privilege admin]
 set subsite [ad_conn package_id]
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

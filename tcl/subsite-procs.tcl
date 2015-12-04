@@ -152,7 +152,7 @@ ad_proc -public subsite::default::create_app_group {
 
             # Create a constraint that says "to be a member of this subsite you must be a member
             # of the parent subsite.
-	    set subsite_id [site_node::closest_ancestor_package \
+            set subsite_id [site_node::closest_ancestor_package \
                                 -node_id $node_id \
                                 -package_key [subsite::package_keys]]
 
@@ -207,10 +207,8 @@ ad_proc -private subsite::instance_name_exists_p {
 
 } {
     return [db_string select_name_exists_p {
-	select count(*) 
-	  from site_nodes
-	 where parent_id = :node_id
-	   and name = :instance_name
+        select count(*)  from site_nodes
+        where parent_id = :node_id and name = :instance_name
     }]
 }
 
@@ -244,33 +242,28 @@ ad_proc -public subsite::auto_mount_application {
 
 } {
     if { $node_id eq "" } {
-	set node_id [ad_conn node_id]
+        set node_id [ad_conn node_id]
     }
 
     set ctr 2
     if { $instance_name eq "" } {
-	# Default the instance name to the package key. Add a number,
-	# if necessary, until we find a unique name
-	set instance_name $package_key
-	while { [subsite::instance_name_exists_p $node_id $instance_name] } {
-	    set instance_name "$package_key-$ctr"
-	    incr ctr
-	}
+        # Default the instance name to the package key. Add a number,
+        # if necessary, until we find a unique name
+        set instance_name $package_key
+        while { [subsite::instance_name_exists_p $node_id $instance_name] } {
+            set instance_name "$package_key-$ctr"
+            incr ctr
+        }
     }
 
     if { $pretty_name eq "" } {
-	# Get the name of the object mounted at this node
-	db_1row select_package_object_names {
-	    select t.pretty_name as package_name, acs_object.name(s.object_id) as object_name
-	      from site_nodes s, apm_package_types t
-	     where s.node_id = :node_id
-	       and t.package_key = :package_key
-	}
-	set pretty_name "$object_name $package_name"
-	if { $ctr > 2 } {	    
-	    # This was a duplicate pkg name... append the ctr used in the instance name
-	    append pretty_name " [expr {$ctr - 1}]"
-	}
+        # Get the name of the object mounted at this node
+        db_1row select_package_object_names {}
+        set pretty_name "$object_name $package_name"
+        if { $ctr > 2 } {
+            # This was a duplicate pkg name... append the ctr used in the instance name
+            append pretty_name " [expr {$ctr - 1}]"
+        }
     }
 
     return [site_node::instantiate_and_mount -parent_node_id $node_id \
@@ -308,7 +301,7 @@ ad_proc -public subsite::get {
     upvar $array subsite_info
 
     if { $subsite_id eq "" } {
-	set subsite_id [ad_conn subsite_id]
+        set subsite_id [ad_conn subsite_id]
     }
 
     if { ![ad_conn isconnected] } {
@@ -346,7 +339,7 @@ ad_proc -public subsite::get_element {
     @creation-date 2003-03-08
 } {
     if { $subsite_id eq "" } {
-	set subsite_id [ad_conn subsite_id]
+        set subsite_id [ad_conn subsite_id]
     }
 
     subsite::get -subsite_id $subsite_id -array subsite_info
@@ -377,7 +370,7 @@ ad_proc -public subsite::upload_allowed {} {
                "<blockquote>
                 You don't have permission to see this page.
                </blockquote>"
-	}
+        }
     }
 }
 
@@ -392,15 +385,7 @@ ad_proc -public subsite::util::sub_type_exists_p {
     @creation-date 2000-02-07
 } {
 
-    return [db_string sub_type_exists_p {
-	select case 
-                 when exists (select 1 from acs_object_types 
-                              where supertype = :object_type)
-                 then 1 
-                 else 0 
-               end
-        from dual
-    }]
+    return [db_string sub_type_exists_p {}]
 
 }
 
@@ -413,18 +398,13 @@ ad_proc -public subsite::util::object_type_path_list {
 } {
     set path_list [list]
 
-    set type_list [db_list select_object_type_path {
-	select object_type
-	from acs_object_types
-	start with object_type = :object_type
-	connect by object_type = prior supertype
-    }]
+    set type_list [db_list select_object_type_path {}]
 
     foreach type $type_list {
-	lappend path_list $type
-	if {$type eq $ancestor_type} {
-	    break
-	}
+        lappend path_list $type
+        if {$type eq $ancestor_type} {
+            break
+        }
     }
 
     return $path_list
@@ -443,8 +423,8 @@ ad_proc -public subsite::util::object_type_pretty_name {
     @param object_type
 } {
     return [db_string select_pretty_name {
-	select pretty_name from acs_object_types 
-	where object_type = :object_type
+        select pretty_name from acs_object_types 
+          where object_type = :object_type
     }]
 }
 
@@ -458,7 +438,7 @@ ad_proc -public subsite::util::return_url_stack {
 } {
 
     if {[llength $return_url_list] == 0} {
-	error "subsite::util::return_url_stack - \$return_url_list is empty"
+        error "subsite::util::return_url_stack - \$return_url_list is empty"
     }
 
     set first_url [lindex $return_url_list 0]
@@ -466,12 +446,12 @@ ad_proc -public subsite::util::return_url_stack {
 
     # Base Case
     if {[llength $rest] == 0} {
-	return $first_url
+        return $first_url
     }
 
     # More than 1 url was in the list, so recurse
     if {[string first ? $first_url] == -1} {
-	append first_url ?
+        append first_url ?
     }
     append first_url "&return_url=[ad_urlencode [return_url_stack $rest]]"
 
@@ -492,9 +472,9 @@ ad_proc -public subsite::define_pageflow {
 } {
     set pageflow [get_pageflow_struct -url $url]
     if {$url eq ""} {
-	set base_url [subsite::get_element -element url]
+        set base_url [subsite::get_element -element url]
     } else {
-	set base_url $url
+        set base_url $url
     }
 
     template::multirow create $sections_multirow name label title url selected_p link_p
@@ -555,8 +535,11 @@ ad_proc -public subsite::add_section_row {
     upvar $array info
 
     # the folder index page is called .
-    if { $info(url) eq "" || $info(url) eq "index" || \
-             [string match "*/" $info(url)] || [string match "*/index" $info(url)] } {
+    if { $info(url) eq ""
+         || $info(url) eq "index"
+         || [string match "*/" $info(url)]
+         || [string match "*/index" $info(url)]
+     } {
         set info(url) "[string range $info(url) 0 [string last / $info(url)]]."
     }
     
@@ -569,8 +552,11 @@ ad_proc -public subsite::add_section_row {
         # Need to prepend the path from the subsite to this package
         set current_url [string range [ad_conn url] [string length $base_url] end]
     }
-    if { $current_url eq "" || $current_url eq "index" || \
-             [string match "*/" $current_url] || [string match "*/index" $current_url] } {
+    if { $current_url eq ""
+         || $current_url eq "index"
+         || [string match "*/" $current_url]
+         || [string match "*/index" $current_url]
+     } {
         set current_url "[string range $current_url 0 [string last / $current_url]]."
     }
     
@@ -645,9 +631,9 @@ ad_proc -public subsite::get_pageflow_struct {
     set pageflow [list]
 
     if {$url eq ""} {
-	set subsite_url [subsite::get_element -element url]
+        set subsite_url [subsite::get_element -element url]
     } else {
-	set subsite_url $url
+        set subsite_url $url
     }
 
     set subsite_id [ad_conn subsite_id]
@@ -695,13 +681,15 @@ ad_proc -public subsite::get_pageflow_struct {
                      -party_id [ad_conn untrusted_user_id]]
     set show_member_list_to [parameter::get -parameter "ShowMembersListTo" -package_id $subsite_id -default 2]
 
-    if { $admin_p || ($user_id != 0 && $show_member_list_to == 1) || \
-	$show_member_list_to == 0 } {
-	lappend pageflow members {
-	    label "Members"
-	    folder "members"
-	    selected_patterns {*}
-	}
+    if { $admin_p
+         || ($user_id != 0 && $show_member_list_to == 1)
+         || $show_member_list_to == 0
+     } {
+        lappend pageflow members {
+            label "Members"
+            folder "members"
+            selected_patterns {*}
+        }
     }
 
 
@@ -796,8 +784,13 @@ ad_proc -public subsite::set_theme {
     -subsite_id
     {-theme:required}
 } {
-    Set the theme for the given subsite.  This will change the subsite's ThemeKey,
-    DefaultMaster, and ThemeCSS parameters.
+    Set the theme for the given or current subsite.  This will change
+    the subsite's ThemeKey, DefaultMaster, and ThemeCSS,
+    DefaultFormStyle, DefaultListStyle, DefaultListFilterStyle,
+    DefaultDimensionalStyle, and ResourceDir parameters.
+
+    @param subsite_id Id of the subsite
+    @param theme Name of the theme (theme key)
 } {
     if { ![info exists subsite_id] } {
         set subsite_id [ad_conn subsite_id]
@@ -811,12 +804,77 @@ ad_proc -public subsite::set_theme {
         -value $template
     parameter::set_value -parameter ThemeCSS -package_id $subsite_id \
         -value $css
+    parameter::set_value -parameter ThemeJS -package_id $subsite_id \
+        -value $js
     parameter::set_value -parameter DefaultFormStyle -package_id $subsite_id \
         -value $form_template
     parameter::set_value -parameter DefaultListStyle -package_id $subsite_id \
         -value $list_template
     parameter::set_value -parameter DefaultListFilterStyle -package_id $subsite_id \
         -value $list_filter_template
+    parameter::set_value -parameter DefaultDimensionalStyle -package_id $subsite_id \
+        -value $dimensional_template
+    parameter::set_value -parameter ResourceDir -package_id $subsite_id \
+        -value $resource_dir
+    parameter::set_value -parameter StreamingHead -package_id $subsite_id \
+        -value $streaming_head
+}
+
+ad_proc -public subsite::save_theme_parameters_as_default {
+    -subsite_id
+    -theme
+} {
+    Save the actual theming parameter set of the given/current subsite
+    as default for the given/current theme. These default values are
+    used, whenever a subsite switches to the specified theme.
+
+    @param subsite_id Id of the subsite
+    @param theme Name of the theme (theme key)
+
+    @author Gustaf Neumann
+} {
+
+    if { ![info exists subsite_id] } {
+        set subsite_id [ad_conn subsite_id]
+    }
+
+    if {![info exists theme]} {
+        set theme [subsite::get_theme -subsite_id $subsite_id]
+    }
+
+    set name [db_string get_theme_name {select name from subsite_themes where key = :theme} -default ""]
+    if {$name eq ""} {
+        error "no subsite theme with key $theme registered"
+    }
+
+    subsite::update_subsite_theme \
+        -key $theme \
+        -name                 $name \
+        -template             [parameter::get -parameter DefaultMaster           -package_id $subsite_id] \
+        -css                  [parameter::get -parameter ThemeCSS                -package_id $subsite_id] \
+        -js                   [parameter::get -parameter ThemeJS                 -package_id $subsite_id] \
+        -form_template        [parameter::get -parameter DefaultFormStyle        -package_id $subsite_id] \
+        -list_template        [parameter::get -parameter DefaultListStyle        -package_id $subsite_id] \
+        -list_filter_template [parameter::get -parameter DefaultListFilterStyle  -package_id $subsite_id] \
+        -dimensional_template [parameter::get -parameter DefaultDimensionalStyle -package_id $subsite_id] \
+        -resource_dir         [parameter::get -parameter ResourceDir             -package_id $subsite_id] \
+        -streaming_head       [parameter::get -parameter StreamingHead           -package_id $subsite_id] 
+        
+}
+
+
+ad_proc -public subsite::get_theme {
+    -subsite_id
+} {
+    Get the theme for the given (or current) subsite.
+
+    @param subsite_id id of the subsite
+    @return Name of the theme (theme key)
+} {
+    if { ![info exists subsite_id] } {
+        set subsite_id [ad_conn subsite_id]
+    }
+    parameter::get -parameter ThemeKey -package_id $subsite_id 
 }
 
 ad_proc -public subsite::new_subsite_theme {
@@ -824,13 +882,51 @@ ad_proc -public subsite::new_subsite_theme {
     -name:required
     -template:required
     {-css ""}
+    {-js ""}
     {-form_template ""}
     {-list_template ""}
     {-list_filter_template ""}
+    {-dimensional_template ""}
+    {-resource_dir ""}
+    {-streaming_head ""}
 } {
     Add a new subsite theme, making it available to the theme configuration code.
 } {
     db_dml insert_subsite_theme {}
+}
+
+ad_proc -public subsite::update_subsite_theme {
+    -key:required
+    -name:required
+    -template:required
+    {-css ""}
+    {-js ""}
+    {-form_template ""}
+    {-list_template ""}
+    {-list_filter_template ""}
+    {-dimensional_template ""}
+    {-resource_dir ""}
+    {-streaming_head ""}
+} {
+    Update the default theming parameters in the database
+
+    @author Gustaf Neumann
+} {
+    db_dml update {
+      update subsite_themes
+        set name = :name,
+            template = :template,
+            css = :css,
+            js = :js,
+            form_template = :form_template,
+            list_template = :list_template,
+            list_filter_template = :list_filter_template,
+            dimensional_template = :dimensional_template,
+            resource_dir = :resource_dir,
+            streaming_head = :streaming_head
+     where
+        key = :key
+    }
 }
 
 ad_proc -public subsite::delete_subsite_theme {
@@ -863,9 +959,9 @@ ad_proc -private subsite::assert_user_may_add_member {} {
 
     if { !$admin_p } {
         # If not admin, user must be member of group, and members must be allowed to invite other members
-        if { ![parameter::get -parameter "MembersCanInviteMembersP" -default 0] || \
-                 ![group::member_p -group_id $group_id] } {
-        
+        if { ![parameter::get -parameter "MembersCanInviteMembersP" -default 0]
+             || ![group::member_p -group_id $group_id]
+         } {
             ad_return_forbidden "Cannot invite members" "I'm sorry, but you're not allowed to invite members to this group"
             ad_script_abort
         }
@@ -907,7 +1003,7 @@ ad_proc -public subsite::get_url {
 
         util_driver_info -array request
 
-	lassign [split [ns_set iget [ns_conn headers] host] :] request(vhost) provided_port
+        lassign [split [ns_set iget [ns_conn headers] host] :] request(vhost) provided_port
 
         if {$provided_port ne "" } {
             set request(port) $provided_port
@@ -1074,3 +1170,9 @@ ad_proc -public subsite::util::get_package_options {
 } {
     return [db_list_of_lists get {}]
 }
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

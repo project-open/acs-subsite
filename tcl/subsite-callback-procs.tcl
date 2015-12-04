@@ -48,15 +48,7 @@ ad_proc -public subsite_callback {
     # handle. Note that we need the distinct in case two callbacks are
     # registered for an object and it's parent object type.
 
-    set callback_list [db_list_of_lists select_callbacks {
-	select distinct callback, callback_type
-	  from subsite_callbacks
-	 where object_type in (select t.object_type
-	                        from acs_object_types t
-	                     connect by prior t.supertype = t.object_type
-	                       start with t.object_type = :object_type)
-	   and event_type = :event_type
-    }]
+    set callback_list [db_list_of_lists select_callbacks {}]
 
     set node_id [ad_conn node_id]
     set package_id [ad_conn package_id]
@@ -112,3 +104,9 @@ ad_proc -public -callback subsite::url {
 
     The type let's you define what kind of URL you are looking for (e.g. admin/edit/display)
 } -
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

@@ -424,9 +424,9 @@ ad_proc -public group::update {
 }
 
 ad_proc -public group::possible_member_states {} {
-    Returns the list of possible member states: approved, needs approval, banned, rejected, deleted.
+    Returns the list of possible member states: approved, needs approval, banned, merged, rejected, deleted.
 } {
-    return [list approved "needs approval" banned rejected deleted]
+    return [list approved "needs approval" banned merged rejected deleted]
 }
 
 ad_proc -public group::get_member_state_pretty {
@@ -440,6 +440,7 @@ ad_proc -public group::get_member_state_pretty {
         banned #acs-kernel.member_state_banned#
         rejected #acs-kernel.member_state_rejected#
         deleted #acs-kernel.member_state_deleted#
+        merged #acs-kernel.member_state_merged#
     }
 
     return [lang::util::localize $message_key_array($member_state)]
@@ -662,9 +663,12 @@ ad_proc -public group::add_member {
     set admin_p [permission::permission_p -object_id $group_id -privilege "admin"]
 
     # Only admins can add non-membership_rel members
-    if { $rel_type eq "" || \
-             (!$no_perm_check_p && $rel_type ne "" && $rel_type ne "membership_rel" && \
-                  ![permission::permission_p -object_id $group_id -privilege "admin"]) } {
+    if { $rel_type eq ""
+         || (!$no_perm_check_p
+             && $rel_type ne ""
+             && $rel_type ne "membership_rel"
+             && ![permission::permission_p -object_id $group_id -privilege "admin"])
+     } {
         set rel_type "membership_rel"
     }
 
@@ -772,3 +776,9 @@ ad_proc -private group::group_p_not_cached {
     return [db_string group "select 1 from groups where group_id = :group_id" -default 0]
 }
 
+
+# Local variables:
+#    mode: tcl
+#    tcl-indent-level: 4
+#    indent-tabs-mode: nil
+# End:

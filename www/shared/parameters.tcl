@@ -10,6 +10,7 @@ ad_page_contract {
     {scope "instance"}
     {return_url:optional "[ad_conn url]?[ad_conn query]"}
     {section ""}
+    {datatype ""}
 }
 
 if { $scope eq "global" } {

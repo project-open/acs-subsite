@@ -97,7 +97,6 @@ ad_proc -public add {
     attribute
     
 } {
-    
     set default_value $default
 
     # We always use type-specific storage. Grab the tablename from the
@@ -131,16 +130,19 @@ ad_proc -public add {
     # the queries are empty because they are pulled out later in db_exec_plsql
     
     set plsql [list]
-    lappend plsql_drop [list "drop_attribute" "FOO" db_exec_plsql]
-    lappend plsql [list "create_attribute" "FOO" db_exec_plsql]
+    lappend plsql_drop [list  db_exec_plsql "drop_attribute" "FOO"]
+    lappend plsql [list db_exec_plsql "create_attribute" "FOO"]
 
     set sql_type [datatype_to_sql_type -default $default_value $table_name $attribute_name $datatype]
     
-    lappend plsql_drop [list "drop_attr_column" "FOO" db_dml]
-    lappend plsql [list "add_column" "FOO" db_dml]
+    lappend plsql_drop [list db_dml "drop_attr_column" "FOO"]
+    lappend plsql [list db_dml "add_column" "FOO"]
     
     for { set i 0 } { $i < [llength $plsql] } { incr i } {
         set cmd [lindex $plsql $i]
+
+        ns_log Notice "xxx: $cmd"
+
         if { [catch $cmd err_msg] } {
             # Rollback what we've done so far. The loop contitionals are:
             #  start at the end of the plsql_drop list (Drop things in reverse order of creation)

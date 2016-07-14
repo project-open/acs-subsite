@@ -4,13 +4,13 @@
   <msg key="_or"> oder</msg>
   <msg key="_Update_Basic_Information">Die Allgemeinen Informationen aktualisieren</msg>
   <msg key="A_member_of_the_system">Registriert bei %system_name% seit</msg>
-  <msg key="About_You">Benutzerinformation</msg>
+  <msg key="About_You">Benutzerdaten</msg>
   <msg key="Account_at_system_closed">Ihr Benutzerkonto bei %system_name% wurde deaktiviert.</msg>
   <msg key="Account_close_confirm_no_label">Nein, zurück zu %pvt_home_name%</msg>
   <msg key="Account_close_confirm_yes_label">Ja, Benutzerkonto deaktivieren</msg>
-  <msg key="Account_closed">&lt;p&gt;Ihr Benutzerkonto ist derzeit deaktiviert.&lt;/p&gt; &lt;p&gt;Sie können es &lt;a href=&quot;%restore_url%&quot;&gt;wieder aktivieren lassen&lt;/a&gt;.&lt;/p&gt;</msg>
+  <msg key="Account_closed">&lt;p&gt;Ihr Benutzerkonto ist derzeit deaktiviert.&lt;/p&gt; &lt;p&gt;Sie können es &lt;a href=&#34;%restore_url%&#34;&gt;wieder aktivieren lassen&lt;/a&gt;.&lt;/p&gt;</msg>
   <msg key="Account_closed_title">Account geschlossen</msg>
-  <msg key="Account_closed_workspace_msg">&lt;p&gt; &lt;font color=&quot;red&quot;&gt; &lt;b&gt; Ihr Benutzerkonto ist derzeit geschlossen. &lt;/b&gt; &lt;/font&gt; &lt;a href=&quot;%login_url%&quot;&gt;Melden Sie sich wieder an&lt;/a&gt;, um weitere Informationen zu erhalten.  &lt;/p&gt;</msg>
+  <msg key="Account_closed_workspace_msg">&lt;p&gt; &lt;font color=&#34;red&#34;&gt; &lt;b&gt; Ihr Benutzerkonto ist derzeit geschlossen. &lt;/b&gt; &lt;/font&gt; &lt;a href=&#34;%login_url%&#34;&gt;Melden Sie sich wieder an&lt;/a&gt;, um weitere Informationen zu erhalten.  &lt;/p&gt;</msg>
   <msg key="Account_not_avail_now">Dieses Benutzerkonto ist derzeit nicht verfügbar.</msg>
   <msg key="Account_reopened_message">Ihr Benutzerkonto wurde wieder aktiviert. Willkommen bei %system_name%.</msg>
   <msg key="Account_reopened_title">Benutzerkonto wieder aktiviert</msg>
@@ -18,22 +18,23 @@
   <msg key="Add">Hinzufügen</msg>
   <msg key="add_folder">Ordner hinzufügen</msg>
   <msg key="Add_new_app">Neue Anwendung hinzufügen</msg>
-  <msg key="Add_this_user">Diesen User hinzufügen</msg>
-  <msg key="Add_User">User hinzufügen</msg>
-  <msg key="Add_users">User hinzufügen</msg>
+  <msg key="Add_this_user">Diesen Benutzer hinzufügen</msg>
+  <msg key="Add_User">Neuer Benutzer</msg>
+  <msg key="Add_users">Neuer Benutzer</msg>
   <msg key="Admin">Verwalten</msg>
   <msg key="admin">Admin</msg>
   <msg key="Administer_subsite">%subsite_name% verwalten</msg>
-  <msg key="Administrative_options">Verwaltungsoptionen für diesen Benutzer</msg>
-  <msg key="Alert_Type">Art der Benachrichtigung</msg>
+  <msg key="Administrative_options">Diesen Benutzer administrieren</msg>
+  <msg key="Alert_Type">Alarmtyp</msg>
   <msg key="another_picture">ein neues Bild</msg>
   <msg key="Answer">Antwort:</msg>
   <msg key="Application_Error">Anwendungsfehler</msg>
   <msg key="Applications">Anwendungen</msg>
   <msg key="Approve">Freischalten</msg>
   <msg key="at">unter</msg>
+  <msg key="Attributes_of_this_type_of_group">Attribute dieses Gruppentyps</msg>
   <msg key="Auth_internal_error">Interner Fehler bei Authentifizierung</msg>
-  <msg key="Authority">Authentifizierungsstelle</msg>
+  <msg key="Authority">Domäne</msg>
   <msg key="Bad_Password">Falsches Passwort</msg>
   <msg key="Ban">Deaktivieren</msg>
   <msg key="Basic_Information">Allgemeine Informationen:</msg>
@@ -41,7 +42,7 @@
   <msg key="Biography">Lebenslauf</msg>
   <msg key="Biography_Mime_Type">Mime Typ für die Biographie</msg>
   <msg key="Biography_Mime_Types">Mime Typ für die Biographie</msg>
-  <msg key="cannot_retrieve_password">Passwort zurücksetzen durch lokale Authentifizierungsstelle nicht unterstützt</msg>
+  <msg key="cannot_retrieve_password">Das Klartext-Passwort kann von der lokalen Domäne nicht geliefert werden</msg>
   <msg key="Cannot_see_memb_list">Liste der Teilnehmer verborgen</msg>
   <msg key="Change_locale_label">Sprache einstellen</msg>
   <msg key="Change_my_email_P">Änderung meines e-Mail Privacy Levels</msg>
@@ -145,6 +146,7 @@
   <msg key="Join_this_subsite">Dieser Subsite beitreten</msg>
   <msg key="Keyword">Schlüsselwort</msg>
   <msg key="Last_name">Nachname</msg>
+  <msg key="Last_name_not_provided_by_authority">Nachname wurde nicht von der Domäne geliefert. Bitte geben Sie Ihren Nachnamen ein.</msg>
   <msg key="later">&amp;nbsp;</msg>
   <msg key="Leave_community">Community entfernen</msg>
   <msg key="Leave_subsite">Die Subsite verlassen</msg>
@@ -161,11 +163,11 @@
   <msg key="Logout">Abmelden</msg>
   <msg key="Logout_from_system">Von %system_name% abmelden</msg>
   <msg key="lt__youd_be_able_to_get">, werden Ihnen mehr Informationen über andere Teilnehmer Ihrer Gruppe angezeigt.</msg>
-  <msg key="lt_Add_checked_users_to_">Markierte User zu den Usern hinzufügen, die Zugriffsrechte auf das Objekt haben.</msg>
+  <msg key="lt_Add_checked_users_to_">Markierten Benutzer Zugriff auf das Objekt einräumen</msg>
   <msg key="lt_Cannot_join_this_grou">Diese Gruppe kann nicht hinzugefügt werden.</msg>
   <msg key="lt_Complete_List_of_ISO_">Vollständige Liste der ISO-Codes</msg>
   <msg key="lt_Continue_working_with">Weiterarbeiten mit %system_name% </msg>
-  <msg key="lt_deleteaifif_nodespara">lösche&lt;/a&gt;  &lt;/if&gt;  &lt;if @nodes.parameters_url@ ne &quot;&quot;&gt;  &lt;a href=&quot;@nodes.parameters_url@&quot;&gt;&lt;#_ parameters</msg>
+  <msg key="lt_deleteaifif_nodespara">lösche&lt;/a&gt;  &lt;/if&gt;  &lt;if @nodes.parameters_url@ ne &#34;&#34;&gt;  &lt;a href=&#34;@nodes.parameters_url@&#34;&gt;&lt;#_ parameters</msg>
   <msg key="lt_Do_not_inherit_from_p">Nicht vererben von %parent_object_name%</msg>
   <msg key="lt_Edit_comment_for_the_">Kommentar zum Bild von %first_names% %last_name% bearbeiten</msg>
   <msg key="lt_first_names_last_name">%first_names% %last_name% (%email%) ist als Benutzer von %system_url% registriert. 
@@ -183,15 +185,15 @@
   <msg key="lt_It_would_be_a_very_ba">Diese Option sollte nicht gewählt werden, wenn der Computer von mehreren Personen genutzt wird, etwa in einer Bibliothek oder einem universitären Rechenzentrum. Nachfolgende Benutzer können sonst unter Ihrer Identität auf den Dienst zugreifen.</msg>
   <msg key="lt_New_registration_at_s">Neue Registrierung bei %system_url%</msg>
   <msg key="lt_Note_text_in_red_below">Note text in red below the parameter entry fields indicates the value of this parameter is being overridden by an entry in the OpenACS parameter file. The use of the parameter file is discouraged but some sites need it to provide instance-specific values for parameters independent of the apm_parameter tables. </msg>
-  <msg key="lt_Note_that_you_can_era">Hinweis: Sie können Ihre Benutzeridentifikation und Ihr Passwort aus dem Browser löschen, indem Sie auf der dotLRN-Startseite die Option 'Abmelden' wählen. </msg>
+  <msg key="lt_Note_that_you_can_era">Hinweis: Sie können Ihre Benutzeridentifikation und Ihr Passwort aus dem Browser löschen, indem Sie auf der dotLRN-Startseite die Option &#39;Abmelden&#39; wählen. </msg>
   <msg key="lt_num_children_Children">%num_children% untergeordnete Objekte ausgeblendet</msg>
-  <msg key="lt_On_portrait_publish_d">Am %portrait_publish_date% haben Sie &lt;a href=&quot;%subsite_url%user/portrait/&quot;&gt;%portrait_title%&lt;/a&gt; hochgeladen</msg>
+  <msg key="lt_On_portrait_publish_d">Am %portrait_publish_date% haben Sie &lt;a href=&#34;%subsite_url%user/portrait/&#34;&gt;%portrait_title%&lt;/a&gt; hochgeladen</msg>
   <msg key="lt_Our_server_can_tell_y">Bestimmte Daten wie Benutzeridentifikation oder Passwort können vom Browser gespeichert werden. Dadurch brauchen diese Daten bei Computern, die von nur einer Person genutzt werden, nicht bei jeder Sitzung neu eingegeben zu werden.</msg>
   <msg key="lt_Password_Confirmation">Passwort bestätigen</msg>
   <msg key="lt_Personal_Home_Page_UR">Adresse der persönlichen Homepage:</msg>
   <msg key="lt_Please_locate_your_co">Bitte wählen Sie aus der folgenden Liste Ihren Ländercode aus. Gehen Sie dann mit Hilfe Ihres Browsers zum  Formular zurück.</msg>
   <msg key="lt_Please_read_and_follo">Bitte führen Sie die in der E-Mail genannten Schritte aus.</msg>
-  <msg key="lt_Please_try_to_a_hrefi">Bitte versuchen Sie noch einmal, sich &lt;a href=&quot;index&quot;&gt;anzumelden&lt;/a&gt;.</msg>
+  <msg key="lt_Please_try_to_a_hrefi">Bitte versuchen Sie noch einmal, sich &lt;a href=&#34;index&#34;&gt;anzumelden&lt;/a&gt;.</msg>
   <msg key="lt_Portrait_of_first_last">Bild von %first_names% %last_name%</msg>
   <msg key="lt_Privileges_higher_implied">Höhere Rechte schließen niedrigere Rechte mit ein. Wenn Sie etwa Verwaltungsrechte erteilen, werden automatisch auch Lese- und Schreibrechte gewährt.</msg>
   <msg key="lt_Problem_with_authenti">Es ist ein Authentifizierungsproblem aufgetreten.</msg>
@@ -206,16 +208,16 @@
   <msg key="lt_Sure_erase_user_por">Wollen Sie das Bild dieses Benutzers wirklich löschen?</msg>
   <msg key="lt_Sure_erase_your_por">Wollen Sie Ihr Bild wirklich löschen?</msg>
   <msg key="lt_The_picture_of_you_in">Ihr Bild kann nicht in dotLRN angezeigt werden. Bitte </msg>
-  <msg key="lt_There_are_no_users_wh">Es existieren keine User, die nicht schon einen Zugriff auf dieses Objekt haben</msg>
+  <msg key="lt_There_are_no_users_wh">Es existieren keine Benutzer, die nicht schon einen Zugriff auf dieses Objekt haben</msg>
   <msg key="lt_There_was_a_problem_w">Es ist ein Problem bei der Authentifizierung Ihres Benutzerkontos aufgetreten.</msg>
   <msg key="lt_This_is_the_image_that">Folgendes Bild wird anderen Benutzern von %system_name% angezeigt</msg>
   <msg key="lt_This_user_doesnt_have">Dieser Benutzer hat noch kein Bild hochgeladen. Sie können</msg>
-  <msg key="lt_This_user_is_deleted">Das Benutzerkonto dieses Benutzers wurde gelöscht.</msg>
+  <msg key="lt_This_user_is_deleted">Das Konto dieses Benutzers wurde gelöscht.</msg>
   <msg key="lt_To_confirm_your_regis">Zur Bestätigung Ihrer Registrierung klicken Sie bitte auf %confirmation_url%.</msg>
   <msg key="lt_Upload_your_favorite">Die Datei muss im JPEG oder GIF-Format vorliegen und sich auf Ihrem PC befinden. Eine Verlinkung mit einem Bild im Internet ist nicht möglich.</msg>
   <msg key="lt_Uploaded_pretty_date">Hochgeladen am: %pretty_date%</msg>
   <msg key="lt_Uploaded_publish_date">Hochgeladen am:</msg>
-  <msg key="lt_Use_the_Browse_button">Klicken Sie auf 'Durchsuchen...', wählen Sie die gewünschte Datei aus und klicken Sie auf 'Öffnen'. </msg>
+  <msg key="lt_Use_the_Browse_button">Klicken Sie auf &#39;Durchsuchen...&#39;, wählen Sie die gewünschte Datei aus und klicken Sie auf &#39;Öffnen&#39;. </msg>
   <msg key="lt_User_has_portrait_title">Dieser Benutzer hat seinen Lebenslauf oder sein Bild bereitgestellt.</msg>
   <msg key="lt_We_cant_find_you">Ihre Benutzeridentifikation (%user_id%) konnte nicht in der Benutzerdatenbank gefunden werden. Wahrscheinlich wurde Ihr Benutzerkonto gelöscht.</msg>
   <msg key="lt_We_had_a_problem_proc">Bei der Verarbeitung Ihrer Eingabe ist ein Fehler aufgetreten.</msg>
@@ -230,13 +232,13 @@
   <msg key="lt_Your_email_has_been_c_1">Ihre E-Mail-Adresse wurde bestätigt. Sie warten nun auf Freischaltung durch den Administrator von %system_name%.</msg>
   <msg key="lt_Your_email_is_confirm">Ihre E-Mail-Adresse wurde bestätigt.</msg>
   <msg key="lt_Your_login_has_expire">Ihre Anmeldung ist abgelaufen. Bitte geben Sie erneut Ihr Passwort ein.</msg>
-  <msg key="lt_Your_URL_doesnt_have_">Die von Ihnen eingegebene URL hat nicht die richtige Form. Eine gültige URL könnte etwa lauten: &quot;%valid_url_example%&quot;</msg>
+  <msg key="lt_Your_URL_doesnt_have_">Die von Ihnen eingegebene URL hat nicht die richtige Form. Eine gültige URL könnte etwa lauten: &#34;%valid_url_example%&#34;</msg>
   <msg key="mail_a_message_to">Eine Nachricht senden an:</msg>
   <msg key="Make_administrator">Administrationsrechte erteilen</msg>
   <msg key="Make_member">Anmelden</msg>
   <msg key="Make_yourself_invisible_label">Onlinestatus verbergen</msg>
   <msg key="Make_yourself_visible_label">Onlinestatus anzeigen</msg>
-  <msg key="manage_users_email">Verwalten des e-Mail Datenschutzes des Users</msg>
+  <msg key="manage_users_email">Administrieren der Email-Einstellungen des Benutzers</msg>
   <msg key="Manage_your_notifications">Benachrichtigungsoptionen verwalten</msg>
   <msg key="Mem_list_not_allowed">Sie sind nicht berechtigt, die Liste der Teilnehmer zu sehen.</msg>
   <msg key="Member">Teilnehmer</msg>
@@ -261,6 +263,7 @@
   <msg key="Not_valid_email_addr">Keine gültige Email-Adresse</msg>
   <msg key="Notes">Hinweise:</msg>
   <msg key="Notice">Hinweis:</msg>
+  <msg key="Object_Types">Objekttypen</msg>
   <msg key="on_name_to">für %name% an:</msg>
   <msg key="Online">Online</msg>
   <msg key="optional">(optional)</msg>
@@ -270,7 +273,7 @@
   <msg key="Parameters">Parameter</msg>
   <msg key="parameters">parameter</msg>
   <msg key="Password">Passwort</msg>
-  <msg key="Password_changed_body">Das Passwort Ihres Benutzerkontos (%account_id_label%: %account_id%) bei %system_name% wurde kürzlich geändert. Es sind keine weiteren Schritte nötig, diese Mitteilung dient lediglich Ihrer Sicherheit. --------------- Sie können Ihr Passwort jederzeit mit folgenden Schritten ändern: 1. Melden Sie sich bei %system_name% an. 2. Klicken Sie auf den Link '%pvt_home_name%'. 3. Wählen Sie die Option '%password_update_link_text%'.</msg>
+  <msg key="Password_changed_body">Das Passwort Ihres Benutzerkontos (%account_id_label%: %account_id%) bei %system_name% wurde kürzlich geändert. Es sind keine weiteren Schritte nötig, diese Mitteilung dient lediglich Ihrer Sicherheit. --------------- Sie können Ihr Passwort jederzeit mit folgenden Schritten ändern: 1. Melden Sie sich bei %system_name% an. 2. Klicken Sie auf den Link &#39;%pvt_home_name%&#39;. 3. Wählen Sie die Option &#39;%password_update_link_text%&#39;.</msg>
   <msg key="Password_changed_subject">Passwort geändert</msg>
   <msg key="Password_regular_change_now">Ihr Passwort muss rgelmässig geändert werden.  Bitte Ändern Sie jetzt ihr Passwort.</msg>
   <msg key="Passwords_dont_match">Passwörter stimmen nicht Überein</msg>
@@ -281,7 +284,7 @@
   <msg key="Please_return_to_home">Bitte gehen Sie zurück zu %home_link%.</msg>
   <msg key="Portrait">Bild</msg>
   <msg key="Privacy">Privatsphäre</msg>
-  <msg key="Problem_auth_no_memb">Es gab einen Fehler beim authentifizieren des Accounts. Sehr wahrscheinlich enthält die Datenbank User mit keinem member_state.</msg>
+  <msg key="Problem_auth_no_memb">Es gab einen Fehler beim authentifizieren des Accounts. Sehr wahrscheinlich enthält die Datenbank Benutzer mit keinem member_state.</msg>
   <msg key="Profile">Profil</msg>
   <msg key="Question">Frage:</msg>
   <msg key="Re_enable">Aktivieren</msg>
@@ -292,6 +295,8 @@
   <msg key="Register">Registrieren</msg>
   <msg key="Registration_Approval_Notice">&lt;p&gt;Vielen Dank für Ihre Registrierung bei %system_name%. Der Antrag wurde an einen Administrator übermittelt.&lt;/p&gt; &lt;p&gt;Sobald Sie freigeschaltet sind, erhalten Sie eine E-Mail mit den erforderlichen Anmeldedaten und können %system_name% nutzen.&lt;/p&gt; </msg>
   <msg key="Reject">Ablehnen</msg>
+  <msg key="Relationship_Types">Beziehungstypen</msg>
+  <msg key="Relationship_types_administration">Administration Beziehungstypen</msg>
   <msg key="Remember_my_login">Anmeldedaten auf diesem Computer speichern</msg>
   <msg key="Remove">Entfernen</msg>
   <msg key="Remove_All">Alle Entfernen</msg>
@@ -325,9 +330,11 @@
   <msg key="Subsites">Subsites</msg>
   <msg key="subsites">Subsites</msg>
   <msg key="Success_but_no_account_yet">Sie haben sich erfolgreich angemeldet, aber Sie haben noch kein Benutzerkonto bei %system_name%.</msg>
+  <msg key="Supertype">Supertyp</msg>
   <msg key="Thank_you">Vielen Dank.</msg>
   <msg key="The_ISO_codes_were_not">Die ISO-Codes sind auf diesem Server nicht geladen.</msg>
   <msg key="This_group_is_closed">Dies ist eine geschlossene Gruppe. Neue Teilnehmer können nur durch Einladung Zugang erhalten.</msg>
+  <msg key="This_group_type_can_only_be_administered_by_programmers">Dieser Gruppentyp kann nur von Entwicklern geändert werden</msg>
   <msg key="this_subsite">diese Subsite</msg>
   <msg key="This_user_has_left_the">Dieser Benutzer ist nicht mehr bei dotLRN registriert.</msg>
   <msg key="To_log_in_visit_the">Um sich anzumelden, gehen Sie auf die</msg>
@@ -336,21 +343,21 @@
   <msg key="Unknown_email">Email-Adresse unbekannt</msg>
   <msg key="unmount">abhängen</msg>
   <msg key="UP">Eine Ebene nach oben</msg>
-  <msg key="up_to_context_name">Eine Ebene höher zu &quot;%context_name%&quot;</msg>
+  <msg key="up_to_context_name">Eine Ebene höher zu &#34;%context_name%&#34;</msg>
   <msg key="Update">Aktualisieren</msg>
   <msg key="Update_Password">Passwort aktualisieren</msg>
   <msg key="upload">Hochladen</msg>
   <msg key="upload_a_portrait">Ein Bild hochladen</msg>
   <msg key="upload_a_replacement_por">Ein anderes Bild hochladen</msg>
   <msg key="Upload_Portrait">Bild hochladen</msg>
-  <msg key="User_Portrait">Portrait des Users</msg>
-  <msg key="User_Portraits">Portraits der User</msg>
-  <msg key="User_Profile">Profil des Users</msg>
-  <msg key="User_Profiles">Prodile der User</msg>
+  <msg key="User_Portrait">Portrait des Benutzers</msg>
+  <msg key="User_Portraits">Portraits der Benutzer</msg>
+  <msg key="User_Profile">Profil des Benutzers</msg>
+  <msg key="User_Profiles">Profile der Benutzer</msg>
   <msg key="Username">Benutzeridentifikation</msg>
-  <msg key="Username_not_found_for_authority">Benutzer mit Namen '%username%' konnte in %this_authority% nicht gefunden werden</msg>
+  <msg key="Username_not_found_for_authority">Benutzer mit Namen &#39;%username%&#39; konnte in %this_authority% nicht gefunden werden</msg>
   <msg key="Username_required">Benutzername muss angegeben werden</msg>
-  <msg key="UserSiteMap">Site Map des Users</msg>
+  <msg key="UserSiteMap">Site Map des Benutzers</msg>
   <msg key="Vacation_Info_Updated">Die Informationen zu Ihrer Abwesenheit wurden aktualisiert.</msg>
   <msg key="Vacation_information_updated">Die Informationen zu Ihrer Abwesenheit unter %site_link% wurden aktualisiert.</msg>
   <msg key="Welcome_user">Willkommen, %user_name%!</msg>

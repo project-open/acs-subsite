@@ -24,7 +24,7 @@
   <msg key="Admin">Verwalten</msg>
   <msg key="admin">Admin</msg>
   <msg key="Administer_subsite">%subsite_name% verwalten</msg>
-  <msg key="Administrative_options">Diesen Benutzer administrieren</msg>
+  <msg key="Administrative_options">Admin Optionen für diesen Benutzer</msg>
   <msg key="Alert_Type">Alarmtyp</msg>
   <msg key="another_picture">ein neues Bild</msg>
   <msg key="Answer">Antwort:</msg>
@@ -77,8 +77,8 @@
   <msg key="default_context">Standardkontext</msg>
   <msg key="Delete">Löschen</msg>
   <msg key="delete">löschen</msg>
-  <msg key="DevAdmin">Administration (Entwickler)</msg>
-  <msg key="Developers_Admin">Administration auf Entwicklerebene</msg>
+  <msg key="DevAdmin">Admin für Entwickler</msg>
+  <msg key="Developers_Admin">Admin für Entwickler</msg>
   <msg key="Direct_Permissions">Explizite Berechtigungen</msg>
   <msg key="Disable">Deaktivieren</msg>
   <msg key="Disabled">Deaktiviert</msg>
@@ -125,6 +125,7 @@
   <msg key="go_upload_your_portrait">ein Bild hochladen.</msg>
   <msg key="Grant">Erteilen</msg>
   <msg key="Grant_Permission">Berechtigungen erteilen</msg>
+  <msg key="Group_administration">Admin Benutzergruppen</msg>
   <msg key="Have_group_mail">Eine Gruppe mit dieser Email-Adresse existiert bereits.</msg>
   <msg key="Have_user_mail">Ein Benutzer mit dieser Email-Adresse existiert bereits.</msg>
   <msg key="Have_user_name">Eine Gruppe mit diesem Benutzernamen existiert bereits.</msg>
@@ -295,8 +296,9 @@
   <msg key="Register">Registrieren</msg>
   <msg key="Registration_Approval_Notice">&lt;p&gt;Vielen Dank für Ihre Registrierung bei %system_name%. Der Antrag wurde an einen Administrator übermittelt.&lt;/p&gt; &lt;p&gt;Sobald Sie freigeschaltet sind, erhalten Sie eine E-Mail mit den erforderlichen Anmeldedaten und können %system_name% nutzen.&lt;/p&gt; </msg>
   <msg key="Reject">Ablehnen</msg>
+  <msg key="Relational_Segment_administration">Admin Relational Segments</msg>
   <msg key="Relationship_Types">Beziehungstypen</msg>
-  <msg key="Relationship_types_administration">Administration Beziehungstypen</msg>
+  <msg key="Relationship_types_administration">Admin Beziehungstypen</msg>
   <msg key="Remember_my_login">Anmeldedaten auf diesem Computer speichern</msg>
   <msg key="Remove">Entfernen</msg>
   <msg key="Remove_All">Alle Entfernen</msg>
@@ -317,7 +319,7 @@
   <msg key="Send_me_a_copy">Schicke eine Kopie an mich:</msg>
   <msg key="set_reg_asm">#assessment.assessment# für die Registrierung auswählen</msg>
   <msg key="Show">Anzeigen</msg>
-  <msg key="Site_Wide_Admin">System Administration</msg>
+  <msg key="Site_Wide_Admin">Systemadministration</msg>
   <msg key="Site_wide_administration">Systemadministration</msg>
   <msg key="sorry_forgotten_pwd">Das Passwort kann nicht zurückgesetzt werden.</msg>
   <msg key="Status">Status</msg>

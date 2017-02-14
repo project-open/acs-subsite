@@ -8,8 +8,8 @@
   <msg key="Account_at_system_closed">您在%system_name%的帐户已关闭。</msg>
   <msg key="Account_close_confirm_no_label">返回%pvt_home_name%</msg>
   <msg key="Account_close_confirm_yes_label">请关闭帐户。</msg>
-  <msg key="Account_closed">&lt;p&gt;您的帐户已关闭。&lt;/p&gt; &lt;p&gt;我们可以为您&lt;a href=&quot;%restore_url%&quot;&gt;重新打开&lt;/a&gt;。&lt;/p&gt; </msg>
-  <msg key="Account_closed_workspace_msg">&lt;p&gt; &lt;font color=&quot;red&quot;&gt; &lt;b&gt; 您的帐户已关闭。可以重新&lt;/b&gt; &lt;/font&gt; &lt;a href=&quot;%=&quot;%login_url%%&quot;&gt;登录&lt;/a&gt; 查看有关情况。 &lt;/p&amp;;gt; </msg>
+  <msg key="Account_closed">&lt;p&gt;您的帐户已关闭。&lt;/p&gt; &lt;p&gt;我们可以为您&lt;a href=&#34;%restore_url%&#34;&gt;重新打开&lt;/a&gt;。&lt;/p&gt; </msg>
+  <msg key="Account_closed_workspace_msg">&lt;p&gt; &lt;font color=&#34;red&#34;&gt; &lt;b&gt; 您的帐户已关闭。可以重新&lt;/b&gt; &lt;/font&gt; &lt;a href=&#34;%=&#34;%login_url%%&#34;&gt;登录&lt;/a&gt; 查看有关情况。 &lt;/p&amp;;gt; </msg>
   <msg key="Account_reopened_message">您在%system_name%的帐户重新打开，欢迎回来。</msg>
   <msg key="Account_reopened_title">帐户重新打开</msg>
   <msg key="Action">操作</msg>
@@ -137,15 +137,15 @@
   <msg key="lt_It_would_be_a_very_ba">如果您使用的是公共计算机，建议不选用该项。否则，使用该计算机的其他人有可能会以您的名义使用系统。</msg>
   <msg key="lt_New_registration_at_s">新注册到%system_url%</msg>
   <msg key="lt_Note_text_in_red_below">注意：参数域下面文本为红色标记时表示此参数的值被OpenACS参数文件拒绝。一般不建议使用参数文件，但是某些网站需要它提供特定值。</msg>
-  <msg key="lt_Note_that_you_can_era">注意：在你的工作空间中选择&quot;退出&quot;，取消你存储的email地址和密码。</msg>
+  <msg key="lt_Note_that_you_can_era">注意：在你的工作空间中选择&#34;退出&#34;，取消你存储的email地址和密码。</msg>
   <msg key="lt_num_children_Children">%num_children%子隐藏</msg>
-  <msg key="lt_On_portrait_publish_d">%portrait_publish_date%日，您上传了&lt;a href=&quot;%subsite_url%user/portrait/?return_url=%pvt_home_url%&quot;&gt;%portrait_title%&lt;/a&gt; </msg>
+  <msg key="lt_On_portrait_publish_d">%portrait_publish_date%日，您上传了&lt;a href=&#34;%subsite_url%user/portrait/?return_url=%pvt_home_url%&#34;&gt;%portrait_title%&lt;/a&gt; </msg>
   <msg key="lt_Our_server_can_tell_y">服务器可以记忆email地址和密码。如果您是个人使用该计算机，就不用每次都输入email地址和密码。</msg>
   <msg key="lt_Password_Confirmation">确认密码</msg>
   <msg key="lt_Personal_Home_Page_UR">个人主页URL:</msg>
   <msg key="lt_Please_locate_your_co">请在下面列表中找到您的国家代码，单击Back钮返回前一表格。</msg>
   <msg key="lt_Please_read_and_follo">请阅读email中的说明。</msg>
-  <msg key="lt_Please_try_to_a_hrefi">请重新&lt;a href=&quot;index&quot;&gt;登录&lt;/a&gt;。</msg>
+  <msg key="lt_Please_try_to_a_hrefi">请重新&lt;a href=&#34;index&#34;&gt;登录&lt;/a&gt;。</msg>
   <msg key="lt_Portrait_of_first_last">%first_names% %last_name%肖像</msg>
   <msg key="lt_Privileges_higher_implied">高权限的用户能自动赋予下级它所具有的权利。如，当授予了管理权后，就能读、写等等。</msg>
   <msg key="lt_Problem_with_authenti">帐户认定问题</msg>
@@ -180,7 +180,7 @@
   <msg key="lt_Your_email_has_been_c_1">您的email已确认。请等候%system_name%管理员的批准。</msg>
   <msg key="lt_Your_email_is_confirm">您的email已确认</msg>
   <msg key="lt_Your_login_has_expire">您的登录过期。请重新输入密码可继续工作。</msg>
-  <msg key="lt_Your_URL_doesnt_have_">URL格式错误。一个有效的URL样式如下：&quot;%valid_url_example%&quot;。</msg>
+  <msg key="lt_Your_URL_doesnt_have_">URL格式错误。一个有效的URL样式如下：&#34;%valid_url_example%&#34;。</msg>
   <msg key="Make_administrator">成为管理员</msg>
   <msg key="Make_member">成为会员</msg>
   <msg key="Make_yourself_invisible_label">使自己不可见</msg>
@@ -207,7 +207,7 @@
   <msg key="Or_add_a_new_user">或增加新用户</msg>
   <msg key="or_the">或这</msg>
   <msg key="Password">密码</msg>
-  <msg key="Password_changed_body">您在的%system_name%登陆信息：%account_id_label%: %account_id%，您帐户的密码已更改。这仅仅是一个通知。您总可以通过以下步骤更改您的密码：1.登陆%system_name% 2.单击&quot;%pvt_home_name%&quot; 3.选择&quot;%password_update_link_text%&quot; </msg>
+  <msg key="Password_changed_body">您在的%system_name%登陆信息：%account_id_label%: %account_id%，您帐户的密码已更改。这仅仅是一个通知。您总可以通过以下步骤更改您的密码：1.登陆%system_name% 2.单击&#34;%pvt_home_name%&#34; 3.选择&#34;%password_update_link_text%&#34; </msg>
   <msg key="Password_changed_subject">密码已更改</msg>
   <msg key="Permissions">许可</msg>
   <msg key="permissions">许可</msg>

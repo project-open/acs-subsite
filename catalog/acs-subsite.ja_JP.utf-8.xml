@@ -26,5 +26,5 @@
   <msg key="lt_Inherited_Permissions">権限の継承</msg>
   <msg key="lt_It_would_be_a_very_ba">図書館や学校などで共有のコンピュータを使用している場合は、このオプションにはチェックしないことをお勧めします。このコンピュータのこれ以降のユーザは誰でも、このサイトであなたになりすますことができてしまいます。</msg>
   <msg key="lt_New_registration_at_s">%system_url% への新規登録</msg>
-  <msg key="lt_Note_that_you_can_era">保存したメールアドレスとパスワードは、ワークスペースの&quot;ログアウト&quot;オプションを選択することで削除することができます。</msg>
+  <msg key="lt_Note_that_you_can_era">保存したメールアドレスとパスワードは、ワークスペースの&#34;ログアウト&#34;オプションを選択することで削除することができます。</msg>
 </message_catalog>

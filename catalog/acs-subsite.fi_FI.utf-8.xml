@@ -27,14 +27,14 @@ uudelleen:</msg>
   <msg key="lt_Inherited_Permissions">Perityt käyttöoikeudet</msg>
   <msg key="lt_It_would_be_a_very_ba">On todella HUONO IDEA valita tämä vaihtoehto, mikäli käyttämäsi kone on yhteiskäytössä esim. kirjastossa tai koulussa. Seuraava käyttäjä pystyy tällöin kirjautumaan palveluumme sinun tunnuksellasi.</msg>
   <msg key="lt_New_registration_at_s">Uusi rekisteröityminen %system_url% -järjestelmään</msg>
-  <msg key="lt_Note_that_you_can_era">Huomaa, että voit nollata tallentamasi sähköpostiosoitteen ja salasanan valitsemalla &quot;kirjaudu ulos&quot; järjestelmän omalta kotisivultasi. </msg>
+  <msg key="lt_Note_that_you_can_era">Huomaa, että voit nollata tallentamasi sähköpostiosoitteen ja salasanan valitsemalla &#34;kirjaudu ulos&#34; järjestelmän omalta kotisivultasi. </msg>
   <msg key="lt_num_children_Children">%num_children% piilotettu(a) lapsi/lasta</msg>
-  <msg key="lt_On_portrait_publish_d">%portrait_publish_date% tallensit tänne kuvan nimeltä &lt;a href=&quot;%subsite_url%user/portrait/?return_url=%pvt_home_url%&quot;&gt;%portrait_title%&lt;/a&gt; </msg>
+  <msg key="lt_On_portrait_publish_d">%portrait_publish_date% tallensit tänne kuvan nimeltä &lt;a href=&#34;%subsite_url%user/portrait/?return_url=%pvt_home_url%&#34;&gt;%portrait_title%&lt;/a&gt; </msg>
   <msg key="lt_Our_server_can_tell_y">Palvelimemme voi pyytää selaintasi muistamaan tiettyjä asioita, kuten sähköpostiosoitteesi ja salasanasi. Tämä on kätevää, koska jos olet koneesi ainoa käyttäjä, sinun ei tarvitse jatkuvasti syöttää näitä tietoja uudelleen.</msg>
   <msg key="lt_Password_Confirmation">Salasnan varmistus:</msg>
   <msg key="lt_Personal_Home_Page_UR">Oman kotisivun osoite:</msg>
   <msg key="lt_Please_read_and_follo">Lue ja seuraa viestissä olevia ohjeita.</msg>
-  <msg key="lt_Please_try_to_a_hrefi">&lt;a href=&quot;index&quot;&gt;Kirjaudu&lt;/a&gt; ystävällisesti uudelleen</msg>
+  <msg key="lt_Please_try_to_a_hrefi">&lt;a href=&#34;index&#34;&gt;Kirjaudu&lt;/a&gt; ystävällisesti uudelleen</msg>
   <msg key="lt_Problem_with_authenti">Ongelma käyttäjän autentikoinnissa</msg>
   <msg key="lt_Registration_informat">Palvelun rekisteröitymisohjeet lähetettiin osoitteeseen %email%.</msg>
   <msg key="lt_Registration_informat_1">Palvelun rekisteröitymisohjeet lähetettiin osoitteeseen %email%.</msg>
@@ -51,7 +51,7 @@ uudelleen:</msg>
   <msg key="lt_Your_email_has_been_c">Sähköpostisi on vahvistettu. Voit nyt kirjautua %system_name%-järjestelmään.</msg>
   <msg key="lt_Your_email_has_been_c_1">Sähköpostisi on vahvistettu. Joudut vielä odottamaan järjestelmän %system_name% ylläpitäjän hyväksyntää.</msg>
   <msg key="lt_Your_email_is_confirm">Sähköpostisi on vahvistettu</msg>
-  <msg key="lt_Your_URL_doesnt_have_">Antamasi osoitteen muoto ei kelpaa. Pätevä URL voisi olla jotain tämän kaltaista: \&quot;%valid_url_example%\&quot;.&quot;</msg>
+  <msg key="lt_Your_URL_doesnt_have_">Antamasi osoitteen muoto ei kelpaa. Pätevä URL voisi olla jotain tämän kaltaista: \&#34;%valid_url_example%\&#34;.&#34;</msg>
   <msg key="Name">Nimi:</msg>
   <msg key="New_Password">Uusi salasana:</msg>
   <msg key="no_portrait_title_message">kuvasi</msg>

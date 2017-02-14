@@ -8,9 +8,9 @@
   <msg key="Account_at_system_closed">Deze rekening op %system_name% is gesloten.</msg>
   <msg key="Account_close_confirm_no_label">Nee, naar %pvt_home_name% teruggaan</msg>
   <msg key="Account_close_confirm_yes_label">Ja, mijn rekening sluiten.</msg>
-  <msg key="Account_closed">&lt;p&gt;Deze rekening is gesloten.&lt;/p&gt; &lt;p&gt;Volg deze &lt;a href=&quot;%restore_url%&quot;&gt;koppeling om de rekening te heropenen&lt;/a&gt;.&lt;/p&gt;</msg>
+  <msg key="Account_closed">&lt;p&gt;Deze rekening is gesloten.&lt;/p&gt; &lt;p&gt;Volg deze &lt;a href=&#34;%restore_url%&#34;&gt;koppeling om de rekening te heropenen&lt;/a&gt;.&lt;/p&gt;</msg>
   <msg key="Account_closed_title">Rekening gesloten</msg>
-  <msg key="Account_closed_workspace_msg">&lt;P&gt;&lt;FONT color='red'&gt;&lt;B&gt;Deze rekening is momenteel gesloten.&lt;/B&gt;&lt;/FONT&gt; Bij het&lt;A href='%login_url%'&gt;opnieuw aanmelden&lt;/a&gt; zal worden aangegeven hoe verder te handelen.&lt;P&gt;</msg>
+  <msg key="Account_closed_workspace_msg">&lt;P&gt;&lt;FONT color=&#39;red&#39;&gt;&lt;B&gt;Deze rekening is momenteel gesloten.&lt;/B&gt;&lt;/FONT&gt; Bij het&lt;A href=&#39;%login_url%&#39;&gt;opnieuw aanmelden&lt;/a&gt; zal worden aangegeven hoe verder te handelen.&lt;P&gt;</msg>
   <msg key="Account_not_avail_now">Deze rekening is op dit moment niet bereikbaar.</msg>
   <msg key="Account_reopened_message">Uw rekening op %system_name% is heropend. Welkom terug!</msg>
   <msg key="Account_reopened_title">Rekening heropend</msg>
@@ -191,17 +191,17 @@ Bezoek de volgende koppeling en verander het wachtwoord direct: %reset_password_
   <msg key="lt_It_would_be_a_very_ba">Het is een zeer slecht idee om deze optie te gebruiken indien deze computer wordt gedeeld met anderen; zoals in een bibliotheek of school. Elke volgende gebruiker van deze computer kan zich dan immers toegang tot uw registratiegegevens verschaffen.</msg>
   <msg key="lt_New_registration_at_s">Nieuwe inschrijving op %system_url%</msg>
   <msg key="lt_Note_text_in_red_below">Rode tekst onder de invoervelden van parameters geeft aan dat de waarde van deze parameter overschreven wordt door een waarde in het OpenACS parameterbestand. Het gebruik van het parameterbestand wordt afgeraden maar sommige sites hebben dit nodig voor het instellen van instance-specifieke parameterwaarden, die onafhankelijk zijn van waarden in de apm_parameter tabellen.</msg>
-  <msg key="lt_Note_that_you_can_era">Het opgeslagen e-mailadres en het wachtwoord kunnen worden gewist door op &quot;afmelden&quot; te klikken.</msg>
+  <msg key="lt_Note_that_you_can_era">Het opgeslagen e-mailadres en het wachtwoord kunnen worden gewist door op &#34;afmelden&#34; te klikken.</msg>
   <msg key="lt_num_children_Children">%num_children% verborgen onderliggende elementen</msg>
-  <msg key="lt_On_portrait_publish_d">&lt;a href=&quot;%subsite_url%user/portrait/?return_url=%pvt_home_url%&quot;&gt;%portrait_title%&lt;/a&gt; is op %portrait_publish_date% in de database opgenomen.</msg>
+  <msg key="lt_On_portrait_publish_d">&lt;a href=&#34;%subsite_url%user/portrait/?return_url=%pvt_home_url%&#34;&gt;%portrait_title%&lt;/a&gt; is op %portrait_publish_date% in de database opgenomen.</msg>
   <msg key="lt_Our_server_can_tell_y">Onze server kan browsers opdragen om dingen te onthouden, zoals een e-mailadres en wachtwoord. Dit heeft als voordeel dat een e-mailadres en wachtwoord niet steeds hoeven te worden ingetypt. Dit is echter alleen veilig als men de computer niet met anderen deelt. </msg>
   <msg key="lt_Password_Confirmation">Wachtwoordbevestiging</msg>
   <msg key="lt_Personal_Home_Page_UR">Persoonlijke website URL:</msg>
-  <msg key="lt_Please_locate_your_co">Kies de eigen landcode uit de onderstaande lijst en gebruik vervolgens de knop &quot;Terug&quot; van de browser om naar het vorige formulier terug te gaan.</msg>
+  <msg key="lt_Please_locate_your_co">Kies de eigen landcode uit de onderstaande lijst en gebruik vervolgens de knop &#34;Terug&#34; van de browser om naar het vorige formulier terug te gaan.</msg>
   <msg key="lt_Please_read_and_follo">Lees en volg de instructies in deze e-mail alstublieft.</msg>
-  <msg key="lt_Please_try_to_a_hrefi">Probeer nogmaals om &lt;a href=&quot;index&quot;&gt;aan te melden&lt;/a&gt; </msg>
+  <msg key="lt_Please_try_to_a_hrefi">Probeer nogmaals om &lt;a href=&#34;index&#34;&gt;aan te melden&lt;/a&gt; </msg>
   <msg key="lt_Portrait_of_first_last">Portretfoto van %first_names% %last_name%</msg>
-  <msg key="lt_Privileges_higher_implied">Hogere privileges omvatten alle onderliggende privileges. Bijvoorbeeld, het toekennen van &quot;admin&quot;-rechten houdt ook het toekennen van &quot;read&quot;- en &quot;write&quot;-rechten in.
+  <msg key="lt_Privileges_higher_implied">Hogere privileges omvatten alle onderliggende privileges. Bijvoorbeeld, het toekennen van &#34;admin&#34;-rechten houdt ook het toekennen van &#34;read&#34;- en &#34;write&#34;-rechten in.
 </msg>
   <msg key="lt_Problem_with_authenti">Identiteitscontrole is mislukt</msg>
   <msg key="lt_Registration_informat">De inschrijfgegevens voor deze service zijn verzonden aan %email%.</msg>
@@ -223,7 +223,7 @@ Bezoek de volgende koppeling en verander het wachtwoord direct: %reset_password_
   <msg key="lt_Upload_your_favorite">Biedt een favoriet bestand van de eigen computer aan. Het mag een ingescand JPEG- of GIF-bestand zijn. Er kan helaas geen verwijzing worden gemaakt naar een bestand ergens op het internet.</msg>
   <msg key="lt_Uploaded_pretty_date">Opgeslagen: %pretty_date%</msg>
   <msg key="lt_Uploaded_publish_date">Opgeslagen: %publish_date%</msg>
-  <msg key="lt_Use_the_Browse_button">De knop \&quot;Bladeren\&quot; gebruiken om een bestand te vinden en dan op \&quot;Openen\&quot; klikken</msg>
+  <msg key="lt_Use_the_Browse_button">De knop \&#34;Bladeren\&#34; gebruiken om een bestand te vinden en dan op \&#34;Openen\&#34; klikken</msg>
   <msg key="lt_User_has_portrait_title">Deze gebruiker heeft een biografie of portret opgeslagen</msg>
   <msg key="lt_We_cant_find_you">We kunnen rekening %user_id% niet in de gebruikerstabel vinden. Kan het zijn dat deze rekening is verwijderd?</msg>
   <msg key="lt_We_had_a_problem_proc">Er was een probleem bij het verwerken van de invoer.</msg>
@@ -238,7 +238,7 @@ Bezoek de volgende koppeling en verander het wachtwoord direct: %reset_password_
   <msg key="lt_Your_email_has_been_c_1">De e-mail is bevestigd. We zijn nu in afwachting van toestemming door de beheerder van %system_name%.</msg>
   <msg key="lt_Your_email_is_confirm">De e-mail is bevestigd.</msg>
   <msg key="lt_Your_login_has_expire">Deze aanmeldsessie is verlopen. Graag opnieuw aanmelden.</msg>
-  <msg key="lt_Your_URL_doesnt_have_">Deze URL heeft niet de juiste opmaak. Een geldige URL ziet er als volgt uit \&quot;%valid_url_example%\&quot;.&quot;</msg>
+  <msg key="lt_Your_URL_doesnt_have_">Deze URL heeft niet de juiste opmaak. Een geldige URL ziet er als volgt uit \&#34;%valid_url_example%\&#34;.&#34;</msg>
   <msg key="mail_a_message_to">E-mail een bericht naar:</msg>
   <msg key="Make_administrator">Beheerder maken</msg>
   <msg key="Make_member">Lid maken</msg>
@@ -289,8 +289,8 @@ Dit bericht is slechts bedoeld om te informeren en daarmee de veiligheid van de 
 --------------- 
 Het wachtwoord kan altijd worden gewijzigd door het volgende te doen: 
 1. Aanmelden op %system_name% 
-2. Klik op  &quot;%pvt_home_name%&quot;
-3. Kies &quot;%password_update_link_text%&quot; </msg>
+2. Klik op  &#34;%pvt_home_name%&#34;
+3. Kies &#34;%password_update_link_text%&#34; </msg>
   <msg key="Password_changed_subject">Wachtwoord is veranderd</msg>
   <msg key="Password_regular_change_now">Uw wachtwoord moet regelmatig veranderd worden. Verander alstublieft nu uw wachtwoord.</msg>
   <msg key="Passwords_dont_match">Wachtwoorden komen niet overeen.</msg>
@@ -301,7 +301,7 @@ Het wachtwoord kan altijd worden gewijzigd door het volgende te doen:
   <msg key="Please_return_to_home">Keer terug naar %home_link%.</msg>
   <msg key="Portrait">Portretfoto</msg>
   <msg key="Privacy">Privacy</msg>
-  <msg key="Problem_auth_no_memb">Er is een probleem opgetreden tijdens de authenticatie van deze rekening. Vermoedelijk bevat de database gebruikers zonder &quot;member_state&quot;.</msg>
+  <msg key="Problem_auth_no_memb">Er is een probleem opgetreden tijdens de authenticatie van deze rekening. Vermoedelijk bevat de database gebruikers zonder &#34;member_state&#34;.</msg>
   <msg key="Profile">Profiel</msg>
   <msg key="Question">Vraag:</msg>
   <msg key="Re_enable">Opnieuw inschakelen</msg>
@@ -368,7 +368,7 @@ Het wachtwoord kan altijd worden gewijzigd door het volgende te doen:
   <msg key="User_Profile">Gebruikersprofiel</msg>
   <msg key="User_Profiles">Gebruikersprofielen</msg>
   <msg key="Username">Gebruikersnaam</msg>
-  <msg key="Username_not_found_for_authority">Geen gebruiker met gebruikersnaam '%username%' gevonden voor de authoriteit %this_authority%</msg>
+  <msg key="Username_not_found_for_authority">Geen gebruiker met gebruikersnaam &#39;%username%&#39; gevonden voor de authoriteit %this_authority%</msg>
   <msg key="Username_required">Gebruikersnaam vereist</msg>
   <msg key="UserSiteMap">Paginaoverzicht van gebruiker</msg>
   <msg key="Vacation_Info_Updated">De informatie omtrent afwezigheid is bijgewerkt</msg>

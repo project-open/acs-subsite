@@ -45,7 +45,6 @@
   <msg key="Confirm">Confirmer:</msg>
   <msg key="confirmation_password_changed">Votre mot de passe a été changé avec succés.</msg>
   <msg key="Continue"> Continue</msg>
-  <msg key="Continue_to_your_account">Continuer vers %pvt_home_name%</msg>
   <msg key="Country_Name">Nom du Pays</msg>
   <msg key="Create_new_community">Créer une nouvelle %pretty_name%</msg>
   <msg key="Create_new_subsite">Créer un nouveau sous-site</msg>

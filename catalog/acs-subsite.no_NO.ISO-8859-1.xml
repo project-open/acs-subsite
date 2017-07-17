@@ -46,7 +46,6 @@
   <msg key="Confirm">Bekreft:</msg>
   <msg key="confirmation_password_changed">Nytt passord er registrert</msg>
   <msg key="Continue">Fortsett</msg>
-  <msg key="Continue_to_your_account">Fortsett til %pvt_home_name%</msg>
   <msg key="Country_Name">Navn på land</msg>
   <msg key="Create_new_community">Lag ny %pretty_name%</msg>
   <msg key="Create_new_subsite">Lag nu undergruppe</msg>

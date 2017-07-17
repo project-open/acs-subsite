@@ -46,7 +46,6 @@
   <msg key="Confirm">Conferma Password:</msg>
   <msg key="confirmation_password_changed">Nuova password confermata.</msg>
   <msg key="Continue">Procedi</msg>
-  <msg key="Continue_to_your_account">Procedi a %pvt_home_name%</msg>
   <msg key="Country_Name">Nazione</msg>
   <msg key="Create_new_community">Crea %pretty_name%</msg>
   <msg key="Create_new_subsite">Crea nuovo subsite</msg>

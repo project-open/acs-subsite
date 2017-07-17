@@ -46,7 +46,6 @@
   <msg key="Confirm">确认</msg>
   <msg key="confirmation_password_changed">已成功选择新密码</msg>
   <msg key="Continue">继续</msg>
-  <msg key="Continue_to_your_account">到%pvt_home_name% </msg>
   <msg key="Country_Name">国家名称</msg>
   <msg key="Create_new_community">新建%pretty_name%</msg>
   <msg key="Create_new_subsite">新建子网页</msg>

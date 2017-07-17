@@ -94,7 +94,6 @@
   <msg key="Confirm">Confirmar:</msg>
   <msg key="confirmation_password_changed">Usted ha seleccionado una nueva contraseña con éxito</msg>
   <msg key="Continue">Continuar</msg>
-  <msg key="Continue_to_your_account">Continuar a %pvt_home_name%</msg>
   <msg key="Core_Services">Servicios del Core</msg>
   <msg key="Country_Name">País</msg>
   <msg key="create">Crear</msg>

@@ -32,7 +32,6 @@
   <msg key="Applications">Anwendungen</msg>
   <msg key="Approve">Freischalten</msg>
   <msg key="at">unter</msg>
-  <msg key="Attributes_of_this_type_of_group">Attribute dieses Gruppentyps</msg>
   <msg key="Auth_internal_error">Interner Fehler bei Authentifizierung</msg>
   <msg key="Authority">Domäne</msg>
   <msg key="Bad_Password">Falsches Passwort</msg>
@@ -63,7 +62,6 @@
   <msg key="Confirm">Bestätigen:</msg>
   <msg key="confirmation_password_changed">Die Änderung Ihres Passworts war erfolgreich.</msg>
   <msg key="Continue">Fortsetzen</msg>
-  <msg key="Continue_to_your_account">Weiter nach %pvt_home_name%</msg>
   <msg key="Country_Name">Land</msg>
   <msg key="create">Erstellen</msg>
   <msg key="create_asm">Erstellen Sie einen neuen Registrationsfragebogen</msg>
@@ -125,7 +123,6 @@
   <msg key="go_upload_your_portrait">ein Bild hochladen.</msg>
   <msg key="Grant">Erteilen</msg>
   <msg key="Grant_Permission">Berechtigungen erteilen</msg>
-  <msg key="Group_administration">Admin Benutzergruppen</msg>
   <msg key="Have_group_mail">Eine Gruppe mit dieser Email-Adresse existiert bereits.</msg>
   <msg key="Have_user_mail">Ein Benutzer mit dieser Email-Adresse existiert bereits.</msg>
   <msg key="Have_user_name">Eine Gruppe mit diesem Benutzernamen existiert bereits.</msg>
@@ -147,7 +144,6 @@
   <msg key="Join_this_subsite">Dieser Subsite beitreten</msg>
   <msg key="Keyword">Schlüsselwort</msg>
   <msg key="Last_name">Nachname</msg>
-  <msg key="Last_name_not_provided_by_authority">Nachname wurde nicht von der Domäne geliefert. Bitte geben Sie Ihren Nachnamen ein.</msg>
   <msg key="later">&amp;nbsp;</msg>
   <msg key="Leave_community">Community entfernen</msg>
   <msg key="Leave_subsite">Die Subsite verlassen</msg>
@@ -264,7 +260,6 @@
   <msg key="Not_valid_email_addr">Keine gültige Email-Adresse</msg>
   <msg key="Notes">Hinweise:</msg>
   <msg key="Notice">Hinweis:</msg>
-  <msg key="Object_Types">Objekttypen</msg>
   <msg key="on_name_to">für %name% an:</msg>
   <msg key="Online">Online</msg>
   <msg key="optional">(optional)</msg>
@@ -296,9 +291,6 @@
   <msg key="Register">Registrieren</msg>
   <msg key="Registration_Approval_Notice">&lt;p&gt;Vielen Dank für Ihre Registrierung bei %system_name%. Der Antrag wurde an einen Administrator übermittelt.&lt;/p&gt; &lt;p&gt;Sobald Sie freigeschaltet sind, erhalten Sie eine E-Mail mit den erforderlichen Anmeldedaten und können %system_name% nutzen.&lt;/p&gt; </msg>
   <msg key="Reject">Ablehnen</msg>
-  <msg key="Relational_Segment_administration">Admin Relational Segments</msg>
-  <msg key="Relationship_Types">Beziehungstypen</msg>
-  <msg key="Relationship_types_administration">Admin Beziehungstypen</msg>
   <msg key="Remember_my_login">Anmeldedaten auf diesem Computer speichern</msg>
   <msg key="Remove">Entfernen</msg>
   <msg key="Remove_All">Alle Entfernen</msg>
@@ -332,11 +324,9 @@
   <msg key="Subsites">Subsites</msg>
   <msg key="subsites">Subsites</msg>
   <msg key="Success_but_no_account_yet">Sie haben sich erfolgreich angemeldet, aber Sie haben noch kein Benutzerkonto bei %system_name%.</msg>
-  <msg key="Supertype">Supertyp</msg>
   <msg key="Thank_you">Vielen Dank.</msg>
   <msg key="The_ISO_codes_were_not">Die ISO-Codes sind auf diesem Server nicht geladen.</msg>
   <msg key="This_group_is_closed">Dies ist eine geschlossene Gruppe. Neue Teilnehmer können nur durch Einladung Zugang erhalten.</msg>
-  <msg key="This_group_type_can_only_be_administered_by_programmers">Dieser Gruppentyp kann nur von Entwicklern geändert werden</msg>
   <msg key="this_subsite">diese Subsite</msg>
   <msg key="This_user_has_left_the">Dieser Benutzer ist nicht mehr bei dotLRN registriert.</msg>
   <msg key="To_log_in_visit_the">Um sich anzumelden, gehen Sie auf die</msg>

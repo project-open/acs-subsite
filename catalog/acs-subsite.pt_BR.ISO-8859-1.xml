@@ -61,7 +61,6 @@
   <msg key="Confirm">Confirmar:</msg>
   <msg key="confirmation_password_changed">A senha foi alterada com sucesso.</msg>
   <msg key="Continue">Continuar</msg>
-  <msg key="Continue_to_your_account">Prossiga para %pvt_home_name%</msg>
   <msg key="Country_Name">Nome do País</msg>
   <msg key="create">Criar</msg>
   <msg key="create_asm">Criar um novo questionário de registro customizado</msg>

@@ -92,7 +92,6 @@
   <msg key="Confirm">Подтвердить</msg>
   <msg key="confirmation_password_changed">Вы успешно выбрали новый пароль.</msg>
   <msg key="Continue">Продолжить</msg>
-  <msg key="Continue_to_your_account">Продолжить с %pvt_home_name%</msg>
   <msg key="Core_Services">Центральные службы</msg>
   <msg key="Country_Name">Наименование страны</msg>
   <msg key="create">Создать</msg>

@@ -263,7 +263,7 @@
   <msg key="Passwords_dont_match">Hasła nie pasują</msg>
   <msg key="perm_cannot_be_removed">To prawo nie może być usunięte.</msg>
   <msg key="Permissions">Prawa</msg>
-  <msg key="permissions">prawa</msg>
+  <msg key="permissions">uprawnienia</msg>
   <msg key="Permissions_for_name">Prawa dla %name%</msg>
   <msg key="Please_return_to_home">Proszę powrócić do %home_link%.</msg>
   <msg key="Portrait">Portret</msg>
@@ -294,6 +294,7 @@
   <msg key="Send_email_to_this_user">Wyślij email do tego użytkownika</msg>
   <msg key="Send_me_a_copy">Prześli mi kopię:</msg>
   <msg key="Show">Pokaż</msg>
+  <msg key="Site_Map">Mapa Strony</msg>
   <msg key="sorry_forgotten_pwd">Przepraszamy, nie możemy pomóc Ci w przypadku zapomnianego hasła.</msg>
   <msg key="Status">Status</msg>
   <msg key="Story_Behind_Photo">Historia o Fotografii</msg>

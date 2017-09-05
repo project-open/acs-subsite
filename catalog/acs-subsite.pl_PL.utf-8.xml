@@ -8,9 +8,9 @@
   <msg key="Account_at_system_closed">Twoje konto w %system_name% zostało zamknięte.</msg>
   <msg key="Account_close_confirm_no_label">Nie, wróć do %pvt_home_name%</msg>
   <msg key="Account_close_confirm_yes_label">Tak, proszę zamknąć moje konto</msg>
-  <msg key="Account_closed">&lt;p&gt;Twoje konto jest aktualnie zamknięte.&lt;/p&gt; &lt;p&gt;Jeśli chcesz możemy &lt;a href=&quot;%restore_url%&quot;&gt; je otworzyć  ponownie&lt;/a&gt;.&lt;/p&gt;</msg>
+  <msg key="Account_closed">&lt;p&gt;Twoje konto jest aktualnie zamknięte.&lt;/p&gt; &lt;p&gt;Jeśli chcesz możemy &lt;a href=&#34;%restore_url%&#34;&gt; je otworzyć  ponownie&lt;/a&gt;.&lt;/p&gt;</msg>
   <msg key="Account_closed_title">Konto Zamknięte</msg>
-  <msg key="Account_closed_workspace_msg">p&gt; &lt;font color=&quot;red&quot;&gt; &lt;b&gt; Twoje konto jest obecnie zamknięte. &lt;/b&gt; &lt;/font&gt; &lt;a href=&quot;%login_url%&quot;&gt;Zaloguj się&lt;/a&gt; ponownie i zobacz co w tej sprawie możesz zrobić. &lt;/p&amp;;gt; </msg>
+  <msg key="Account_closed_workspace_msg">p&gt; &lt;font color=&#34;red&#34;&gt; &lt;b&gt; Twoje konto jest obecnie zamknięte. &lt;/b&gt; &lt;/font&gt; &lt;a href=&#34;%login_url%&#34;&gt;Zaloguj się&lt;/a&gt; ponownie i zobacz co w tej sprawie możesz zrobić. &lt;/p&amp;;gt; </msg>
   <msg key="Account_not_avail_now">To konto jest w tej chwili niedostępne.</msg>
   <msg key="Account_reopened_message">Twoje konto w %system_name% zostało otwarte. Witamy ponownie.</msg>
   <msg key="Account_reopened_title">Konto otwarte ponownie.</msg>
@@ -24,7 +24,9 @@
   <msg key="Admin">Admin</msg>
   <msg key="admin">Admin</msg>
   <msg key="Administer_subsite">Zarządzaj %subsite_name% </msg>
+  <msg key="Administration">Administracja</msg>
   <msg key="Administrative_options">Opcje administracyjne dla tego użytkownika</msg>
+  <msg key="Advanced">Zaawansowane</msg>
   <msg key="Alert_Type">Typ zawiadomienia</msg>
   <msg key="another_picture">inna ilustracja</msg>
   <msg key="Answer">Odpowiedź:</msg>
@@ -54,6 +56,7 @@
   <msg key="Communities">Wspólnoty</msg>
   <msg key="communities">wspólnoty</msg>
   <msg key="community">wspólnota</msg>
+  <msg key="Configuration">Konfiguracja</msg>
   <msg key="Confirm">Potwierdź:</msg>
   <msg key="confirmation_password_changed">Zmiana hasła przebiegła pomyślnie.</msg>
   <msg key="Continue">Kontynuuj</msg>
@@ -175,17 +178,17 @@
   <msg key="lt_It_would_be_a_very_ba">Jest to zupełnie zły pomysł, jeśli używasz publicznego komputera - jak w bibliotece lub szkole. Ktokolwiek, kto użyje tej maszyny po Tobie, bedzie mógł się pod Ciebie podszyć w tym systemie.</msg>
   <msg key="lt_New_registration_at_s">Nowa rejestracja w %system_url%</msg>
   <msg key="lt_Note_text_in_red_below">Tekst czerwoną czcionką poniżej pola parametru wskazuje, że wartość tego parametru jest nadpisana przez wpis w pliku konfiguracyjnym OpenACS. Używanie pliku z parametrami jest nie jest zalecane, ale niektóre instalacje wymagają specyficznych wartości dla każdej instancji niezależnie od tabeli parametrów apm_parameter.</msg>
-  <msg key="lt_Note_that_you_can_era">Możesz wymazać swoje zapisane email i hasło wybierając &quot;wyloguj się&quot; na Twoim Pulpicie.</msg>
+  <msg key="lt_Note_that_you_can_era">Możesz wymazać swoje zapisane email i hasło wybierając &#34;wyloguj się&#34; na Twoim Pulpicie.</msg>
   <msg key="lt_num_children_Children">%num_children% Ukrytych Dzieci</msg>
-  <msg key="lt_On_portrait_publish_d">%portrait_publish_date% wgrano &lt;a href=&quot;%subsite_url%user/portrait/?return_url=%pvt_home_url%&quot;&gt;%portrait_title%&lt;/a&gt;</msg>
+  <msg key="lt_On_portrait_publish_d">%portrait_publish_date% wgrano &lt;a href=&#34;%subsite_url%user/portrait/?return_url=%pvt_home_url%&#34;&gt;%portrait_title%&lt;/a&gt;</msg>
   <msg key="lt_Our_server_can_tell_y">Twoja przeglądarka może zapamiętać Twój email i hasło. Jest to wygodne, bo nie musisz ciągle ich wpisywać - ale bezpieczne TYLKO wtedy gdy JEDYNIE TY używasz komputera z którego odwiedzasz nasz system.</msg>
   <msg key="lt_Password_Confirmation">Potwierdzenie Hasła</msg>
   <msg key="lt_Personal_Home_Page_UR">URL Strony Domowej</msg>
-  <msg key="lt_Please_locate_your_co">Wskaż kod swojego kraju na tej liście i kliknij przycisk &quot;powrót&quot; w swojej przeglądarce by przejść do poprzedniego formularza.</msg>
+  <msg key="lt_Please_locate_your_co">Wskaż kod swojego kraju na tej liście i kliknij przycisk &#34;powrót&#34; w swojej przeglądarce by przejść do poprzedniego formularza.</msg>
   <msg key="lt_Please_read_and_follo">Proszę wypełnić instrukcje podane w niniejszym mailu.</msg>
-  <msg key="lt_Please_try_to_a_hrefi">Proszę &lt;a href=&quot;index&quot;&gt;zalogować się&lt;/a&gt; ponownie</msg>
+  <msg key="lt_Please_try_to_a_hrefi">Proszę &lt;a href=&#34;index&#34;&gt;zalogować się&lt;/a&gt; ponownie</msg>
   <msg key="lt_Portrait_of_first_last">Portret użytkownika: %first_names% %last_name%</msg>
-  <msg key="lt_Privileges_higher_implied">Przywilej wyższy w hierarchii zakłada przywileje niższe. To znaczy jeśli przyznasz prawa &quot;admin&quot;, prawa &quot;czytaj&quot;, &quot;pisz&quot;, etc. są przyznawane automatycznie.</msg>
+  <msg key="lt_Privileges_higher_implied">Przywilej wyższy w hierarchii zakłada przywileje niższe. To znaczy jeśli przyznasz prawa &#34;admin&#34;, prawa &#34;czytaj&#34;, &#34;pisz&#34;, etc. są przyznawane automatycznie.</msg>
   <msg key="lt_Problem_with_authenti">Problem potwierdzenia tożsamości</msg>
   <msg key="lt_Registration_informat">Informacja o rejestracji w tym serwisie została wysłana do %email%.</msg>
   <msg key="lt_Registration_informat_1">Informacja o rejestracji w tym serwisie została wysłana do %email%.</msg>
@@ -206,7 +209,7 @@
   <msg key="lt_Upload_your_favorite">Wgraj swój ulubiony plik, skan JPEG lub GIF, z Twojego kmputera ( plik musi być lokalnie na tym komputerze; nie możesz podać adresu pliku skądś w Internecie ).</msg>
   <msg key="lt_Uploaded_pretty_date">Wgrano: %pretty_date%</msg>
   <msg key="lt_Uploaded_publish_date">Wgrano: %publish_date%</msg>
-  <msg key="lt_Use_the_Browse_button">Użyj przycisku &quot;przeglądaj...&quot; by wskazać plik, następnie kliknij &quot;Otwórz&quot;. </msg>
+  <msg key="lt_Use_the_Browse_button">Użyj przycisku &#34;przeglądaj...&#34; by wskazać plik, następnie kliknij &#34;Otwórz&#34;. </msg>
   <msg key="lt_User_has_portrait_title">Ten użytkownik wpisał biografię lub wgrał portret</msg>
   <msg key="lt_We_cant_find_you">Nie można odnaleźć Cię (użytkownik %user_id%) w tabeli. Prawdopodobnie Twoje konto zostało z jakigoś powodu usunięte. </msg>
   <msg key="lt_We_had_a_problem_proc">Mieliśmy problem z przetwarzaniem Twoich danych.</msg>
@@ -221,7 +224,7 @@
   <msg key="lt_Your_email_has_been_c_1">Twój email został potwierdzony. Oczekujesz teraz na zatwierdzenie administratora %system_name%.</msg>
   <msg key="lt_Your_email_is_confirm">Twój email jest potwierdzony</msg>
   <msg key="lt_Your_login_has_expire">Twój login jest nieaktualny. Proszę ponownie wpisać hasło.</msg>
-  <msg key="lt_Your_URL_doesnt_have_">Twój URL ma błędną formę. Przykład prawidłowego URL to \&quot;%valid_url_example%\&quot;.&quot;</msg>
+  <msg key="lt_Your_URL_doesnt_have_">Twój URL ma błędną formę. Przykład prawidłowego URL to \&#34;%valid_url_example%\&#34;.&#34;</msg>
   <msg key="mail_a_message_to">Wyślij email do:</msg>
   <msg key="Make_administrator">Utwórz administratora</msg>
   <msg key="Make_member">Utwórz członka</msg>
@@ -239,6 +242,7 @@
   <msg key="Name">Nazwa</msg>
   <msg key="new_application">nowa aplikacja</msg>
   <msg key="New_Password">Nowe Hasło:</msg>
+  <msg key="New_Subsite">Nowa podwitryna</msg>
   <msg key="No_applications">Brak aplikacji</msg>
   <msg key="no_assessment">Brak sprawdzianów.</msg>
   <msg key="No_ISO_Codes">Brak kodów ISO</msg>
@@ -299,6 +303,7 @@
   <msg key="Status">Status</msg>
   <msg key="Story_Behind_Photo">Historia o Fotografii</msg>
   <msg key="Story_behind_photo">Historia o Fotografii</msg>
+  <msg key="Subsite_Home">Strona domowa %subsite_name%</msg>
   <msg key="Thank_you">Dziękujemy.</msg>
   <msg key="The_ISO_codes_were_not">Kody ISO jeszcze nie zostały załadowane do tego serwera.</msg>
   <msg key="This_group_is_closed">Ta grua jest zamknięta. Nowi członkowie mogą się zapisać tylko przez zaproszenie.</msg>

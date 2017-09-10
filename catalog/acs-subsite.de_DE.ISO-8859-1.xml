@@ -2,7 +2,7 @@
 <message_catalog package_key="acs-subsite" locale="de_DE" charset="ISO-8859-1">
 
   <msg key="_or"> oder</msg>
-  <msg key="_Update_Basic_Information">Die Allgemeinen Informationen aktualisieren</msg>
+  <msg key="_Update_Basic_Information">Basis-Informationen aktualisieren</msg>
   <msg key="A_member_of_the_system">Registriert bei %system_name% seit</msg>
   <msg key="About_You">Benutzerdaten</msg>
   <msg key="Account_at_system_closed">Ihr Benutzerkonto bei %system_name% wurde deaktiviert.</msg>
@@ -40,7 +40,7 @@
   <msg key="Authority">Domäne</msg>
   <msg key="Bad_Password">Falsches Passwort</msg>
   <msg key="Ban">Deaktivieren</msg>
-  <msg key="Basic_Information">Allgemeine Informationen:</msg>
+  <msg key="Basic_Information">Basis-Informationen:</msg>
   <msg key="Biographies">Biographien</msg>
   <msg key="Biography">Lebenslauf</msg>
   <msg key="Biography_Mime_Type">Mime Typ für die Biographie</msg>
@@ -78,7 +78,7 @@
   <msg key="Database_Error">Datenbankfehler</msg>
   <msg key="default_context">Standardkontext</msg>
   <msg key="Delete">Löschen</msg>
-  <msg key="delete">löschen</msg>
+  <msg key="delete">Löschen</msg>
   <msg key="DevAdmin">Admin für Entwickler</msg>
   <msg key="Developers_Admin">Admin für Entwickler</msg>
   <msg key="Direct_Permissions">Explizite Berechtigungen</msg>
@@ -251,7 +251,7 @@
   <msg key="mount">mount</msg>
   <msg key="My_Account">Mein Account</msg>
   <msg key="Name">Name:</msg>
-  <msg key="new_application">neue Applikation</msg>
+  <msg key="new_application">Neue Applikation</msg>
   <msg key="New_Password">Neues Passwort:</msg>
   <msg key="No_applications">Keine Anwendungen vorhanden</msg>
   <msg key="no_assessment">Kein Assessment verfügbar</msg>
@@ -274,7 +274,7 @@
   <msg key="Or_add_a_new_user">oder einen neuen Benutzer hinzufügen</msg>
   <msg key="or_the">oder das</msg>
   <msg key="Parameters">Parameter</msg>
-  <msg key="parameters">parameter</msg>
+  <msg key="parameters">Parameter</msg>
   <msg key="Password">Passwort</msg>
   <msg key="Password_changed_body">Das Passwort Ihres Benutzerkontos (%account_id_label%: %account_id%) bei %system_name% wurde kürzlich geändert. Es sind keine weiteren Schritte nötig, diese Mitteilung dient lediglich Ihrer Sicherheit. --------------- Sie können Ihr Passwort jederzeit mit folgenden Schritten ändern: 1. Melden Sie sich bei %system_name% an. 2. Klicken Sie auf den Link &#39;%pvt_home_name%&#39;. 3. Wählen Sie die Option &#39;%password_update_link_text%&#39;.</msg>
   <msg key="Password_changed_subject">Passwort geändert</msg>
@@ -308,6 +308,7 @@
   <msg key="Req_membership_comm">Zugang zu dieser Gruppe beantragen</msg>
   <msg key="Req_membership_subs">Mitgliedschaft für diese Subsite beantragen</msg>
   <msg key="Request_membership">Zugang beantragen</msg>
+  <msg key="Reset_Password">Passwort zurücksetzen</msg>
   <msg key="return_to_application">Zurück zur Anwendung</msg>
   <msg key="Revoke_Checked">Ausgewählte Berechtigungen aufheben</msg>
   <msg key="Role">Rolle</msg>
@@ -345,7 +346,7 @@
   <msg key="Topic">Thema</msg>
   <msg key="type_specific_info">Typspezifische Informationen:</msg>
   <msg key="Unknown_email">Email-Adresse unbekannt</msg>
-  <msg key="unmount">abhängen</msg>
+  <msg key="unmount">Abhängen</msg>
   <msg key="UP">Eine Ebene nach oben</msg>
   <msg key="up_to_context_name">Eine Ebene höher zu &#34;%context_name%&#34;</msg>
   <msg key="Update">Aktualisieren</msg>

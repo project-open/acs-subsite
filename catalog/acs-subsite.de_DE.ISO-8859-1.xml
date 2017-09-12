@@ -16,6 +16,12 @@
   <msg key="Account_reopened_title">Benutzerkonto wieder aktiviert</msg>
   <msg key="Action">Aktion</msg>
   <msg key="Add">Hinzufügen</msg>
+  <msg key="Add_a_group_of_this_type">Eine Gruppe dieses Typs hinzufügen</msg>
+  <msg key="Add_a_permissible_relationship_type">Erlaubten Relationstyp hinzufügen</msg>
+  <msg key="Add_an_attribute">Attribut hinzufügen</msg>
+  <msg key="Add_another_hostname_URL_pair">Weiteres Servername/URL Paar hinzufügen</msg>
+  <msg key="Add_application">Anwendung hinzfügen</msg>
+  <msg key="Add_Applications">Anwendungen hinzufügen</msg>
   <msg key="add_folder">Ordner hinzufügen</msg>
   <msg key="Add_new_app">Neue Anwendung hinzufügen</msg>
   <msg key="Add_permissible_relationship_type">Erlaubten Beziehungstyp hinzufügen</msg>
@@ -286,6 +292,7 @@
   <msg key="Permissions_for_name">Zugriffsberechtigungen für %name%</msg>
   <msg key="Please_return_to_home">Bitte gehen Sie zurück zu %home_link%.</msg>
   <msg key="Portrait">Bild</msg>
+  <msg key="Pretty_plural">Voller Plural</msg>
   <msg key="Privacy">Privatsphäre</msg>
   <msg key="Problem_auth_no_memb">Es gab einen Fehler beim authentifizieren des Accounts. Sehr wahrscheinlich enthält die Datenbank Benutzer mit keinem member_state.</msg>
   <msg key="Profile">Profil</msg>

@@ -1713,6 +1713,11 @@ function showCalendarWithDateWidget(id,fmt) {
   var idM = document.getElementById(id+'.month');
   var idD = document.getElementById(id+'.day');
   var idY = document.getElementById(id+'.year');
+
+    if (!idM.value) idM.value = new Date().getMonth();
+    if (!idD.value) idD.value = new Date().getDate();
+    if (!idY.value) idY.value = new Date().getFullYear();
+
   var calval = idY.value+'-'+idM.value+'-'+idD.value;
   if (calendar != null) {
     // we already have one created, so just update it.

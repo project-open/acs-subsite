@@ -1775,6 +1775,13 @@ function selectwidget(cal, date) {
     cal.selM.value = m;
     cal.selY.value = y;
     cal.selD.value = d;
+
+      // Trigger the "change" event of the date 
+      var event = new Event('change');
+      cal.selM.dispatchEvent(event);
+      cal.selY.dispatchEvent(event);
+      cal.selD.dispatchEvent(event);
+
     return;
   }
 }

@@ -92,6 +92,7 @@
   <msg key="Confirm">Bevestigen</msg>
   <msg key="confirmation_password_changed">Het kiezen van een nieuw wachtwoord is succesvol afgerond. </msg>
   <msg key="Continue">Doorgaan</msg>
+  <msg key="Convert_to_descendent_subsite_type">Converteer naar afstammeling subsite type</msg>
   <msg key="Core_Services">Core services</msg>
   <msg key="Country_Name">Landnaam</msg>
   <msg key="create">Aanmaken</msg>

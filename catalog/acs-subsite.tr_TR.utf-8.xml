@@ -27,7 +27,7 @@
   <msg key="Home_page">Ana sayfa</msg>
   <msg key="Last_name">Soyadiniz</msg>
   <msg key="Logout">Sistemden cik</msg>
-  <msg key="Logout_from_system">%system_name% &#39;den cik</msg>
+  <msg key="Logout_from_system">%system_name% 'den cik</msg>
   <msg key="lt_Show_everyone_else_at">Sistemdeki %system_name% haric herkese nasil gorundugumu goster:</msg>
   <msg key="lt_What_other_people_see">Diger kullanicilar isminize tiklayinca ne gorecekler</msg>
   <msg key="Make_yourself_invisible_label">Kendizini gorunmez yapin</msg>

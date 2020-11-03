@@ -8,8 +8,8 @@
   <msg key="Account_at_system_closed">Kontoen din ved %system_name% har blitt stengt. </msg>
   <msg key="Account_close_confirm_no_label">Nei, ta meg tilbake til %pvt_home_name%</msg>
   <msg key="Account_close_confirm_yes_label">Ja, avslutt min konto</msg>
-  <msg key="Account_closed">&lt;p&gt;Kontoen din er stengt.&lt;/p&gt; &lt;p&gt;Dersom du ønsker det, kan vi &lt;a href=&#34;%restore_url%&#34;&gt;åpne kontoen din igjen&lt;/a&gt;.&lt;/p&gt;</msg>
-  <msg key="Account_closed_workspace_msg">&lt;p&gt; &lt;font color=&#34;red&#34;&gt; &lt;b&gt; Kontoen din er stengt. &lt;/b&gt; &lt;/font&gt; &lt;a href=&#34;%login_url%&#34;&gt;Logg inn&lt;/a&gt; igjen for å se hva du kan gjøre med det. &lt;/p&amp;;gt; </msg>
+  <msg key="Account_closed">&lt;p&gt;Kontoen din er stengt.&lt;/p&gt; &lt;p&gt;Dersom du ønsker det, kan vi &lt;a href=&quot;%restore_url%&quot;&gt;åpne kontoen din igjen&lt;/a&gt;.&lt;/p&gt;</msg>
+  <msg key="Account_closed_workspace_msg">&lt;p&gt; &lt;font color=&quot;red&quot;&gt; &lt;b&gt; Kontoen din er stengt. &lt;/b&gt; &lt;/font&gt; &lt;a href=&quot;%login_url%&quot;&gt;Logg inn&lt;/a&gt; igjen for å se hva du kan gjøre med det. &lt;/p&amp;;gt; </msg>
   <msg key="Account_reopened_message">Din konto ved %system_name% har blitt gjenåpnet. Velkommen tilbake.</msg>
   <msg key="Account_reopened_title">Konto gjenåpnet</msg>
   <msg key="Action">Oppgave</msg>
@@ -46,6 +46,7 @@
   <msg key="Confirm">Bekreft:</msg>
   <msg key="confirmation_password_changed">Nytt passord er registrert</msg>
   <msg key="Continue">Fortsett</msg>
+  <msg key="Continue_to_your_account">Fortsett til %pvt_home_name%</msg>
   <msg key="Country_Name">Navn på land</msg>
   <msg key="Create_new_community">Lag ny %pretty_name%</msg>
   <msg key="Create_new_subsite">Lag nu undergruppe</msg>
@@ -136,15 +137,15 @@
   <msg key="lt_It_would_be_a_very_ba">Det ville være svært lite klokt å velge dette dersom du bruker en felles datamaskin i et biblotek eller fellesareal. Alle brukere som kommer etter deg vil kunne opptre som deg på tjenesten vår.</msg>
   <msg key="lt_New_registration_at_s">Ny registrering på %system_url%</msg>
   <msg key="lt_Note_text_in_red_below">Legg merke til at tekst i rødt under feltet for innlegging av parameter betyr at verdien til denne parameteren er overstyrt av et innleg i Open ACS parameterfil. Bruk av parameterfilen er ikke anbefalt, men noen steder må man bruke dem for å gi spesifkke verdier til parametre uavhengig av apm_parametertabeller.</msg>
-  <msg key="lt_Note_that_you_can_era">Legg merke til at du kan slette e-postadressen og passordet du har lagret ved å velge &#34;logg ut&#34; fra arbeidsområdet ditt.</msg>
+  <msg key="lt_Note_that_you_can_era">Legg merke til at du kan slette e-postadressen og passordet du har lagret ved å velge &quot;logg ut&quot; fra arbeidsområdet ditt.</msg>
   <msg key="lt_num_children_Children">%num_children% Barn gjemt </msg>
-  <msg key="lt_On_portrait_publish_d">Den %portrait_publish_date%, lastet du opp &lt;a href=&#34;%subsite_url%user/portrait/?return_url=%pvt_home_url%&#34;&gt;%portrait_title%&lt;/a&gt; </msg>
+  <msg key="lt_On_portrait_publish_d">Den %portrait_publish_date%, lastet du opp &lt;a href=&quot;%subsite_url%user/portrait/?return_url=%pvt_home_url%&quot;&gt;%portrait_title%&lt;/a&gt; </msg>
   <msg key="lt_Our_server_can_tell_y">Tjenesten vår kan be webleseren din å huske visse ting, som bruker-id og passord. Dette er praktisk for deg fordi, dersom du er den eneste personen som bruker denne maskinen, så trenger du ikke fortelle dem til oss hele tiden.</msg>
   <msg key="lt_Password_Confirmation">Bekreft passord:</msg>
   <msg key="lt_Personal_Home_Page_UR">URL for personlig webside:</msg>
-  <msg key="lt_Please_locate_your_co">Du kan finne landkoden i listen under, så bruker du &#34;tilbake&#34;-knappen på nettleseren din for å komme tilbake til det forrige skjemaet.</msg>
+  <msg key="lt_Please_locate_your_co">Du kan finne landkoden i listen under, så bruker du &quot;tilbake&quot;-knappen på nettleseren din for å komme tilbake til det forrige skjemaet.</msg>
   <msg key="lt_Please_read_and_follo">Vennligst les og følg instruksjonene i denne e-posten.</msg>
-  <msg key="lt_Please_try_to_a_hrefi">Vennligst prøv å &lt;a href=&#34;index&#34;&gt;logge inn&lt;/a&gt; igjen</msg>
+  <msg key="lt_Please_try_to_a_hrefi">Vennligst prøv å &lt;a href=&quot;index&quot;&gt;logge inn&lt;/a&gt; igjen</msg>
   <msg key="lt_Portrait_of_first_last">Portrett av %first_names% %last_name%</msg>
   <msg key="lt_Privileges_higher_implied">Rettigheter høyere i hierarkiet tar med seg rettighetene under - for eksempel dersom du gir noen rettighet som admin, vil lese- og skriverettigheter automatisk være gitt også.</msg>
   <msg key="lt_Problem_with_authenti">Problemer med autentisering</msg>
@@ -165,7 +166,7 @@
   <msg key="lt_Upload_your_favorite">Last opp din favorittfil, et innskannet JPEG eller GIF, fra din egen datamaskin (legg merke til at du ikke kan vise til et bilde et annet sted på internettet; dette bildet må ligge på harddisken på din egen maskin).</msg>
   <msg key="lt_Uploaded_pretty_date">Lastet opp: %pretty_date%</msg>
   <msg key="lt_Uploaded_publish_date">Lastet opp: %publish_date%</msg>
-  <msg key="lt_Use_the_Browse_button">Bruk &#34;Søk...&#34;-knappen til å finne filen din, så klikker du &#34;Åpne&#34;.</msg>
+  <msg key="lt_Use_the_Browse_button">Bruk &quot;Søk...&quot;-knappen til å finne filen din, så klikker du &quot;Åpne&quot;.</msg>
   <msg key="lt_User_has_portrait_title">Denne brukerene har lagt inn en beskrivelse eller lastet opp et bilde</msg>
   <msg key="lt_We_cant_find_you">Vi kan ikke finne deg (bruker %user_id%) i brukertabellen, Sannsynligvis har kontoen din blitt slettet av en eller annen grunn.</msg>
   <msg key="lt_We_had_a_problem_proc">Vi fikk et problem da vi skulle prosessere ditt innlegg.</msg>
@@ -179,7 +180,7 @@
   <msg key="lt_Your_email_has_been_c_1">E-posten din har blitt mottatt. Du venter nå på endelig godkjenning fra administrator for %system_name%.</msg>
   <msg key="lt_Your_email_is_confirm">E-posten din er mottatt.</msg>
   <msg key="lt_Your_login_has_expire">Innloggingen din har gått ut på tid. Vennligst skriv passordet ditt på nytt for å fortsette arbeidet.</msg>
-  <msg key="lt_Your_URL_doesnt_have_">Din URL har ikke korrekt form. En gyldig URL er noe som ligner på dette: &#34;%valid_url_example%&#34;. </msg>
+  <msg key="lt_Your_URL_doesnt_have_">Din URL har ikke korrekt form. En gyldig URL er noe som ligner på dette: &quot;%valid_url_example%&quot;. </msg>
   <msg key="Make_administrator">Lag administrator</msg>
   <msg key="Make_member">Lag medlem</msg>
   <msg key="Make_yourself_invisible_label">Gjør deg selv usynlig</msg>
@@ -206,7 +207,7 @@
   <msg key="Or_add_a_new_user">Eller legg til en ny bruker</msg>
   <msg key="or_the">eller</msg>
   <msg key="Password">Passord:</msg>
-  <msg key="Password_changed_body">Innloggingen din ved %system_name%: %account_id_label%: %account_id% Passordet ditt for denne kontoen har nylig blitt endret. Du trenger ikke gjøre noe, dette er bare en melding for å beskytte sikkerheten av kontoen din. --------------- Du kan alltid endre passordet ditt ved å gjøre følgende: 1. Logg inn ved %system_name% 2. Klikk på &#34;%pvt_home_name%&#34; lenke 3. Velg &#34;%password_update_link_text%&#34; </msg>
+  <msg key="Password_changed_body">Innloggingen din ved %system_name%: %account_id_label%: %account_id% Passordet ditt for denne kontoen har nylig blitt endret. Du trenger ikke gjøre noe, dette er bare en melding for å beskytte sikkerheten av kontoen din. --------------- Du kan alltid endre passordet ditt ved å gjøre følgende: 1. Logg inn ved %system_name% 2. Klikk på &quot;%pvt_home_name%&quot; lenke 3. Velg &quot;%password_update_link_text%&quot; </msg>
   <msg key="Password_changed_subject">Passord endret</msg>
   <msg key="Permissions">Rettigheter</msg>
   <msg key="permissions">rettigheter</msg>

@@ -97,6 +97,7 @@ ad_proc -public add {
     attribute
     
 } {
+    
     set default_value $default
 
     # We always use type-specific storage. Grab the tablename from the
@@ -130,7 +131,7 @@ ad_proc -public add {
     # the queries are empty because they are pulled out later in db_exec_plsql
     
     set plsql [list]
-    lappend plsql_drop [list  db_exec_plsql "drop_attribute" "FOO"]
+    lappend plsql_drop [list db_exec_plsql "drop_attribute" "FOO"]
     lappend plsql [list db_exec_plsql "create_attribute" "FOO"]
 
     set sql_type [datatype_to_sql_type -default $default_value $table_name $attribute_name $datatype]
@@ -140,16 +141,13 @@ ad_proc -public add {
     
     for { set i 0 } { $i < [llength $plsql] } { incr i } {
         set cmd [lindex $plsql $i]
-
-        ns_log Notice "xxx: $cmd"
-
         if { [catch $cmd err_msg] } {
             # Rollback what we've done so far. The loop contitionals are:
             #  start at the end of the plsql_drop list (Drop things in reverse order of creation)
             # execute drop statements until we reach position $i+1
             #  This position represents the operation on which we failed, and thus
             #  is not executed
-            for { set inner [expr {[llength $plsql_drop] - 1}] } { $inner > $i + 1 } { set inner [expr {$inner - 1}] } {
+            for { set inner [expr {[llength $plsql_drop] - 1}] } { $inner > $i + 1 } { incr inner -1 } {
                 set drop_cmd [lindex $plsql_drop $inner]
                 if { [catch $drop_cmd err_msg_2] } {
                     append err_msg "\nAdditional error while trying to roll back: $err_msg_2"
@@ -237,14 +235,7 @@ ad_proc -public delete { attribute_id } {
     # 2. Drop the attribute
     # 3. Return
     
-    if { ![db_0or1row select_attr_info {
-        select a.object_type, a.attribute_name, 
-               decode(a.storage,'type_specific',t.table_name,a.table_name) as table_name,
-	       nvl(a.column_name, a.attribute_name) as column_name
-          from acs_attributes a, acs_object_types t
-         where a.attribute_id = :attribute_id
-           and t.object_type = a.object_type
-    }] } {
+    if { ![db_0or1row select_attr_info {}] } {
         # Attribute doesn't exist
         return 0
     }
@@ -438,21 +429,7 @@ ad_proc -public array_for_type {
           and a.storage in ('[join $include_storage_types "', '"]')"
     }
 
-    db_foreach select_attributes "
-	select nvl(a.column_name, a.attribute_name) as name, 
-               a.pretty_name, a.attribute_id, a.datatype, 
-               v.enum_value, v.pretty_name as value_pretty_name
-	from acs_object_type_attributes a,
-               acs_enum_values v,
-               (select t.object_type, level as type_level
-                  from acs_object_types t
-                 start with t.object_type = :start_with
-               connect by prior t.object_type = t.supertype) t 
-         where a.object_type = :object_type
-           and a.attribute_id = v.attribute_id(+)
-           and t.object_type = a.ancestor_type $storage_clause
-        order by type_level, a.sort_order
-    " {
+    db_foreach select_attributes {} {
 	# Enumeration values show up more than once...
 	if {$name ni $attr_list} {
 	    lappend attr_list $name

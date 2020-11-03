@@ -25,6 +25,7 @@
   <msg key="Account_reopened_message">Your account at %system_name% has been reopened. Welcome back.</msg>
   <msg key="Account_reopened_title">Account Reopened</msg>
   <msg key="Action">Action</msg>
+  <msg key="Active_theme">Active</msg>
   <msg key="Add">Add</msg>
   <msg key="Add_a_group_of_this_type">Add a group of this type</msg>
   <msg key="Add_a_permissible_relationship_type">Add a permissible relationship type</msg>
@@ -144,8 +145,9 @@ logging in again. &lt;/p&gt;
   <msg key="Delete_selected_app">Delete selected applications</msg>
   <msg key="Delete_this_application">Delete this application</msg>
   <msg key="Delete_this_group_type">Delete this group type</msg>
+  <msg key="Delete_this_theme">Delete this theme</msg>
   <msg key="Description">Description</msg>
-  <msg key="Details_for__group_type_pretty_name">Details for %group_type_pretty_name%</msg>
+  <msg key="Details_for__group_type_pretty_name">Details for Group Type &#34;%group_type_pretty_name%&#34;</msg>
   <msg key="DevAdmin">DevAdmin</msg>
   <description key="DevAdmin">Can we please have a description about the purpose of this key?</description>
 
@@ -162,6 +164,7 @@ logging in again. &lt;/p&gt;
   <msg key="Edit_caption">Edit Caption</msg>
   <msg key="edit_comment">edit comment</msg>
   <msg key="Edit_Options">Edit Options</msg>
+  <msg key="Edit_this_theme">Edit this theme</msg>
   <msg key="Elements_not_editable">Certain elements are not editable, because they are managed by %authority_name%.</msg>
   <msg key="Email">Email</msg>
   <msg key="Email_already_exists">#acs-subsite.Email# already exists</msg>
@@ -225,6 +228,7 @@ Please visit the following link to change your password now:
   <msg key="Grant">Grant</msg>
   <msg key="Grant_Permission">Grant Permission</msg>
   <msg key="Group_administration">Group administration</msg>
+  <msg key="Group_members">Members of Group: %group_name%</msg>
   <msg key="Group_type">Group type</msg>
   <msg key="Group_type_administration">Group type administration</msg>
   <msg key="Group_Types">Group Types</msg>
@@ -255,6 +259,7 @@ Please visit the following link to change your password now:
   <msg key="Join_subsite">Join subsite</msg>
   <msg key="Join_this_community">Join this community</msg>
   <msg key="Join_this_subsite">Join this subsite</msg>
+  <msg key="Key">Key</msg>
   <msg key="Keyword">Keyword</msg>
   <msg key="Last_name">Last name</msg>
   <msg key="Last_name_not_provided_by_authority">Last name was not provided by the login authority. Please enter your last name.</msg>
@@ -391,6 +396,7 @@ account was deleted for some reason.</msg>
   <msg key="Members">Members</msg>
   <msg key="Members_only">Members only</msg>
   <msg key="Missing_argument">Missing argument</msg>
+  <msg key="Modified_theme">Modified</msg>
   <msg key="mount">mount</msg>
   <msg key="My_Account">Your Account</msg>
   <msg key="Name">Name</msg>
@@ -495,6 +501,7 @@ You can always change your password by doing the following:
   <msg key="Req_membership_comm">Request membership of this community</msg>
   <msg key="Req_membership_subs">Request membership of this subsite</msg>
   <msg key="Request_Change_Password_token_email">Request to Change Password: A token for changing your password has been emailed to you. Follow the instructions in that email to change your password</msg>
+  <msg key="Request_join_submitted">Your request to join group '%group_name%' has been submitted</msg>
   <msg key="Request_membership">Request membership</msg>
   <msg key="Reset_Password">Reset Password</msg>
   <msg key="return_to_application">return to application</msg>
@@ -513,6 +520,7 @@ You can always change your password by doing the following:
   <msg key="Select_Applications">Select Applications</msg>
   <msg key="Select_Applications__helptext">If the application is not in the list, you may need to &lt;a href=\&#34;/acs-admin/install/\&#34;&gt;install&lt;/a&gt; it on the server</msg>
   <msg key="Select_relation_type">Select relation type</msg>
+  <msg key="Select_theme">Select Theme</msg>
   <msg key="Send_email_to_this_user">Send email to this user</msg>
   <msg key="Send_me_a_copy">Send me a copy:</msg>
   <msg key="Services">Services</msg>
@@ -546,6 +554,7 @@ You can always change your password by doing the following:
   <msg key="The_name_of_the_new_subsite_you_re_setting_up">The name of the new subsite you&#39;re setting up</msg>
   <msg key="Theme">Theme</msg>
   <msg key="theme">theme</msg>
+  <msg key="Themes">Themes</msg>
   <msg key="This_group_is_closed">This group is closed. New members can only get access by invitation.</msg>
   <msg key="This_group_type_can_only_be_administered_by_programmers">This group type can only be administered by programmers</msg>
   <msg key="This_should_be_a_short_string">This should be a short string, all lowercase, with hyphens instead of spaces, whicn will be used in the URL of the new application. If you leave this blank, we will generate one for you from name of the application.</msg>
@@ -576,6 +585,7 @@ copy it as above to the new location, then select &lt;em&gt;unmount&lt;/em&gt; a
   <msg key="Upload_Portrait">Upload Portrait</msg>
   <msg key="URL">URL</msg>
   <msg key="URL_folder_name">URL folder name</msg>
+  <msg key="Usage">Usage</msg>
   <msg key="User_name">User name</msg>
   <msg key="User_Portrait">User Portrait</msg>
   <msg key="User_Portraits">User Portraits</msg>
@@ -605,9 +615,14 @@ copy it as above to the new location, then select &lt;em&gt;unmount&lt;/em&gt; a
   <msg key="You_dont_have_a_portrait">You don&#39;t have a portrait yet. You can</msg>
   <msg key="You_have_admin_rights_on">You have admin rights on the following objects:</msg>
   <msg key="You_have_no_email_alerts">You currently have no email alerts registered.</msg>
+  <msg key="You_joined_group">You have joined the group &#39;%group_name%&#39;</msg>
   <msg key="Your_Account">Your Account</msg>
   <msg key="Your_discussion_alerts">Your discussion forum alerts</msg>
   <msg key="Your_Portrait">Your Portrait</msg>
   <msg key="Your_system_alerts">Your %gc_system_name% alerts</msg>
   <msg key="Youre_marked_as_back">You&#39;re marked as back from vacation at %site_link%.</msg>
+  <msg key="Request_group_submitted">Your request to join group '%group_name%' has been submitted.</msg>
+  <msg key="Joined_group">You have joined the group %group_name%.</msg>
+  <msg key="Error_joining">Error Joining</msg>
+  <msg key="Error_joining_details">We experienced an error adding you to the group.</msg>
 </message_catalog>

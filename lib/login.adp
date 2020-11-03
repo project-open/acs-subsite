@@ -6,17 +6,20 @@
         <table cellspacing=0 cellpadding=0 border=0>
         <tr valign=center>
         <td>
+
 		<if @forgotten_pwd_url@ not nil>
-			<if @email_forgotten_password_p@ true>
-				<a href="@forgotten_pwd_url@">#acs-subsite.Forgot_your_password#</a>
-				<br>
-			</if>
+		  <if @email_forgotten_password_p;literal@ true>
+		    <a href="@forgotten_pwd_url;literal@" true>#acs-subsite.Forgot_your_password#</a>
+		    <br>
+		  </if>
 		</if>
-		<if @self_registration@ true>
-			<if @register_url@ not nil>
-				  <a href="@register_url@">#acs-subsite.Register#</a>
-			</if>
+		
+		<if @self_registration;literal@ true>
+		  <if @register_url@ not nil>
+		    <a href="@register_url@">#acs-subsite.Register#</a>
+		  </if>
 		</if>
+
         </td>
 	<td width=10>&nbsp;</td>
         <td align=right>
@@ -38,6 +41,7 @@
         </td>
         </tr>
         </table>
+
 
 </div>
 

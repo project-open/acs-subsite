@@ -8,9 +8,9 @@
   <msg key="Account_at_system_closed">Ваша учётная запись в %system_name% была закрыта.</msg>
   <msg key="Account_close_confirm_no_label">Нет, верните назад к %pvt_home_name%</msg>
   <msg key="Account_close_confirm_yes_label">Да, пожалуйста, удалите мою учётную запись</msg>
-  <msg key="Account_closed">&lt;p&gt;Ваша учётная запись закрыта.&lt;/p&gt;  &lt;p&gt;Если хотите, мы можем &lt;a href=&#34;%restore_url%&#34;&gt;её восстановить&lt;/a&gt;.&lt;/p&gt;.</msg>
+  <msg key="Account_closed">&lt;p&gt;Ваша учётная запись закрыта.&lt;/p&gt;  &lt;p&gt;Если хотите, мы можем &lt;a href=&quot;%restore_url%&quot;&gt;её восстановить&lt;/a&gt;.&lt;/p&gt;.</msg>
   <msg key="Account_closed_title">Учётная запись закрыта</msg>
-  <msg key="Account_closed_workspace_msg">&lt;p&gt; Ваша учётная запись &lt;strong&gt;закрыта&lt;/strong&gt;. &lt;a href=&#34;%login_url%&#34;&gt;Войдите&lt;/a&gt; опять и какие действия мы можем предпринять.&lt;/p&gt;</msg>
+  <msg key="Account_closed_workspace_msg">&lt;p&gt; Ваша учётная запись &lt;strong&gt;закрыта&lt;/strong&gt;. &lt;a href=&quot;%login_url%&quot;&gt;Войдите&lt;/a&gt; опять и какие действия мы можем предпринять.&lt;/p&gt;</msg>
   <msg key="Account_not_avail_now">Это учётная запись в настоящее время недоступна.</msg>
   <msg key="Account_reopened_message">Ваша учётная запись %system_name% была открыта заново. Рады вашему возвращению.</msg>
   <msg key="Account_reopened_title">Учётная запись была открыта заново</msg>
@@ -92,6 +92,7 @@
   <msg key="Confirm">Подтвердить</msg>
   <msg key="confirmation_password_changed">Вы успешно выбрали новый пароль.</msg>
   <msg key="Continue">Продолжить</msg>
+  <msg key="Continue_to_your_account">Продолжить с %pvt_home_name%</msg>
   <msg key="Core_Services">Центральные службы</msg>
   <msg key="Country_Name">Наименование страны</msg>
   <msg key="create">Создать</msg>
@@ -235,7 +236,7 @@
   <msg key="lt_Cannot_join_this_grou">Невозможно присоединиться к этой группе.</msg>
   <msg key="lt_Complete_List_of_ISO_">Полный список ISO кодов</msg>
   <msg key="lt_Continue_working_with">Продолжать работать с %system_name%</msg>
-  <msg key="lt_deleteaifif_nodespara">удалить&lt;/a&gt; &lt;/if&gt; &lt;if @nodes.parameters_url@ ne &#34;&#34;&gt; &lt;a href=&#34;@nodes.parameters_url@&#34;&gt;&lt;#_ параметры</msg>
+  <msg key="lt_deleteaifif_nodespara">удалить&lt;/a&gt; &lt;/if&gt; &lt;if @nodes.parameters_url@ ne &quot;&quot;&gt; &lt;a href=&quot;@nodes.parameters_url@&quot;&gt;&lt;#_ параметры</msg>
   <msg key="lt_Do_not_inherit_from_p">Не наследовать из %parent_object_name%</msg>
   <msg key="lt_Edit_comment_for_the_">Редактировать комментарий к изображению %first_names% %last_name%</msg>
   <msg key="lt_first_names_last_name">%first_names% %last_name% (%email%) зарегистрирован как пользователь %system_url%</msg>
@@ -253,15 +254,15 @@
   <msg key="lt_New_registration_at_s">Новая регистрация в %system_url%</msg>
   <msg key="lt_Note_text_in_red_below">Примечание, написанное красным под полями ввода параметров
 , содержит значение этого параметра которое будет переопределено в файле параметров OpenACS. Использование файла параметров не приветствуется, однако некоторые сайты нуждаются в предоставление экземпляро-ориентированных значений для параметров независимо от apm_parameter таблиц.</msg>
-  <msg key="lt_Note_that_you_can_era">Примите к сведению, что вы можете стереть ваш сохраненный адрес электронной почты и пароль, выбрав опцию &#34;Завершить сеанс&#34; из вашей рабочей области.</msg>
+  <msg key="lt_Note_that_you_can_era">Примите к сведению, что вы можете стереть ваш сохраненный адрес электронной почты и пароль, выбрав опцию &quot;Завершить сеанс&quot; из вашей рабочей области.</msg>
   <msg key="lt_num_children_Children">%num_children% дочерних спрятано</msg>
-  <msg key="lt_On_portrait_publish_d">На %portrait_publish_date%, вы загрузили &lt;a href=&#34;%subsite_url%user/portrait/?return_url=%pvt_home_url%&#34;&gt;%portrait_title%&lt;/a&gt;</msg>
+  <msg key="lt_On_portrait_publish_d">На %portrait_publish_date%, вы загрузили &lt;a href=&quot;%subsite_url%user/portrait/?return_url=%pvt_home_url%&quot;&gt;%portrait_title%&lt;/a&gt;</msg>
   <msg key="lt_Our_server_can_tell_y">Наш сервер может предложить вашему броузеру запомнить определённые данные, такие как адрес электронной почты и пароль. Это удобно для вас, поскольку если вы являетесь единственным пользователем своего компьютера, вряд ли вам захочется постоянно вводить пароль и адрес электронной почты.</msg>
   <msg key="lt_Password_Confirmation">Подтверждение пароля</msg>
   <msg key="lt_Personal_Home_Page_UR">URL домашней страницы:</msg>
-  <msg key="lt_Please_locate_your_co">Пожалуйста, отметьте код вашей страны в списке, приведённом ниже, и воспользуйтесь кнопкой &#34;назад&#34; в вашем броузере для возврата к предыдущей форме.</msg>
+  <msg key="lt_Please_locate_your_co">Пожалуйста, отметьте код вашей страны в списке, приведённом ниже, и воспользуйтесь кнопкой &quot;назад&quot; в вашем броузере для возврата к предыдущей форме.</msg>
   <msg key="lt_Please_read_and_follo">Пожалуйста, прочитайте и следуйте инструкции, приведённой в настоящем сообщении.</msg>
-  <msg key="lt_Please_try_to_a_hrefi">Пожалуйста, повторите &lt;a href=&#34;index&#34;&gt; вход в систему&lt;/a&gt;</msg>
+  <msg key="lt_Please_try_to_a_hrefi">Пожалуйста, повторите &lt;a href=&quot;index&quot;&gt; вход в систему&lt;/a&gt;</msg>
   <msg key="lt_Portrait_of_first_last">Изображение %first_names% %last_name%</msg>
   <msg key="lt_Privileges_higher_implied">Привилегии более высокого уровня в иерархии заключают в себе все привилегии более низкого уровня, например,когда вы предоставляете права администратора, то права по чтению, записи и т.д. предоставляются автоматически. </msg>
   <msg key="lt_Problem_with_authenti">Проблема с подтверждением подлинности</msg>
@@ -284,7 +285,7 @@
   <msg key="lt_Upload_your_favorite">Загрузите ваше любимое изображение в формате JPEG или GIF с рабочего компьютера(не указывайте ссылку на файл в Интернет; картинка должна находится на вашем жёстком диске).</msg>
   <msg key="lt_Uploaded_pretty_date">Загружено: %pretty_date%</msg>
   <msg key="lt_Uploaded_publish_date">Загружено: %publish_date%</msg>
-  <msg key="lt_Use_the_Browse_button">Нажмите на кнопку &#34;Browse...&#34;, выберите файл, затем нажмите &#34;Открыть&#34;.</msg>
+  <msg key="lt_Use_the_Browse_button">Нажмите на кнопку &quot;Browse...&quot;, выберите файл, затем нажмите &quot;Открыть&quot;.</msg>
   <msg key="lt_User_has_portrait_title">Пользователь добавил биографию или загрузил изображение</msg>
   <msg key="lt_We_cant_find_you">Мы не можем найти вас (пользователь %user_id%) в таблице пользователей. Возможно, ваша учётная запись была по каким-то причинам удалена. </msg>
   <msg key="lt_We_had_a_problem_proc">У нас были проблемы с обработкой вашего входа.</msg>
@@ -299,7 +300,7 @@
   <msg key="lt_Your_email_has_been_c_1">Ваш электронный почтовый адрес подтверждён. Дождитесь подтверждения от администратора %system_name%.</msg>
   <msg key="lt_Your_email_is_confirm">Ваш адрес электронной почты подтверждён. </msg>
   <msg key="lt_Your_login_has_expire">Время вашего сеанса истекло. Для продолжения работы введите пароль заново.</msg>
-  <msg key="lt_Your_URL_doesnt_have_">Форма вашего URL неверна. Допустимый URL должен выглядеть примерно так &#34;%valid_url_example%&#34;.</msg>
+  <msg key="lt_Your_URL_doesnt_have_">Форма вашего URL неверна. Допустимый URL должен выглядеть примерно так &quot;%valid_url_example%&quot;.</msg>
   <msg key="mail_a_message_to">Отправить электронное почтовое сообщение для:</msg>
   <msg key="Make_administrator">Создать администратора</msg>
   <msg key="Make_member">Создать участника</msg>
@@ -336,7 +337,7 @@
   <msg key="none">отсутствуют</msg>
   <msg key="Not_logged_in">Не вошёл в систему</msg>
   <msg key="Not_valid_email_addr">Это не проверенный адрес электронной почты</msg>
-  <msg key="Note_Relational_segments_are_created_from_the_groups_administration_pages">Примечание: Связанные сегменты созданы из  &lt;a href=&#39;../groups/&#39;&gt;страниц администрирования групп&lt;/a&gt;</msg>
+  <msg key="Note_Relational_segments_are_created_from_the_groups_administration_pages">Примечание: Связанные сегменты созданы из  &lt;a href='../groups/'&gt;страниц администрирования групп&lt;/a&gt;</msg>
   <msg key="Notes">Примечания:</msg>
   <msg key="Notice">Предупреждение:</msg>
   <msg key="number_of_groups_defined">определено количество групп</msg>
@@ -354,7 +355,7 @@
   <msg key="Parameters">Параметры</msg>
   <msg key="parameters">параметры</msg>
   <msg key="Password">Пароль</msg>
-  <msg key="Password_changed_body">Ваши регистрации данные в %system_name%: %account_id_label%: %account_id% Ваш пароль для этой учётной записи был недавно изменён. Это сообщение носит уведомительный характер с целью обеспечения безопасности вашей учетной записи. Вам не требуется предпринимать каких-либо действий.---------------Вы всегда можете изменить ваш пароль, выполнив следующие шаги:1. Войти в %system_name%. 2. Щёлкнуть по ссылке &#34;%pvt_home_name%&#34;. 3. Выбрать &#34;%password_update_link_text%&#34;</msg>
+  <msg key="Password_changed_body">Ваши регистрации данные в %system_name%: %account_id_label%: %account_id% Ваш пароль для этой учётной записи был недавно изменён. Это сообщение носит уведомительный характер с целью обеспечения безопасности вашей учетной записи. Вам не требуется предпринимать каких-либо действий.---------------Вы всегда можете изменить ваш пароль, выполнив следующие шаги:1. Войти в %system_name%. 2. Щёлкнуть по ссылке &quot;%pvt_home_name%&quot;. 3. Выбрать &quot;%password_update_link_text%&quot;</msg>
   <msg key="Password_changed_subject">Пароль изменён</msg>
   <msg key="Password_regular_change_now">Ваш пароль должен регулярно обновляться. Пожалуйста, смените ваш пароль сейчас.</msg>
   <msg key="Passwords_dont_match">Пароли не совпадают</msg>
@@ -367,7 +368,7 @@
   <msg key="Please_return_to_home">Пожалуйста, вернитесь на %home_link%..</msg>
   <msg key="Please_select">-- Пожалуйста выберите --</msg>
   <msg key="Portrait">Изображение</msg>
-  <msg key="Powered_by_OpenACS">Под управлением &lt;a href=&#34;http://openacs.org&#34; title=&#34;The OpenACS Project Homepage&#34;&gt;OpenACS&lt;/a&gt;</msg>
+  <msg key="Powered_by_OpenACS">Под управлением &lt;a href=&quot;http://openacs.org&quot; title=&quot;The OpenACS Project Homepage&quot;&gt;OpenACS&lt;/a&gt;</msg>
   <msg key="Pretty_name">Единственное число</msg>
   <msg key="Pretty_plural">Множественное число</msg>
   <msg key="Privacy">Конфиденциальность</msg>
@@ -415,7 +416,7 @@
   <msg key="See_full_size">Смотреть в полном размере</msg>
   <msg key="Select_an_Object_by_Id">Выбрать объект по Id:</msg>
   <msg key="Select_Applications">Выбрать Приложения</msg>
-  <msg key="Select_Applications__helptext">Если приложения нет в списке, вам необходимо &lt;a href=\&#34;/acs-admin/install/\&#34;&gt;установить&lt;/a&gt; его на сервере.</msg>
+  <msg key="Select_Applications__helptext">Если приложения нет в списке, вам необходимо &lt;a href=\&quot;/acs-admin/install/\&quot;&gt;установить&lt;/a&gt; его на сервере.</msg>
   <msg key="Select_relation_type">Выбрать тип отношения</msg>
   <msg key="Send_email_to_this_user">Послать сообщение электронной почты этому пользователю </msg>
   <msg key="Send_me_a_copy">Выслать мне копию</msg>
@@ -453,7 +454,7 @@
   <msg key="This_should_be_a_short_string">Эта строка будет использоваться в URL нового приложения. Она должна быть короткой, состоять из всех строчных букв с дефисом вместо пробелов. Если вы оставите её пустой, мы создадим её для вас из наименования вашего приложения. </msg>
   <msg key="this_subsite">этот подсайт</msg>
   <msg key="This_user_has_left_the">Этот пользователь покинул сообщество</msg>
-  <msg key="To_add_a_group_first_select_a_group_type_above_or_go_to_the">Для добавления группы сначала выберите типа группы из представленных выше или перейдите на страницу &lt;a href=&#34;../group-types/&#34;&gt;администрирование типа групп&lt;/a&gt; </msg>
+  <msg key="To_add_a_group_first_select_a_group_type_above_or_go_to_the">Для добавления группы сначала выберите типа группы из представленных выше или перейдите на страницу &lt;a href=&quot;../group-types/&quot;&gt;администрирование типа групп&lt;/a&gt; </msg>
   <msg key="To_add_an_application_to_this_site">Для &lt;strong&gt;добавления приложения&lt;/strong&gt; на этот сайт используйте &lt;em&gt;новую папку &lt;/em&gt; для создания нового узла сайта ниже под выбранной папкой. Затем выберите &lt;em&gt;новое приложение&lt;/em&gt; для выбора установленного пакета приложения для экземпляра заданного класса. Приложение будет доступно по отображаемому URL.</msg>
   <msg key="To_configure_an_application_select_set_parameters">Для &lt;strong&gt;конфигурирования&lt;/strong&gt; приложения выберите &lt;em&gt;настроить параметры&lt;/em&gt; для просмотра и редактирования специфичных параметров приложения . &lt;em&gt; Разграничение прав доступа &lt;/em&gt;позволяет предоставлять привилегии пользователям и группам в отношении экземпляров приложения или к другим данным приложения.Для получения больше информации о параметрах и правах доступа смотрите соответствующую документацию к пакету.</msg>
   <msg key="To_copy_an_application_instance_to_another">Для &lt;strong&gt;копирования&lt;/strong&gt; экземпляра приложения на другой URL необходимо создать новую папку как описано выше, затем выбрать &lt;em&gt;монтировать&lt;/em&gt;. Выбранное приложение будет скопировано из списка свободных пакетов.</msg>
@@ -480,7 +481,7 @@
   <msg key="User_Profile">Профайл пользователя</msg>
   <msg key="User_Profiles">Профайлы пользователя</msg>
   <msg key="Username">Имя пользователя</msg>
-  <msg key="Username_not_found_for_authority">Не одного пользователя с именем пользователя &#39;%username%&#39; не найдено для полномочий %this_authority%</msg>
+  <msg key="Username_not_found_for_authority">Не одного пользователя с именем пользователя '%username%' не найдено для полномочий %this_authority%</msg>
   <msg key="Username_required">Требуется имя пользователя</msg>
   <msg key="UserSiteMap">Карта сайта для пользователя</msg>
   <msg key="Vacation_Info_Updated">Информация об отпуске обновлена</msg>

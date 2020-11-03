@@ -12,14 +12,10 @@ ad_page_contract {
     attribute_id:naturalnum,notnull
     attribute_enum_values:array,trim,optional
     { operation:trim "Finish adding values" }
-    { return_url "" }
+    { return_url:localurl "" }
 }
 
-set max_sort_order [db_string select_max_sort_order {
-    select nvl(max(v.sort_order),0)
-      from acs_enum_values v
-     where v.attribute_id = :attribute_id
-}]
+set max_sort_order [db_string select_max_sort_order {}]
 
 db_transaction {
     foreach ideal_sort_order [array names attribute_enum_values] {

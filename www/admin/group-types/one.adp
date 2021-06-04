@@ -1,6 +1,7 @@
 <master>
 <property name="context">@context;literal@</property>
 <property name="&doc">doc</property>
+<property name="main_navbar_label">admin</property>
 				   
 <h1>@doc.title@</h1>
 
